@@ -23,3 +23,7 @@ Ivoor #f3efe7, espresso #302a24, koper #8a452c. Systeemlettertypen Georgia en Ar
 ## Branchbeleid
 
 Deze website staat uitsluitend op `site/involfit-architectuur`, gebaseerd op `main`, in `projects/involfit-architectuur/`. De gedeelde agencyconfiguratie en kennisbank blijven op `main`. Geen GitHub Pages, hosting of productiepublicatie ingesteld. De demo heeft `noindex, nofollow`; CSP blokkeert connecties en formulierverzending. Een eventuele latere publicatie vraagt een aparte opdracht en controle van echte bedrijfsinformatie en serverheaders.
+
+## Huidige reviewstatus
+
+[Reviewbewijs en screenshots](review/README.md). Volgens de aangescherpte oplevervoorwaarde is de site nog niet reviewbaar opgeleverd zolang een gecontroleerde externe previewlink ontbreekt. Lokale tests en screenshots vervangen die link niet.

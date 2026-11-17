@@ -1,0 +1,16 @@
+{
+  "passed": [
+    "3 pages at 1440x1000: layout, images, headings, navigation",
+    "3 pages at 390x844: layout, images, headings, navigation",
+    "3 pages at 320x720: layout, images, headings, navigation",
+    "3 pages at 844x390: layout, images, headings, navigation",
+    "mobile keyboard menu, Escape, focus restoration and navigation",
+    "project filters, live count and disclosure",
+    "invalid/valid form, accessible errors, focus and zero requests/cookies/storage",
+    "input never interpreted as HTML",
+    "reduced motion respected",
+    "no JS errors, HTTP errors or external requests",
+    "without JS: navigation/projects work; form disabled"
+  ],
+  "axe": false
+}

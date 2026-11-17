@@ -30,3 +30,7 @@ De eerste axe-injectie werd door de bestaande Content Security Policy geblokkeer
 Beperkingen: Chromium getest, geen Safari/Firefox of fysieke apparaten. Geen volledige screenreader- of handmatige WCAG-audit, juridisch onderzoek of certificering. Geen backend of e-mailaflevering aanwezig of getest. Geen bouwstap nodig voor deze statische site. Alle 22 rollen zijn geconfigureerd, maar niet alle 22 live gestart; configuratie is geen bewijs van runtime-activatie. Twee taakgerichte subagents zijn in deze sessie daadwerkelijk gebruikt voor configuratie en onafhankelijke review.
 
 De browsertest start en stopt een tijdelijke server. Screenshots en testresultaat-JSON staan buiten de repository in `/tmp/involfit-browser/`. Alleen fictieve formuliergegevens gebruikt. Er is geen hosting/deploymentworkflow toegevoegd.
+
+## Aanvullende previewgate
+
+De aangescherpte oplevervoorwaarde vereist een gecontroleerde externe previewlink plus GitHub-link en desktop-/mobiele screenshots. De lokale testresultaten blijven geldig; de status is **niet reviewbaar opgeleverd** zolang die externe link ontbreekt. Zie [actuele reviewstatus en screenshots](review/README.md). Geen productiepublicatie.
