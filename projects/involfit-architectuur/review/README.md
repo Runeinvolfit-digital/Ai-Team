@@ -2,7 +2,7 @@
 
 **Niet reviewbaar opgeleverd: externe previewlink ontbreekt.**
 
-Gecontroleerd: 2026-11-17T16:15:22+01:00 (Europe/Amsterdam). Bron van de site: `64614ab08e2a6cae193dcba76886f719ae402c4b`, branch `site/involfit-architectuur`. Deze reviewcommit voegt alleen bewijs en documentatie toe; websitecode is ongewijzigd.
+Gecontroleerd: 2026-11-17T16:17:33+01:00 (Europe/Amsterdam). Bron van de site: `64614ab08e2a6cae193dcba76886f719ae402c4b`, branch `site/involfit-architectuur`. De reviewcommits voegen bewijs, documentatie en een betrouwbaardere screenshotprocedure toe; de websitecode is ongewijzigd.
 
 [GitHub-projectmap](https://github.com/Runeinvolfit-digital/Ai-Team/tree/site/involfit-architectuur/projects/involfit-architectuur).
 
@@ -14,11 +14,11 @@ Gecontroleerd: 2026-11-17T16:15:22+01:00 (Europe/Amsterdam). Bron van de site: `
 | Projecten | [Screenshot](projecten-desktop.png) | [Screenshot](projecten-mobiel.png) |
 | Contact | [Screenshot](contact-desktop.png) | [Screenshot](contact-mobiel.png) |
 
-Dit zijn volledige paginaopnamen uit Chromium met de bovenstaande viewportafmetingen. Ze komen van een lokale testserver, niet van een extern bereikbare preview. Ze bewijzen dus geen externe bereikbaarheid.
+Dit zijn opnamen van het zichtbare browservenster uit Chromium met de bovenstaande viewportafmetingen. Volledige paginaopnamen gaven in deze runtime incidentele renderartefacten; de testrunner legt daarom het geteste browservenster vast na het laden/decoderen van de afbeeldingen. Ze komen van een lokale testserver, niet van een extern bereikbare preview. Ze bewijzen dus geen externe bereikbaarheid.
 
 ## Werkelijk gecontroleerd
 
-- `python3 tests/browser.py --artifacts /tmp/involfit-review-current`: 11 controlegroepen geslaagd op vier schermformaten; [resultaten](local-test-results.json).
+- `python3 tests/browser.py --artifacts /tmp/involfit-review-viewport`: 11 controlegroepen geslaagd op vier schermformaten; [resultaten](local-test-results.json).
 - Apart de server op poort 8000 getest: Home laadt, projectfilter Wonen werkt en lege formulierinvoer toont drie veldfouten.
 - De huidige omgevingsstatus meldt uitsluitend een SSH-portal op poort 22 en geen HTTP-preview-URL, ook na starten van de server op 0.0.0.0:8000. Een tool om HTTP-previewtoegang te configureren is hier niet beschikbaar.
 - Er is geen externe previewcontrole uitgevoerd. De eerdere uitgebreide tests staan in [TEST-REPORT.md](../TEST-REPORT.md); hun geslaagde status vervangt de previewgate niet.

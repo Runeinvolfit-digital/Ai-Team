@@ -40,9 +40,11 @@ try:
      page.evaluate(args.axe.read_text())
      scan=page.evaluate("async()=>await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})")
      assert not scan['violations'],json.dumps(scan['violations'],indent=2)
+    # Capture the tested viewport; avoid offscreen rasterization artifacts.
+    page.evaluate('async () => { for (const img of document.images) img.loading = "eager"; await Promise.all([...document.images].map(img => img.decode())); await document.fonts.ready; }')
     page.evaluate('window.scrollTo({top:0,behavior:"instant"})')
-    page.evaluate('() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
-    page.screenshot(path=str(args.artifacts/f'{file[:-5]}-{width}.png'),full_page=True,animations='disabled')
+    page.wait_for_timeout(300)
+    page.screenshot(path=str(args.artifacts/f'{file[:-5]}-{width}.png'),full_page=False,animations='disabled')
    passed(f'3 pages at {width}x{height}: layout, images, headings, navigation'+(', axe scan' if args.axe else ''))
   page.set_viewport_size({'width':390,'height':844});page.goto(base+'/index.html')
   menu=page.get_by_role('button',name='Menu');menu.focus();page.keyboard.press('Enter')
