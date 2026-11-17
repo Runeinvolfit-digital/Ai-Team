@@ -17,6 +17,8 @@ def check():
             matrix.append(cells[0])
     registry = json.loads((ROOT / 'agency/agents.json').read_text())
     config = tomllib.loads((ROOT / '.codex/config.toml').read_text())
+    assert config['agents']['max_concurrent_threads_per_session'] == 2, 'Expected at most two configured subagent threads'
+    assert config['agents']['max_depth'] == 1, 'Nested delegation must be disabled'
     roles = {key: value for key, value in config['agents'].items() if isinstance(value, dict)}
     assert len(matrix) == len(registry) == len(roles) == 22, 'Expected exactly 22 roles'
     assert [r['name'] for r in registry] == matrix, 'Role matrix mismatch'
@@ -31,6 +33,7 @@ def check():
         assert path.resolve() == (ROOT / role['config']).resolve()
         instruction = tomllib.loads(path.read_text())['developer_instructions']
         assert role['name'] in instruction and role['parent'] in instruction
+        assert 'agency/rules/efficiency.md' in instruction, 'Role missing efficiency policy'
         for doc in role['knowledge']:
             assert (ROOT / doc).is_file(), f'Missing knowledge: {doc}'
             assert doc in instruction, f'Unwired knowledge: {doc}'
@@ -39,7 +42,7 @@ def check():
     actual = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
               for p in (ROOT / 'knowledge').rglob('*') if p.is_file()}
     assert actual == baseline, 'Existing knowledge changed, missing, or added'
-    for name in ['core', 'task-interpretation', 'delegation', 'quality', 'github']:
+    for name in ['core', 'task-interpretation', 'delegation', 'quality', 'github', 'efficiency']:
         assert (ROOT / f'agency/rules/{name}.md').is_file()
     skills = list((ROOT / '.agents/skills').glob('*/SKILL.md'))
     assert len(skills) == 4

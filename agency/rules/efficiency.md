@@ -1,0 +1,16 @@
+# Zuinige, doelgerichte uitvoering
+
+Deze standaard concretiseert de gebruikersafspraak. Alle 22 rollen blijven beschikbaar; beschikbaarheid is geen opdracht om een sessie te starten. De bestaande kennisbank blijft behouden.
+
+- **Klein werk:** één uitvoerder interpreteert, implementeert en controleert. Manager en teamleider zijn verantwoordelijkheden die deze uitvoerder zelf kan vervullen; geen aparte sessies of uitgebreide plannen. Leg doel, grenzen en passende tests vast in enkele zinnen in de taakcontext. Een apart briefbestand is alleen nodig voor grotere taken of overdracht.
+- **Context:** geef een specialist alleen de concrete opdracht, relevante bestanden/kennisverwijzingen, bestandsbezit, criteria en verwacht bewijs. Geef noodzakelijke gebruikersbeperkingen mee. Gebruik waar ondersteund `fork_turns="none"`; geef niet standaard de volledige chatgeschiedenis door. Bij tools zonder contextkeuze stuur je de kleinst mogelijke zelfstandige opdracht en meld je een relevante runtimebeperking.
+- **Lezen:** raadpleeg alleen benodigde kennisdocumenten en relevante passages. Hergebruik reeds gelezen context zolang die beschikbaar en actueel is. Lees opnieuw bij gewijzigde bestanden of ontbrekende informatie; sla vereiste veiligheidsregels niet over.
+- **Samenwerking:** maximaal twee gelijktijdige uitvoerders voor aantoonbaar onafhankelijke taken. De coördinator telt mee zodra deze zelf uitvoert. Houd centraal bij wie welke taak en bestanden bezit; wacht op afronding voordat een derde uitvoerder begint. Geen dubbele opdrachten of gelijktijdige schrijvers op dezelfde bestanden. Alleen de hoofdcoördinator start subagents; geen geneste delegatie. Functionele rapportagelijnen in de matrix vereisen geen extra sessies.
+- **Reviews:** kies controles op risico en wijziging. Behoud noodzakelijke security-, privacy- en kwaliteitsgates. Een tekstcorrectie vraagt gerichte verificatie, geen volledige audit; gevoelige datastromen of authenticatie vragen passende securitytests en zo nodig onafhankelijke review.
+- **Herstel:** maximaal twee verschillende herstelpogingen per probleem. Een nieuwe poging vereist een andere diagnose of betekenisvolle wijziging. Daarna: rapporteer fout, beide pogingen en precies wat nodig is; werk verder aan onafhankelijke taken. Hervat pas bij nieuwe informatie of een gewijzigde voorwaarde.
+- **Rapport:** kort wat gewijzigd is, wat werkelijk getest is en wat openstaat, met GitHub-links. Geen interne discussieverslagen. Een mislukte of niet-uitgevoerde check blijft expliciet zichtbaar.
+- **Meting:** registreer tokengebruik alleen als de runtime betrouwbare cijfers geeft: bron/sessie, model, invoer/uitvoer en eventueel cachegebruik. Ontbrekende cijfers zijn niet beschikbaar, niet nul. Bereken alleen een besparing bij vergelijkbare gemeten taken met dezelfde scope en meetmethode; verzin geen percentage. Start geen agents of benchmarks uitsluitend om een besparingsclaim te maken.
+
+## Runtimegrens
+
+`.codex/config.toml` begrenst subagentthreads per sessie op twee en delegatiediepte op één. Dit is geen universele globale teller en verandert een bestaande hostsessie niet. De coördinator bewaakt daarom daarnaast de bovenstaande grens van twee actieve uitvoerders. In een runtime die deze instellingen niet ondersteunt, voer je standaard centraal uit; claim geen technische enforcement die niet is aangetoond.

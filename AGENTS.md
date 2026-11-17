@@ -1,7 +1,7 @@
 # Involfit Digital — Codex instructies
-1. Lees `knowledge/README.md`, `knowledge/company/execution-efficiency.md` en voor je rol de relevante documenten in `knowledge/agent-matrix.md`.
-2. De eigenaar formuleert het doel; de Manager maakt een korte task brief met acceptatiecriteria. Verzin geen ongevraagde scope.
-3. Manager selecteert teams; leads selecteren specialisten. Geen agent inschakelen zonder concrete taak. Als native delegatie niet werkt, centraal uitvoeren zonder gesimuleerde agentresultaten.
+1. Raadpleeg `knowledge/README.md`, `knowledge/company/execution-efficiency.md` en de relevante rolrij in `knowledge/agent-matrix.md` voor zover nog niet actueel beschikbaar; lees daarna alleen benodigde documenten.
+2. De eigenaar formuleert het doel; één uitvoerder legt bij klein werk doel, grenzen en tests in enkele zinnen vast. Manager en teamleiders zijn dan verantwoordelijkheden, geen extra sessies. Verzin geen ongevraagde scope.
+3. Gebruik één uitvoerder als standaard. Start alleen nuttige specialisttaken, met minimale taakcontext en maximaal twee gelijktijdige uitvoerders voor onafhankelijk werk. Alleen de hoofdcoördinator start subagents. Als delegatie niet werkt, centraal uitvoeren zonder gesimuleerde agentresultaten.
 4. **Action first**: na beknopte inspectie de kleinste effectieve wijziging implementeren. Niet eindeloos plannen, herlezen of herontwerpen.
 5. Gebruik bestaande stack en patronen; beperk afhankelijkheden, contextverbruik en bestandwijzigingen.
 6. Schrijf geen claims over tests, browsen, security, benchmarks of voltooiing zonder bewijs.
@@ -12,6 +12,8 @@
 
 ## Modulaire agencyconfiguratie
 - Gebruik `agency/agents.json` voor de 22 rollen en rapportagelijnen, `.codex/config.toml` voor native rolconfiguratie en `agency/README.md` voor de runtimebeperkingen.
-- Pas de taakrelevante regels in `agency/rules/` toe. Gebruik de lokale skills in `.agents/skills/` en de templates in `templates/`.
+- Pas de taakrelevante regels in `agency/rules/` toe; `agency/rules/efficiency.md` bepaalt de zuinige uitvoeringsstandaard. Gebruik de lokale skills in `.agents/skills/` en de templates in `templates/`.
 - Bij deze herbouw blijft de bestaande `knowledge/`-map ongewijzigd. Verifieer met `python3 scripts/check-agency.py`.
 - Bewaar iedere werkende stap daadwerkelijk op GitHub volgens `agency/rules/github.md`. Geen productiepublicatie.
+- Hergebruik actuele gelezen kennis; lees opnieuw bij wijzigingen of ontbrekende context. Maximaal twee verschillende herstelpogingen per probleem; daarna een concrete blokkade.
+- Rapporteer kort wijziging, echte tests en open punten. Tokengebruik alleen uit beschikbare runtimecijfers; geen verzonnen besparingspercentages.

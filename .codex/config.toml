@@ -1,8 +1,8 @@
 # Native Codex role configuration. Availability still depends on the host runtime.
 [agents]
 enabled = true
-max_concurrent_threads_per_session = 6
-max_depth = 3
+max_concurrent_threads_per_session = 2
+max_depth = 1
 
 [agents.agency_manager]
 description = "Agency Manager: Interpreteer de opdracht, benoem scope en acceptatiecriteria, selecteer alleen noodzakelijke teams en lever één eerlijk eindresultaat."
