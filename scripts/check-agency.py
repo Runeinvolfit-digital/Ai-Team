@@ -42,7 +42,7 @@ def check():
     actual = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
               for p in (ROOT / 'knowledge').rglob('*') if p.is_file()}
     assert actual == baseline, 'Existing knowledge changed, missing, or added'
-    for name in ['core', 'task-interpretation', 'delegation', 'quality', 'github', 'efficiency']:
+    for name in ['core', 'task-interpretation', 'delegation', 'quality', 'github', 'efficiency', 'preview']:
         assert (ROOT / f'agency/rules/{name}.md').is_file()
     skills = list((ROOT / '.agents/skills').glob('*/SKILL.md'))
     assert len(skills) == 4

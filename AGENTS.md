@@ -17,3 +17,5 @@
 - Bewaar iedere werkende stap daadwerkelijk op GitHub volgens `agency/rules/github.md`. Geen productiepublicatie.
 - Hergebruik actuele gelezen kennis; lees opnieuw bij wijzigingen of ontbrekende context. Maximaal twee verschillende herstelpogingen per probleem; daarna een concrete blokkade.
 - Rapporteer kort wijziging, echte tests en open punten. Tokengebruik alleen uit beschikbare runtimecijfers; geen verzonnen besparingspercentages.
+
+- Websiteoplevering: pas `agency/rules/preview.md` toe. Pas reviewbaar met gecontroleerde previewlink, GitHub-link en desktop-/mobiele screenshots. Definitieve productiepublicatie vereist expliciete eigenaarstoestemming.

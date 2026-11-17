@@ -1,0 +1,12 @@
+# Reviewbare websiteoplevering
+
+Een website is pas **reviewbaar opgeleverd** met alle onderstaande bewijzen. Een werkende lokale server, screenshot of GitHub-bronlink vervangt geen bereikbare previewlink.
+
+1. Lever een previewadres op de bedoelde websitebranch. Gebruik een ondersteunde previewomgeving of platformportal; verzin geen URL en presenteer localhost niet als een link die de opdrachtgever kan openen. Een preview is een testomgeving, geen definitieve productiepublicatie.
+2. Open het exacte previewadres en controleer dat de bedoelde site daadwerkelijk laadt, zonder foutpagina, ontbrekende assets of onverwachte loginbarrière. Controleer belangrijke pagina's en de primaire interactie op die preview. Een HTTP 200 of een gereserveerde URL alleen bewijst geen werking. Meld toegangseisen en tijdelijke geldigheid.
+3. Leg vast: gecontroleerde URL, datum/tijd met tijdzone, branch/broncommit en werkelijk uitgevoerd gedrag. Maak desktop- en mobiele screenshots van dezelfde versie; benoem pagina, viewport en of de opname van de externe preview of een lokale test komt. Presenteer lokale screenshots nooit als bewijs van externe bereikbaarheid.
+4. Geef bij oplevering de gecontroleerde previewlink, directe GitHub-link naar de sitebranch/projectmap, desktop- en mobiele screenshots en een kort verslag van tests en open punten. Bewaar screenshots en reviewinformatie bij voorkeur in `projects/[projectnaam]/review/` op de sitebranch; geen credentials of persoonsgegevens.
+5. Ontbreekt previewtoegang of faalt de controle, meld dan **niet reviewbaar opgeleverd** met de concrete blokkade. Rond onafhankelijk werk af, maar claim geen voltooiing. Vraag alleen de ontbrekende toegang of platforminstelling; voer geen productiepublicatie uit om de preview-eis te omzeilen.
+6. Definitieve productiepublicatie vereist vooraf expliciete goedkeuring van de eigenaar voor de concrete versie en bestemming. Een previewopdracht, push, merge of reviewgoedkeuring is geen toestemming voor productie.
+
+Deze gate blijft verplicht bij websiteoplevering, ook binnen de zuinige uitvoeringsstandaard. Een gewijzigde websiteversie vereist een opnieuw gecontroleerde preview en bijpassende screenshots. Voor een beperkte wijziging volstaan gerichte controles; ongewijzigde functies hoeven niet opnieuw volledig getest.

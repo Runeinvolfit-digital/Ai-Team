@@ -16,3 +16,5 @@ Validatie: `python3 scripts/check-agency.py`. De checker controleert rolstructuu
 Schema: https://github.com/openai/codex/blob/main/codex-rs/core/config.schema.json (geraadpleegd 2026-11-17). Geen model, credentials of permissies worden in projectconfiguratie overschreven.
 
 De native configuratie begrenst subagentthreads per sessie op twee en delegatiediepte op één. De aanvullende grens van twee actieve uitvoerders is een coördinatieregel; hostgedrag en tokenbesparing zijn daarmee niet bewezen. Meet tokens alleen waar de runtime cijfers geeft. De kennisbank en 22 rollen blijven behouden.
+
+Websiteoplevering volgt de [previewgate](rules/preview.md): gecontroleerde previewlink, GitHub-link en desktop-/mobiele screenshots. Zonder werkende preview is de site niet reviewbaar opgeleverd. Definitieve productiepublicatie vraagt expliciete eigenaarstoestemming.

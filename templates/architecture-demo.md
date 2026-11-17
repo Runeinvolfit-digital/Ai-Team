@@ -13,3 +13,5 @@ Formulier: labels, required-velden, geldige email en bruikbare foutmeldingen. Le
 Acceptatie: drie pagina’s werken; navigatie werkt op mobiel en toetsenbord; filters indien aanwezig werken; lege/ongeldige/geldige invoer getest; geen horizontale overflow; lokaal opstartcommando en tests gedocumenteerd; geen productiepublicatie.
 
 Repository: maak de sitebranch `site/involfit-architectuur` vanaf `main`; plaats alle websitebestanden onder `projects/involfit-architectuur/`. De agency en knowledge blijven gedeeld op `main`. Push werkende sitestappen naar de sitebranch zonder productiepublicatie.
+
+Reviewbare oplevering vereist een gecontroleerde previewlink, directe GitHub-link en desktop-/mobiele screenshots van dezelfde versie volgens `agency/rules/preview.md`. Zonder werkende preview blijft de oplevering geblokkeerd. Definitieve productiepublicatie vereist expliciete eigenaarstoestemming.
