@@ -1,0 +1,17 @@
+{
+  "passed": [
+    "1440x1000: responsive layout, headings, image, links and honest concept labels, axe WCAG scan",
+    "390x844: responsive layout, headings, image, links and honest concept labels, axe WCAG scan",
+    "320x720: responsive layout, headings, image, links and honest concept labels, axe WCAG scan",
+    "844x390: responsive layout, headings, image, links and honest concept labels, axe WCAG scan",
+    "mobile keyboard menu, Escape, focus and anchor navigation",
+    "garden explorer: keyboard selection, animated scene, live result and accessible SVG title",
+    "real text download reflects selected garden, limitations and no submission",
+    "reduced motion: choice works with plant transitions and smooth scrolling disabled",
+    "touch input changes garden choices; target height at least 44px",
+    "JavaScript disabled: navigation, static garden inspiration and clear fallback",
+    "standalone HTML: embedded photo, animated garden and real download without server requests",
+    "no JS/HTTP errors, external requests, cookies or browser storage"
+  ],
+  "axe": true
+}
