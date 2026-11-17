@@ -7,7 +7,7 @@
     <meta name="referrer" content="no-referrer" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'none'; script-src 'sha256-/KBDfB0lUsPcsGQvqD3NlJpMExuq3ZawfkTeZYoxOSY='; style-src 'sha256-HGFvFfPJWfuo0DjF0zdpffqWUV/wi3SaqpSL91eHZrc='; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'"
+      content="default-src 'none'; script-src 'sha256-7WiUiPn1YegBKfbz2H1N61rTX8ZeG1i9rWqhAqxbLb8='; style-src 'sha256-HyRPkMohTP55ncvrFJ8ysPmBbtgbXTUg4fVMjq5ggIs='; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'"
     />
     <meta name="theme-color" content="#11263a" />
     <title>
@@ -81,13 +81,13 @@
         letter-spacing: -0.045em;
       }
       h1 {
-        font-size: clamp(3.5rem, 5.5vw, 5.9rem);
+        font-size: clamp(2.5rem, 3.7vw, 3.5rem);
       }
       h2 {
-        font-size: clamp(2.4rem, 4vw, 4rem);
+        font-size: clamp(1.9rem, 2.7vw, 2.7rem);
       }
       h3 {
-        font-size: clamp(1.9rem, 2.6vw, 2.6rem);
+        font-size: clamp(1.6rem, 2.2vw, 2.15rem);
       }
       em {
         font-weight: 400;
@@ -96,17 +96,7 @@
         width: min(1240px, 88%);
         margin-inline: auto;
       }
-      .eyebrow {
-        font-size: 0.65rem;
-        font-weight: 600;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-      }
-      .arrow {
-        width: 21px;
-        height: 21px;
-        flex-shrink: 0;
-      }
+
       .dark {
         color: var(--white);
         background: var(--navy);
@@ -184,12 +174,9 @@
         grid-template-columns: 1.45fr 1fr;
         gap: 5rem;
         align-items: center;
-        padding-block: 5.5rem 5rem;
+        padding-block: 4rem;
       }
-      .hero .eyebrow {
-        color: var(--silver);
-        margin-bottom: 2rem;
-      }
+
       .hero h1 {
         max-width: 13ch;
       }
@@ -321,10 +308,7 @@
         align-items: start;
         margin-bottom: 3.5rem;
       }
-      .section-heading .eyebrow {
-        padding-top: 0.65rem;
-        color: var(--muted);
-      }
+
       .section-heading h2 {
         max-width: 19ch;
       }
@@ -338,11 +322,7 @@
         padding: 2.2rem 0 0;
         border-top: 1px solid var(--navy);
       }
-      .service-number {
-        font: 0.7rem var(--sans);
-        color: var(--muted);
-        letter-spacing: 0.12em;
-      }
+
       .service h3 {
         margin: 1.3rem 0 1.2rem;
         overflow-wrap: anywhere;
@@ -362,10 +342,7 @@
         border-top: 1px solid var(--line);
         font-size: 0.69rem;
       }
-      .service-foot .arrow {
-        width: 17px;
-        height: 17px;
-      }
+
       .service-foot:hover {
         text-decoration: underline;
       }
@@ -375,46 +352,13 @@
       .approach .section-heading {
         margin-bottom: 3rem;
       }
-      .steps {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3rem;
-        margin: 0;
-        padding: 0;
-      }
-      .steps li {
-        border-top: 1px solid #a3b2be;
-        padding-top: 1.5rem;
-      }
-      .step-index {
-        display: inline-grid;
-        place-content: center;
-        width: 33px;
-        height: 33px;
-        border: 1px solid #9caebb;
-        border-radius: 50%;
-        font-size: 0.7rem;
-        margin-bottom: 1.5rem;
-      }
-      .steps h3 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-      }
-      .steps p {
-        font-size: 0.86rem;
-        color: var(--muted);
-        max-width: 34ch;
-      }
+
       .about {
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 3rem;
       }
-      .about > .eyebrow {
-        color: var(--muted);
-        padding-top: 0.6rem;
-      }
+
       .about h2 {
         margin-bottom: 1.5rem;
       }
@@ -450,12 +394,9 @@
         gap: 5rem;
         align-items: center;
       }
-      .contact .eyebrow {
-        color: var(--silver);
-        margin-bottom: 1.5rem;
-      }
+
       .contact h2 {
-        font-size: clamp(2.5rem, 4.4vw, 4.3rem);
+        font-size: clamp(1.9rem, 2.8vw, 2.7rem);
         max-width: 15ch;
       }
       .contact-intro {
@@ -515,10 +456,7 @@
       .footer a:hover {
         text-decoration: underline;
       }
-      .footer .arrow {
-        width: 14px;
-        height: 14px;
-      }
+
       .skip-link {
         position: fixed;
         z-index: 5;
@@ -552,7 +490,7 @@
           gap: 1.3rem;
         }
         .hero h1 {
-          font-size: clamp(3.1rem, 5.2vw, 5.4rem);
+          font-size: clamp(2.5rem, 3.7vw, 3.5rem);
         }
         .hero-actions {
           gap: 1rem;
@@ -607,13 +545,9 @@
           padding-block: 3.1rem;
           gap: 2.7rem;
         }
-        .hero .eyebrow {
-          font-size: 0.54rem;
-          letter-spacing: 0.11em;
-          margin-bottom: 1.7rem;
-        }
+
         .hero h1 {
-          font-size: clamp(3rem, 11.2vw, 4.7rem);
+          font-size: clamp(2rem, 8.4vw, 2.6rem);
           max-width: 13ch;
         }
         .hero-intro {
@@ -664,11 +598,9 @@
           gap: 1.3rem;
           margin-bottom: 2.5rem;
         }
-        .section-heading .eyebrow {
-          padding: 0;
-        }
+
         h2 {
-          font-size: 2.7rem;
+          font-size: 2rem;
         }
         .services {
           grid-template-columns: 1fr;
@@ -678,7 +610,7 @@
           padding-top: 1.5rem;
         }
         .service h3 {
-          font-size: clamp(1.8rem, 7.2vw, 2.7rem);
+          font-size: clamp(1.6rem, 6.5vw, 2rem);
         }
         .service p {
           font-size: 0.85rem;
@@ -687,29 +619,7 @@
           font-size: 0.65rem;
           margin-top: 1.5rem;
         }
-        .steps {
-          grid-template-columns: 1fr;
-          gap: 1.8rem;
-        }
-        .steps li {
-          display: grid;
-          grid-template-columns: 35px 1fr;
-          gap: 0.6rem 1rem;
-          padding-top: 1.3rem;
-        }
-        .step-index {
-          grid-row: 1/3;
-          margin: 0;
-        }
-        .steps h3 {
-          font-size: 1.8rem;
-          margin: 0;
-        }
-        .steps p {
-          grid-column: 2;
-          font-size: 0.82rem;
-          max-width: 42ch;
-        }
+
         .about {
           grid-template-columns: 1fr;
           gap: 1.3rem;
@@ -728,7 +638,7 @@
           gap: 2.5rem;
         }
         .contact h2 {
-          font-size: 2.9rem;
+          font-size: 2rem;
           max-width: 15ch;
         }
         .contact-details {
@@ -760,6 +670,132 @@
         *::after {
           transition: none !important;
           animation: none !important;
+        }
+      }
+
+      /* Compact hierarchy and a task-driven animated question explorer. */
+      .clear-heading {
+        display: block;
+        margin-bottom: 2rem;
+      }
+      .clear-heading h2 {
+        max-width: 24ch;
+      }
+      .about {
+        display: block;
+      }
+      .about > div {
+        max-width: 760px;
+        margin-left: auto;
+      }
+      .choice-intro {
+        color: var(--muted);
+        max-width: 55ch;
+        margin-bottom: 1.7rem;
+        font-size: 0.9rem;
+      }
+      .route-choices {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+      }
+      .route-choices button {
+        padding: 0.8rem 1.15rem;
+        min-height: 48px;
+        color: var(--navy);
+        border: 1px solid #8397a6;
+        background: transparent;
+        border-radius: 2px;
+        font-size: 0.8rem;
+      }
+      .route-choices button[aria-pressed="true"] {
+        color: var(--white);
+        background: var(--navy);
+        border-color: var(--navy);
+      }
+      .route-choices button:hover {
+        border-color: var(--navy);
+      }
+      .route-body {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        align-items: center;
+        gap: 3rem;
+        border-top: 1px solid var(--line);
+        margin-top: 1.8rem;
+        padding-top: 1.8rem;
+      }
+      .route-visual {
+        width: 100%;
+        max-width: 360px;
+      }
+      .route-visual path {
+        fill: none;
+        stroke-width: 2;
+      }
+      .route-base {
+        stroke: #b6c1ca;
+      }
+      .route-path {
+        stroke: var(--navy);
+        stroke-dasharray: 1;
+        opacity: 0;
+      }
+      [data-selected="interim"] .route-interim,
+      [data-selected="advies"] .route-advies {
+        opacity: 1;
+      }
+      .route-origin,
+      .route-end {
+        fill: var(--navy);
+      }
+      .route-end {
+        transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      [data-selected="advies"] .route-end {
+        transform: translateY(90px);
+      }
+      #route-title {
+        font-size: 1.7rem;
+        margin-bottom: 0.8rem;
+      }
+      #route-description {
+        max-width: 48ch;
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+      .route-contact {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        border-bottom: 1px solid var(--navy);
+        margin-top: 1.2rem;
+        font-size: 0.78rem;
+      }
+      @media (max-width: 760px) {
+        .clear-heading {
+          margin-bottom: 1.5rem;
+        }
+        .about > div {
+          margin-left: 0;
+        }
+        .route-body {
+          grid-template-columns: 1fr;
+          gap: 1.2rem;
+        }
+        .route-visual {
+          max-width: 280px;
+        }
+        .route-choices {
+          gap: 0.6rem;
+        }
+        .route-choices button {
+          flex: 1;
+          padding: 0.75rem 0.7rem;
+          font-size: 0.72rem;
+        }
+        #route-title {
+          font-size: 1.6rem;
         }
       }
     </style>
@@ -803,10 +839,7 @@
       <div class="dark">
         <section class="hero wrap" aria-labelledby="hero-title">
           <div>
-            <p class="eyebrow">Interimmanagement &amp; organisatieadvies</p>
-            <h1 id="hero-title">
-              Richting geven.<br /><em>Beweging brengen.</em>
-            </h1>
+            <h1 id="hero-title">Richting en<br /><em>beweging.</em></h1>
             <p class="hero-intro">
               Involfit B.V. ondersteunt organisaties met interimmanagement en
               organisatieadvies. Om vraagstukken scherp te krijgen, keuzes te
@@ -816,19 +849,7 @@
               <a
                 class="button"
                 href="mailto:info@involfit.nl?subject=Kennismaking%20Involfit"
-                >Bespreek uw vraagstuk
-                <svg
-                  class="arrow"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    d="M4 12h15m-6-6 6 6-6 6"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  /></svg></a
+                >Bespreek uw vraagstuk </a
               ><a class="link" href="#dienstverlening"
                 >Ontdek de dienstverlening</a
               >
@@ -864,15 +885,13 @@
         tabindex="-1"
         aria-labelledby="services-title"
       >
-        <div class="section-heading">
-          <p class="eyebrow">De dienstverlening</p>
+        <div class="section-heading clear-heading">
           <h2 id="services-title">
             Tijdelijk versterken.<br />Gericht verder komen.
           </h2>
         </div>
         <div class="services">
           <article class="service">
-            <span class="service-number">01 / INTERIM</span>
             <h3>Interimmanagement</h3>
             <p>
               Tijdelijke versterking met aandacht voor richting en uitvoering.
@@ -883,22 +902,9 @@
               class="service-foot"
               href="mailto:info@involfit.nl?subject=Kennismaking%20Involfit"
               >Bespreek uw interimvraag
-              <svg
-                class="arrow"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path
-                  d="M4 12h15m-6-6 6 6-6 6"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                /></svg
-            ></a>
+            </a>
           </article>
           <article class="service">
-            <span class="service-number">02 / ADVIES</span>
             <h3>Organisatieadvies</h3>
             <p>
               Een helder perspectief op de vragen binnen uw organisatie. Samen
@@ -909,19 +915,7 @@
               class="service-foot"
               href="mailto:info@involfit.nl?subject=Kennismaking%20Involfit"
               >Bespreek uw organisatievraag
-              <svg
-                class="arrow"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path
-                  d="M4 12h15m-6-6 6 6-6 6"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                /></svg
-            ></a>
+            </a>
           </article>
         </div>
       </section>
@@ -932,33 +926,88 @@
         aria-labelledby="approach-title"
       >
         <div class="section wrap">
-          <div class="section-heading">
-            <p class="eyebrow">De werkwijze</p>
-            <h2 id="approach-title">Eerst begrijpen.<br />Dan in beweging.</h2>
+          <div class="section-heading clear-heading">
+            <h2 id="approach-title">Een passende eerste stap.</h2>
           </div>
-          <ol class="steps">
-            <li>
-              <span class="step-index" aria-hidden="true">01</span>
-              <h3>Begrijpen</h3>
-              <p>
-                We bespreken uw vraag en brengen de situatie en gewenste
-                richting in beeld.
-              </p>
-            </li>
-            <li>
-              <span class="step-index" aria-hidden="true">02</span>
-              <h3>Kiezen</h3>
-              <p>We maken prioriteiten en vervolgstappen concreet.</p>
-            </li>
-            <li>
-              <span class="step-index" aria-hidden="true">03</span>
-              <h3>Uitvoeren</h3>
-              <p>
-                We werken aan de afgesproken stappen en houden zicht op de
-                voortgang.
-              </p>
-            </li>
-          </ol>
+          <p class="choice-intro">
+            Kies wat op dit moment speelt. Zo begint uw e-mail meteen bij de
+            juiste vraag.
+          </p>
+          <div class="question-tool" data-selected="interim" hidden>
+            <div
+              class="route-choices"
+              role="group"
+              aria-label="Wat vraagt uw organisatie?"
+            >
+              <button
+                type="button"
+                data-choice="interim"
+                aria-pressed="true"
+                aria-controls="route-result"
+              >
+                Tijdelijke versterking
+              </button>
+              <button
+                type="button"
+                data-choice="advies"
+                aria-pressed="false"
+                aria-controls="route-result"
+              >
+                Organisatievraag
+              </button>
+            </div>
+            <div class="route-body">
+              <svg
+                class="route-visual"
+                viewBox="0 0 360 150"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  class="route-base"
+                  d="M26 75H100Q130 75 150 50L170 30H330M100 75Q130 75 150 100L170 120H330"
+                />
+                <path
+                  class="route-path route-interim"
+                  pathLength="1"
+                  d="M26 75H100Q130 75 150 50L170 30H330"
+                />
+                <path
+                  class="route-path route-advies"
+                  pathLength="1"
+                  d="M26 75H100Q130 75 150 100L170 120H330"
+                />
+                <circle class="route-origin" cx="26" cy="75" r="5" />
+                <circle class="route-end" cx="330" cy="30" r="5" />
+              </svg>
+              <div>
+                <div
+                  id="route-result"
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                >
+                  <h3 id="route-title">Interimmanagement</h3>
+                  <p id="route-description">
+                    Wilt u tijdelijk een rol of verantwoordelijkheid invullen?
+                    Bespreek welke versterking uw organisatie nodig heeft.
+                  </p>
+                </div>
+                <a
+                  class="route-contact"
+                  href="mailto:info@involfit.nl?subject=Interimmanagement%20bij%20Involfit"
+                  >Bespreek tijdelijke versterking</a
+                >
+              </div>
+            </div>
+          </div>
+          <noscript
+            ><p>
+              De eerste stap is een gesprek: uw vraag begrijpen, prioriteiten
+              kiezen en vervolgstappen afspreken. Mail naar
+              <a href="mailto:info@involfit.nl">info@involfit.nl</a>.
+            </p></noscript
+          >
         </div>
       </section>
       <section
@@ -967,7 +1016,6 @@
         tabindex="-1"
         aria-labelledby="about-title"
       >
-        <p class="eyebrow">Over Sander</p>
         <div>
           <h2 id="about-title">Sander de Ridder</h2>
           <p class="about-lead">
@@ -994,7 +1042,6 @@
       >
         <div class="contact-grid wrap">
           <div>
-            <p class="eyebrow">Een eerste gesprek</p>
             <h2 id="contact-title">Wat vraagt uw<br />organisatie nu?</h2>
             <p class="contact-intro">
               Neem contact op met Sander de Ridder om uw vraagstuk te bespreken.
@@ -1005,37 +1052,13 @@
             <p class="contact-role">Oprichter · Involfit B.V.</p>
             <a class="email" href="mailto:info@involfit.nl"
               >info@involfit.nl
-              <svg
-                class="arrow"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path
-                  d="M4 12h15m-6-6 6 6-6 6"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                /></svg
-            ></a>
+            </a>
             <div>
               <a
                 class="button"
                 href="mailto:info@involfit.nl?subject=Kennismaking%20Involfit"
                 >Stuur een e-mail
-                <svg
-                  class="arrow"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    d="M4 12h15m-6-6 6 6-6 6"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  /></svg
-              ></a>
+              </a>
             </div>
             <p class="contact-note">
               Opent uw eigen e-mailprogramma. Deze website verstuurt of bewaart
@@ -1049,21 +1072,7 @@
       <div class="footer-inner wrap">
         <p>Involfit B.V. · Interimmanagement &amp; organisatieadvies</p>
         <p>Sander de Ridder</p>
-        <a href="#boven"
-          >Terug naar boven
-          <svg
-            class="arrow"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path
-              d="M4 12h15m-6-6 6 6-6 6"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-            /></svg
-        ></a>
+        <a href="#boven">Terug naar boven </a>
       </div>
     </footer>
     <script>
@@ -1097,6 +1106,68 @@
           const target = document.querySelector(link.getAttribute("href"));
           if (target) target.focus({ preventScroll: true });
         }
+      });
+
+      const questionTool = document.querySelector(".question-tool");
+      const routeChoices = questionTool.querySelectorAll("[data-choice]");
+      const routes = {
+        interim: {
+          title: "Interimmanagement",
+          description:
+            "Wilt u tijdelijk een rol of verantwoordelijkheid invullen? Bespreek welke versterking uw organisatie nodig heeft.",
+          contact: "Bespreek tijdelijke versterking",
+          subject: "Interimmanagement bij Involfit",
+        },
+        advies: {
+          title: "Organisatieadvies",
+          description:
+            "Wilt u een organisatievraagstuk verhelderen? Bespreek wat er speelt en welke keuzes of vervolgstappen aandacht vragen.",
+          contact: "Bespreek uw organisatievraag",
+          subject: "Organisatieadvies bij Involfit",
+        },
+      };
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      );
+      questionTool.hidden = false;
+      routeChoices.forEach((button) =>
+        button.addEventListener("click", () => {
+          const choice = button.dataset.choice;
+          if (questionTool.dataset.selected === choice) return;
+          const route = routes[choice];
+          questionTool
+            .querySelectorAll(".route-path")
+            .forEach((path) =>
+              path.getAnimations().forEach((animation) => animation.cancel()),
+            );
+          questionTool.dataset.selected = choice;
+          routeChoices.forEach((option) =>
+            option.setAttribute("aria-pressed", String(option === button)),
+          );
+          document.querySelector("#route-title").textContent = route.title;
+          document.querySelector("#route-description").textContent =
+            route.description;
+          const contact = questionTool.querySelector(".route-contact");
+          contact.textContent = route.contact;
+          contact.href =
+            "mailto:info@involfit.nl?subject=" +
+            encodeURIComponent(route.subject);
+          if (!reducedMotion.matches)
+            questionTool
+              .querySelector(".route-" + choice)
+              .animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], {
+                duration: 650,
+                easing: "cubic-bezier(.2,.7,.2,1)",
+              });
+        }),
+      );
+      reducedMotion.addEventListener("change", (event) => {
+        if (event.matches)
+          questionTool
+            .querySelectorAll(".route-path")
+            .forEach((path) =>
+              path.getAnimations().forEach((animation) => animation.cancel()),
+            );
       });
     </script>
   </body>

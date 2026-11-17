@@ -29,9 +29,11 @@ try:
    page.set_viewport_size({'width':width,'height':height})
    assert page.goto(base+'/index.html').status==200
    page.wait_for_load_state('networkidle')
+   assert page.locator('.eyebrow,.service-number,.step-index,.arrow').count()==0
+   assert page.locator('h1').evaluate('(el)=>parseFloat(getComputedStyle(el).fontSize)<=56')
    assert page.locator('h1').count()==1
    assert page.locator('main h1').count()==1
-   assert 'Richting geven' in page.locator('h1').inner_text()
+   assert 'Richting en' in page.locator('h1').inner_text()
    assert page.locator('html').get_attribute('lang')=='nl'
    assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),f'Overflow at {width}'
    assert page.get_by_role('img',name='Gereserveerde ruimte',exact=False).is_visible()
@@ -47,6 +49,8 @@ try:
     scan=page.evaluate("async()=>await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})")
     assert not scan['violations'],json.dumps(scan['violations'],indent=2)
    page.screenshot(path=str(args.artifacts/f'home-{width}.png'),animations='disabled')
+   page.locator('#werkwijze').scroll_into_view_if_needed();page.wait_for_timeout(150)
+   page.screenshot(path=str(args.artifacts/f'explorer-{width}.png'),animations='disabled')
    page.locator('#contact').scroll_into_view_if_needed();page.wait_for_timeout(150)
    page.screenshot(path=str(args.artifacts/f'contact-{width}.png'),animations='disabled')
    passed(f'{width}x{height}: layout, anchor targets, content, mailto, placeholder'+(', axe WCAG scan' if args.axe else ''))
@@ -66,15 +70,27 @@ try:
   page.set_viewport_size({'width':1440,'height':1000})
   assert page.get_by_role('navigation').is_visible()
   passed('navigation available after mobile-to-desktop resize')
+  page.locator('[data-choice="advies"]').focus();page.keyboard.press('Enter')
+  assert page.locator('[data-choice="advies"]').get_attribute('aria-pressed')=='true'
+  assert page.locator('#route-title').inner_text()=='Organisatieadvies'
+  assert 'Organisatieadvies' in page.locator('.route-contact').get_attribute('href')
+  assert page.locator('.question-tool').get_attribute('data-selected')=='advies'
+  assert page.locator('.route-advies').evaluate('(el)=>el.getAnimations().length>0')
+  passed('question explorer: keyboard selection, animated path, meaningful result and matching email subject')
   page.emulate_media(reduced_motion='reduce')
   assert page.evaluate('getComputedStyle(document.documentElement).scrollBehavior')=='auto'
-  passed('reduced motion preference')
+  page.locator('[data-choice="interim"]').click()
+  assert page.locator('#route-title').inner_text()=='Interimmanagement'
+  assert page.locator('.route-interim').evaluate('(el)=>el.getAnimations().length===0')
+  assert page.locator('.route-end').evaluate('(el)=>getComputedStyle(el).transitionDuration')=='0s'
+  assert 'Interimmanagement' in page.locator('.route-contact').get_attribute('href')
+  passed('reduced motion: no path/circle animation, question explorer remains functional')
   nojs=browser.new_context(java_script_enabled=False,viewport={'width':390,'height':844})
   plain=nojs.new_page();plain.goto(base+'/index.html')
   assert plain.get_by_role('navigation').is_visible()
   plain.get_by_role('navigation').get_by_role('link',name='Contact',exact=True).click()
   assert plain.url.endswith('#contact')
-  assert plain.locator('a[href="mailto:info@involfit.nl"]').is_visible()
+  assert plain.locator('#contact a[href="mailto:info@involfit.nl"]').is_visible()
   passed('JavaScript disabled: navigation and contact available')
   standalone=browser.new_page(viewport={'width':390,'height':844})
   offline_errors=[];offline_requests=[]
@@ -86,6 +102,8 @@ try:
   standalone.get_by_role('navigation').get_by_role('link',name='Over Sander',exact=True).click()
   assert standalone.url.endswith('#sander')
   assert standalone.locator('#sander').evaluate('(el)=>document.activeElement===el')
+  standalone.locator('[data-choice=advies]').click()
+  assert standalone.locator('#route-title').inner_text()=='Organisatieadvies'
   assert not offline_requests,offline_requests
   assert not offline_errors,offline_errors
   passed('standalone document: layout and menu with zero resource requests')
