@@ -15,3 +15,5 @@ Acceptatie: drie pagina’s werken; navigatie werkt op mobiel en toetsenbord; fi
 Repository: maak de sitebranch `site/involfit-architectuur` vanaf `main`; plaats alle websitebestanden onder `projects/involfit-architectuur/`. De agency en knowledge blijven gedeeld op `main`. Push werkende sitestappen naar de sitebranch zonder productiepublicatie.
 
 Reviewbare oplevering vereist een gecontroleerde previewlink, directe GitHub-link en desktop-/mobiele screenshots van dezelfde versie volgens `agency/rules/preview.md`. Zonder werkende preview blijft de oplevering geblokkeerd. Definitieve productiepublicatie vereist expliciete eigenaarstoestemming.
+
+Respecteer `agency/rules/design-preferences.md`: proportionele koppen zonder standaard bovenlabels, decoratieve nummering en pijltjes. Voeg een taakgerichte eigen functie met animatie toe, met toetsenbord-/touchbediening en een gereduceerde-bewegingsvariant.
