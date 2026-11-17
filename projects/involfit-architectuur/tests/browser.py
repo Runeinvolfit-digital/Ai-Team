@@ -37,10 +37,12 @@ try:
      image.scroll_into_view_if_needed()
      assert image.evaluate('(img)=>img.complete && img.naturalWidth>0')
     if args.axe:
-     page.add_script_tag(path=str(args.axe))
+     page.evaluate(args.axe.read_text())
      scan=page.evaluate("async()=>await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})")
      assert not scan['violations'],json.dumps(scan['violations'],indent=2)
-    page.screenshot(path=str(args.artifacts/f'{file[:-5]}-{width}.png'),full_page=True)
+    page.evaluate('window.scrollTo({top:0,behavior:"instant"})')
+    page.evaluate('() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
+    page.screenshot(path=str(args.artifacts/f'{file[:-5]}-{width}.png'),full_page=True,animations='disabled')
    passed(f'3 pages at {width}x{height}: layout, images, headings, navigation'+(', axe scan' if args.axe else ''))
   page.set_viewport_size({'width':390,'height':844});page.goto(base+'/index.html')
   menu=page.get_by_role('button',name='Menu');menu.focus();page.keyboard.press('Enter')
@@ -65,6 +67,9 @@ try:
   assert page.locator('#duinwoning details').get_attribute('open') is not None
   passed('project filters, live count and disclosure')
   page.goto(base+'/contact.html');page.wait_for_load_state('networkidle')
+  assert page.locator('#interest option').count()==3
+  page.locator('#interest').select_option('wonen')
+  assert page.locator('#interest').input_value()=='wonen'
   submissions=[];page.on('request',lambda request:submissions.append(request.url))
   submit=page.get_by_role('button',name='Controleer mijn demo-invoer')
   submit.click();assert page.locator('[aria-invalid="true"]').count()==3

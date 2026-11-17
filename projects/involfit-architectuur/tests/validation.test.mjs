@@ -1,11 +1,50 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import { validateContact } from '../validation.mjs';
-const valid = {name:'Demo Gebruiker',email:'demo@example.com',message:'Een fictief idee voor een rustige woonruimte.'};
-test('valid input',()=>assert.deepEqual(validateContact(valid),{}));
-test('empty fields',()=>assert.deepEqual(Object.keys(validateContact({})),['name','email','message']));
-test('whitespace fails',()=>assert.equal(Object.keys(validateContact({name:' ',email:' ',message:' '.repeat(30)})).length,3));
-test('invalid emails',()=>{for(const email of ['naam','a@b','a b@example.com','a@@example.com',''])assert.ok(validateContact({...valid,email}).email)});
-test('length boundaries',()=>{assert.ok(validateContact({...valid,name:'x'.repeat(101)}).name);assert.ok(validateContact({...valid,message:'x'.repeat(19)}).message);assert.ok(validateContact({...valid,message:'x'.repeat(2001)}).message);assert.deepEqual(validateContact({...valid,message:'x'.repeat(20)}),{});assert.deepEqual(validateContact({...valid,message:'x'.repeat(2000)}),{})});
-test('unicode and plus address',()=>assert.deepEqual(validateContact({...valid,name:'Zoë van Dijk',email:'demo+test@example.com'}),{}));
-test('no mutation',()=>{const input=Object.freeze({...valid});validateContact(input);assert.deepEqual(input,valid)});
+import test from "node:test";
+import assert from "node:assert/strict";
+import { validateContact } from "../validation.mjs";
+const valid = {
+  name: "Demo Gebruiker",
+  email: "demo@example.com",
+  message: "Een fictief idee voor een rustige woonruimte.",
+};
+test("valid input", () => assert.deepEqual(validateContact(valid), {}));
+test("empty fields", () =>
+  assert.deepEqual(Object.keys(validateContact({})), [
+    "name",
+    "email",
+    "message",
+  ]));
+test("whitespace fails", () =>
+  assert.equal(
+    Object.keys(
+      validateContact({ name: " ", email: " ", message: " ".repeat(30) }),
+    ).length,
+    3,
+  ));
+test("invalid emails", () => {
+  for (const email of ["naam", "a@b", "a b@example.com", "a@@example.com", ""])
+    assert.ok(validateContact({ ...valid, email }).email);
+});
+test("length boundaries", () => {
+  assert.ok(validateContact({ ...valid, name: "x".repeat(101) }).name);
+  assert.ok(validateContact({ ...valid, message: "x".repeat(19) }).message);
+  assert.ok(validateContact({ ...valid, message: "x".repeat(2001) }).message);
+  assert.deepEqual(validateContact({ ...valid, message: "x".repeat(20) }), {});
+  assert.deepEqual(
+    validateContact({ ...valid, message: "x".repeat(2000) }),
+    {},
+  );
+});
+test("unicode and plus address", () =>
+  assert.deepEqual(
+    validateContact({
+      ...valid,
+      name: "Zoë van Dijk",
+      email: "demo+test@example.com",
+    }),
+    {},
+  ));
+test("no mutation", () => {
+  const input = Object.freeze({ ...valid });
+  validateContact(input);
+  assert.deepEqual(input, valid);
+});
