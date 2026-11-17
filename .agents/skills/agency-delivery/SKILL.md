@@ -10,3 +10,5 @@ Raadpleeg AGENTS.md, knowledge/agent-matrix.md, agency/rules/efficiency.md en ag
 Specialisten krijgen minimale zelfstandige context, waar beschikbaar met `fork_turns="none"`. Maximaal twee gelijktijdige uitvoerders voor onafhankelijk werk, geen dubbele opdrachten. Laat alleen de hoofdcoördinator sessies starten. Kies review naar risico; behoud noodzakelijke security- en kwaliteitsgates. Maximaal twee verschillende herstelpogingen per probleem, daarna een duidelijke blokkade. Rapporteer kort; vermeld tokengebruik alleen als de runtime cijfers levert.
 
 Bij websiteoplevering is agency/rules/preview.md verplicht: gecontroleerde previewlink, GitHub-link en desktop-/mobiele screenshots. Zonder werkende preview blijft de status niet reviewbaar opgeleverd. Productie vereist afzonderlijke expliciete goedkeuring.
+
+Bij websiteontwerp: pas agency/rules/design-preferences.md toe. Kies één onderscheidende functie met betekenisvolle, toegankelijke animatie en test die; voorkom standaard bovenlabels, reuzenkoppen, decoratieve nummers en pijltjes.

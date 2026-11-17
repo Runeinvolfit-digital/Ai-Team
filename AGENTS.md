@@ -19,3 +19,5 @@
 - Rapporteer kort wijziging, echte tests en open punten. Tokengebruik alleen uit beschikbare runtimecijfers; geen verzonnen besparingspercentages.
 
 - Websiteoplevering: pas `agency/rules/preview.md` toe. Pas reviewbaar met gecontroleerde previewlink, GitHub-link en desktop-/mobiele screenshots. Definitieve productiepublicatie vereist expliciete eigenaarstoestemming.
+
+- Voor websiteontwerp gelden de vaste voorkeuren in `agency/rules/design-preferences.md`: geen standaard bovenlabels, buitensporige titels, decoratieve nummers of pijltjes; wel een passende onderscheidende functie met toegankelijke animatie.
