@@ -1,0 +1,42 @@
+{
+  "method": "Local production build, Chromium, simulated mobile, SITE_INDEXABLE=1",
+  "runs": {
+    "home": {
+      "measuredAt": "2026-11-17T19:53:51.870Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 1514,
+      "cls": 0.0015,
+      "tbtMs": 0
+    },
+    "diensten": {
+      "measuredAt": "2026-11-17T19:54:02.027Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 905,
+      "cls": 0.0068,
+      "tbtMs": 0
+    },
+    "contact": {
+      "measuredAt": "2026-11-17T19:54:46.538Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 905,
+      "cls": 0.0005,
+      "tbtMs": 0
+    }
+  },
+  "lighthouseVersion": "13.6.0"
+}

@@ -1,0 +1,64 @@
+---
+import '@fontsource-variable/manrope/wght.css';
+import { email } from '../content';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const {title, description} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const navigation = [
+  { href: '/', label: 'Home' },
+  { href: '/diensten/', label: 'Diensten' },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f7f6ef" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/site.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:site_name" content="Involfit" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/ruimte-1100.webp', Astro.site)} />
+    <meta property="og:image:alt" content="Abstracte compositie van licht en schaduw op beton" />
+  </head>
+  <body>
+    <a class="skip" href="#inhoud">Naar de inhoud</a>
+    <header class="site-header shell">
+      <a class="wordmark" href="/" aria-label="Involfit, home">involfit<span aria-hidden="true">.</span></a>
+      <nav aria-label="Hoofdnavigatie">
+        {navigation.map(({href, label}) => (
+          <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>
+        ))}
+      </nav>
+    </header>
+    <main id="inhoud" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <a class="wordmark" href="/" aria-label="Involfit, home">involfit<span aria-hidden="true">.</span></a>
+          <p>Involfit B.V. · Sander de Ridder</p>
+        </div>
+        <div class="footer-links">
+          <a href={`mailto:${email}`}>{email}</a>
+          <a href="/privacy/">Privacyverklaring</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

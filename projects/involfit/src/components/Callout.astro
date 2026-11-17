@@ -1,0 +1,11 @@
+---
+interface Props { title: string; text: string; label?: string }
+const {title, text, label = 'Neem contact op'} = Astro.props;
+---
+<section class="callout shell">
+  <div>
+    <h2>{title}</h2>
+    <p>{text}</p>
+  </div>
+  <a class="button button-light" href="/contact/">{label}</a>
+</section>

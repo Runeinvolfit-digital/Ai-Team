@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "chromium": "156.0.8078.79",
+  "widths": [
+    360,
+    390,
+    768,
+    1024,
+    1440,
+    1920
+  ],
+  "routes": [
+    "/",
+    "/diensten/",
+    "/contact/",
+    "/privacy/"
+  ],
+  "layoutChecks": 24,
+  "automatedAxeScans": 10,
+  "interactions": [
+    "skip link",
+    "question explorer",
+    "keyboard tabs",
+    "history",
+    "touch",
+    "reduced motion",
+    "no JavaScript fallback",
+    "custom 404"
+  ],
+  "contact": [
+    "native validation",
+    "400 server validation",
+    "503 missing mail configuration",
+    "200 with injected provider"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "involfit-site",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "npm run build && node --watch server.mjs",
+    "build": "astro build",
+    "start": "node server.mjs",
+    "test": "node --test",
+    "check": "astro check"
+  },
+  "devDependencies": {
+    "@fontsource-variable/manrope": "5.3.0",
+    "astro": "7.4.12",
+    "@astrojs/check": "0.9.12",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,74 @@
+---
+import Site from '../layouts/Site.astro';
+import Callout from '../components/Callout.astro';
+import { email, services } from '../content';
+
+const business = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Involfit',
+  legalName: 'Involfit B.V.',
+  url: 'https://involfit.nl/',
+  email,
+  founder: {'@type': 'Person', name: 'Sander de Ridder'},
+};
+---
+<Site title="Involfit | Interimmanagement en organisatieadvies" description="Sander de Ridder helpt organisaties met interimmanagement, organisatieadvies en verbetering. Bespreek uw vraagstuk met Involfit.">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(business)}></script>
+  <section class="hero shell">
+    <h1>Ruimte voor<br />verandering<span>.</span></h1>
+    <p>Involfit helpt organisaties als er tijdelijk versterking nodig is, een verandering vastloopt of het dagelijkse werk slimmer kan.</p>
+    <div class="actions">
+      <a class="button" href="/contact/">Plan een kennismaking</a>
+      <a class="button button-outline" href="/diensten/">Bekijk de diensten</a>
+    </div>
+  </section>
+  <section class="feature shell" aria-labelledby="vraag-kop">
+    <picture>
+      <source media="(max-width: 760px)" srcset="/ruimte-mobiel.webp" />
+      <img src="/ruimte-1100.webp" srcset="/ruimte-640.webp 640w, /ruimte-1100.webp 1100w, /ruimte-1800.webp 1800w" sizes="(min-width: 1480px) 1380px, 94vw" width="1800" height="600" alt="" fetchpriority="high" />
+    </picture>
+    <div class="question">
+      <h2 id="vraag-kop">Waar loopt uw organisatie tegenaan?</h2>
+      <div class="question-list">
+        {services.map(service => (
+          <details name="organisatievraag">
+            <summary>{service.question}</summary>
+            <div class="question-answer">
+              <p>{service.summary}</p>
+              <a href={`/diensten/#${service.id}`}>Bekijk {service.title.toLowerCase()}</a>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="shell section split" aria-labelledby="sander">
+    <div><h2 id="sander">Sander de Ridder</h2><p class="muted">Oprichter van Involfit B.V.</p></div>
+    <div class="prose">
+      <p>Sander de Ridder ondersteunt organisaties bij vragen over verandering, aansturing en samenwerking. Met Involfit kan hij tijdelijk een rol invullen of meedenken over een vraagstuk dat intern moeilijk loskomt.</p>
+      <p>Zijn werk ligt op het snijvlak van advies en uitvoering. Dat is relevant als een besluit pas effect heeft zodra teams weten wat er van hen wordt verwacht.</p>
+    </div>
+  </section>
+  <section class="offer">
+    <div class="shell section">
+      <h2>Diensten en expertise</h2>
+      <div class="offer-grid">
+        {services.map(service => (
+          <article>
+            <h3><a href={`/diensten/#${service.id}`}>{service.title}</a></h3>
+            <p>{service.summary}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="shell section split">
+    <h2>Trainingen</h2>
+    <div class="prose">
+      <p>Involfit biedt trainingen rond organisatieontwikkeling, verandering en verbetering. Bespreek welk vraagstuk uw team wil oefenen en welke invulling daarbij past.</p>
+      <a class="text-link" href="/diensten/#trainingen">Bekijk de trainingsthema’s</a>
+    </div>
+  </section>
+  <Callout title="Waar wilt u verder mee?" text="Vertel Sander kort wat er speelt. In een eerste gesprek verkent u samen wat de situatie vraagt." />
+</Site>
