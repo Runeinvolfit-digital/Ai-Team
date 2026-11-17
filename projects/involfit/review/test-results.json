@@ -16,10 +16,12 @@
     "/privacy/"
   ],
   "layoutChecks": 24,
+  "reflowReferenceWidth": 320,
+  "textResizeChecks": 12,
   "automatedAxeScans": 10,
   "interactions": [
     "skip link",
-    "question explorer",
+    "worktable with prefilled contact topic",
     "keyboard tabs",
     "history",
     "touch",

@@ -46,4 +46,14 @@ Zonder mailconfiguratie meldt het formulier dat verzending tijdelijk niet beschi
 
 De masteropdracht levert de positionering en trainingsthema’s. [Het bestaande project](https://github.com/Runeinvolfit-digital/Ai-Team/blob/8dfbf3d675bf859cd541e86c8ea8f9619bd80040/projects/involfit-interim/README.md) documenteert interimmanagement, organisatieadvies, de naam van de oprichter en het opgegeven contactadres. De publieke bron gaf in deze omgeving een proxy-403. Specifieke werkgevers, cases, kwalificaties, trainingsnamen en resultaten zijn daarom weggelaten. De trainingsvoorbeelden zijn expliciet als oefenvragen beschreven.
 
-Vergeleken zijn een adviesdossier (professioneel, met meer leestijd), een dienstencatalogus (scanbaar, maar afstandelijk) en een redactionele pagina met vraagverkenner (compacte introductie en snelle route vanuit een herkenbare situatie). De laatste richting is uitgewerkt met een warme papierkleur, donkere tekst, een olijfgroen accent en een oorspronkelijke, gegenereerde architectuurillustratie als sfeerbeeld. Op mobiel komt de vraagverkenner direct onder het beeld. De kerninhoud en vraagverkenner werken ook zonder JavaScript. Met JavaScript krijgt de dienstenpagina toetsenbordbedienbare tabs.
+Bij het herontwerp is uitgegaan van leidinggevenden en teams die tijdelijke versterking of hulp bij een besluit of overdracht zoeken. Hun primaire taak is herkennen welke vorm van ondersteuning past en een kennismaking aanvragen.
+
+| Richting | Merk en doelgroep | Gebruik op breed en smal scherm |
+| --- | --- | --- |
+| Persoonlijk portret | Persoonlijk contact staat direct centraal. Behoeft een geverifieerd en goedgekeurd portret. | Eenvoudig te schalen. Dienstkeuze vraagt een vervolgstap. |
+| Typografisch dienstendossier | Zakelijk en goed scanbaar. Geeft minder steun bij een nog onduidelijke vraag. | Geschikt voor een lijst op mobiel en een dossierindeling op desktop. |
+| Interactieve werktafel | Maakt Involfits praktische werkwijze concreet met vragen over mandaat, besluiten en overdracht. | Desktop toont keuzes naast het antwoord. Mobiel staan alle keuzes boven het antwoord. |
+
+De werktafel is gekozen omdat die de bezoeker bij de eigen situatie laat beginnen. Elke keuze toont een concrete eerste stap en geeft toegang tot de bijbehorende dienst of een vooringevuld contactonderwerp. De selectie gebruikt native radioknoppen en CSS. Het redactionele letterbeeld, de papierkleuren en de originele, gegenereerde compositie van samenkomende stroken verbinden die werkwijze aan een herkenbaar beeld. Het beeld stelt geen bestaande klant, persoon of opdracht voor.
+
+De eerdere uitvoering is terug te vinden op [commit 0351154](https://github.com/Runeinvolfit-digital/Ai-Team/tree/035115406327492929d1cbbe1e99bef927682a00/projects/involfit). Bekijk de [review](review/README.md) voor de beoordeling van het herontwerp.

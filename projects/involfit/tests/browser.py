@@ -87,7 +87,10 @@ def layout_matrix(browser, base, screenshots, axe):
                 current = page.locator('nav[aria-label="Hoofdnavigatie"] [aria-current="page"]')
                 expect(current).to_have_attribute("href", route)
             if route == "/":
-                assert page.locator("picture img").evaluate("(img) => img.complete && img.naturalWidth > 0")
+                founder_image = page.locator(".founder figure img")
+                founder_image.scroll_into_view_if_needed()
+                page.wait_for_function("document.querySelector('.founder figure img').naturalWidth > 0")
+                page.evaluate("scrollTo(0, 0)")
             if route == "/contact/":
                 expect(page.get_by_role("button", name="Verstuur bericht")).to_be_visible()
             if width in (390, 1440):
@@ -100,6 +103,35 @@ def layout_matrix(browser, base, screenshots, axe):
         assert not failures, (width, failures)
         context.close()
 
+    # Use the 320 CSS pixel reflow reference width of WCAG 1.4.10.
+    context = browser.new_context(viewport={"width": 320, "height": 800})
+    page = context.new_page()
+    for route in ROUTES:
+        open_route(page, base, route)
+        assert page.evaluate("document.documentElement.scrollWidth === innerWidth"), (320, route)
+    context.close()
+
+
+def enlarged_text(browser, base):
+    # Bypass CSP only for injecting this test stylesheet into the page.
+    for width in (920, 1024, 1440):
+        context = browser.new_context(viewport={"width": width, "height": 1000}, bypass_csp=True)
+        page = context.new_page()
+        for route in ROUTES:
+            open_route(page, base, route)
+            page.add_style_tag(content=":root { font-size: 212% !important; }")
+            page.evaluate("document.fonts.ready")
+            assert page.evaluate("document.documentElement.scrollWidth === innerWidth"), (width, route)
+            overflow = page.locator("h1, h2, h3").evaluate_all(
+                "(headings) => headings.filter(el => el.scrollWidth > el.clientWidth + 2).map(el => el.innerText)"
+            )
+            assert not overflow, (width, route, overflow)
+            if route == "/":
+                panel = page.locator(".question-answer:visible")
+                links = panel.locator(".answer-links")
+                assert links.bounding_box()["y"] + links.bounding_box()["height"] <= panel.bounding_box()["y"] + panel.bounding_box()["height"]
+        context.close()
+
 
 def interactions(browser, base, axe):
     context = browser.new_context(viewport={"width": 1440, "height": 1000}, reduced_motion="reduce")
@@ -109,15 +141,27 @@ def interactions(browser, base, axe):
     expect(page.get_by_role("link", name="Naar de inhoud")).to_be_focused()
     page.keyboard.press("Enter")
     expect(page.locator("main")).to_be_focused()
-    choice = page.get_by_text("We hebben tijdelijk versterking nodig")
-    choice.focus()
-    page.keyboard.press("Enter")
-    expect(choice.locator("..")).to_have_attribute("open", "")
-    answer = page.get_by_role("link", name="Bekijk interimmanagement")
+    initial = page.get_by_role("radio", name="We hebben tijdelijk versterking nodig")
+    choice = page.get_by_role("radio", name="We zoeken richting voor een verandering")
+    expect(initial).to_be_checked()
+    initial.focus()
+    page.keyboard.press("ArrowDown")
+    expect(choice).to_be_checked()
+    expect(choice).to_be_focused()
+    expect(initial).not_to_be_checked()
+    answer = page.get_by_role("link", name="Bekijk organisatieadvies")
     expect(answer).to_be_visible()
-    assert answer.locator("..").evaluate("(el) => getComputedStyle(el).animationDuration") == "0s"
+    panel = page.locator(".question-answer:visible")
+    assert panel.evaluate("(el) => getComputedStyle(el).animationDuration") == "0s"
+    page.get_by_role("link", name="Bespreek deze situatie").click()
+    expect(page).to_have_url(base + "/contact/?onderwerp=organisatieadvies")
+    expect(page.get_by_role("textbox", name="Bericht")).to_have_value("Ik wil graag kennismaken over organisatieadvies.\n\n")
+    page.go_back(wait_until="networkidle")
+    if not choice.is_checked():
+        initial.focus()
+        page.keyboard.press("ArrowDown")
     answer.click()
-    expect(page).to_have_url(base + "/diensten/#interimmanagement")
+    expect(page).to_have_url(base + "/diensten/#organisatieadvies")
     dienst = page.get_by_role("tab", name="Diensten")
     dienst.focus()
     page.keyboard.press("ArrowRight")
@@ -150,11 +194,15 @@ def interactions(browser, base, axe):
     mobile = browser.new_context(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True)
     page = mobile.new_page()
     open_route(page, base, "/")
-    page.get_by_text("We zoeken richting voor een verandering").tap()
+    page.get_by_text("We zoeken richting voor een verandering", exact=True).tap()
     expect(page.get_by_role("link", name="Bekijk organisatieadvies")).to_be_visible()
-    page.get_by_text("We willen een knelpunt aanpakken").tap()
+    page.get_by_text("We willen een knelpunt aanpakken", exact=True).tap()
     expect(page.get_by_role("link", name="Bekijk organisatieverbetering")).to_be_visible()
-    expect(page.locator("details[open]")).to_have_count(1)
+    expect(page.get_by_role("radio", checked=True)).to_have_count(1)
+    page.get_by_role("link", name="Bespreek deze situatie").tap()
+    expect(page).to_have_url(base + "/contact/?onderwerp=verbetering")
+    expect(page.get_by_role("textbox", name="Bericht")).to_have_value("Ik wil graag kennismaken over organisatieverbetering.\n\n")
+    open_route(page, base, "/")
     page.get_by_role("link", name="Bekijk de trainingsthema’s").tap()
     expect(page.get_by_role("tab", name="Trainingen")).to_have_attribute("aria-selected", "true")
     mobile.close()
@@ -162,7 +210,7 @@ def interactions(browser, base, axe):
     no_script = browser.new_context(java_script_enabled=False)
     page = no_script.new_page()
     open_route(page, base, "/")
-    page.get_by_text("We zoeken richting voor een verandering").click()
+    page.get_by_text("We zoeken richting voor een verandering", exact=True).click()
     expect(page.get_by_role("link", name="Bekijk organisatieadvies")).to_be_visible()
     open_route(page, base, "/diensten/")
     expect(page.get_by_role("heading", name="Organisatieontwikkeling", exact=True)).to_be_visible()
@@ -222,6 +270,7 @@ def main():
     with serve() as base, serve(mock=True) as mock_base, sync_playwright() as playwright:
         browser = playwright.chromium.launch(executable_path=os.environ.get("CHROMIUM_PATH", "/usr/bin/chromium"), args=["--no-sandbox"])
         layout_matrix(browser, base, args.screenshots, args.axe)
+        enlarged_text(browser, base)
         interactions(browser, base, args.axe)
         contact(browser, base, mock_base, args.axe)
         results = {
@@ -230,8 +279,10 @@ def main():
             "widths": VIEWPORTS,
             "routes": list(ROUTES),
             "layoutChecks": len(ROUTES) * len(VIEWPORTS),
+            "reflowReferenceWidth": 320,
+            "textResizeChecks": 3 * len(ROUTES),
             "automatedAxeScans": 10 if args.axe else 0,
-            "interactions": ["skip link", "question explorer", "keyboard tabs", "history", "touch", "reduced motion", "no JavaScript fallback", "custom 404"],
+            "interactions": ["skip link", "worktable with prefilled contact topic", "keyboard tabs", "history", "touch", "reduced motion", "no JavaScript fallback", "custom 404"],
             "contact": ["native validation", "400 server validation", "503 missing mail configuration", "200 with injected provider"],
         }
         browser.close()

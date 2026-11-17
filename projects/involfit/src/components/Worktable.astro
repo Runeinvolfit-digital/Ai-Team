@@ -1,0 +1,29 @@
+---
+import { services } from '../content';
+---
+<section class="worktable shell" aria-labelledby="vraag-kop">
+  <div class="worktable-menu">
+    <h2 id="vraag-kop">Begin bij wat er speelt.</h2>
+    <fieldset class="question-list" aria-labelledby="vraag-kop">
+      {services.map((service, index) => (
+        <div class="worktable-option">
+          <input id={`keuze-${service.id}`} type="radio" name="organisatievraag" checked={index === 0} aria-controls={`antwoord-${service.id}`} />
+          <label for={`keuze-${service.id}`}>{service.question}</label>
+        </div>
+      ))}
+    </fieldset>
+  </div>
+  <div class="worktable-answers">
+    {services.map(service => (
+      <div class="question-answer" id={`antwoord-${service.id}`}>
+        <p class="answer-topic">{service.title}</p>
+        <h3>{service.opening}</h3>
+        <p>{service.firstStep}</p>
+        <div class="answer-links">
+          <a href={`/diensten/#${service.id}`}>Bekijk {service.title.toLowerCase()}</a>
+          <a href={`/contact/?onderwerp=${service.id}`}>Bespreek deze situatie</a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
