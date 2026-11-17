@@ -7,6 +7,7 @@
 - GitHub-mijlpalen en geverifieerde remote SHA:
 - Open beperkingen, eigenaar en eventuele noodzakelijke actie:
 - Website indien van toepassing: gecontroleerde preview-URL, controletijd/tijdzone en branch/broncommit; status reviewbaar of concrete blokkade.
+- Website indien van toepassing: gekozen ontwerprichting en reden, bewijs van ontwerpbeoordeling, score of ontbrekend bewijs, hercontrole en werkelijk uitgevoerde agents met bijdragen.
 - Screenshots: desktop en mobiel met pagina/viewport en herkomst (preview of lokale test).
 - Productiepublicatie: niet uitgevoerd tenzij afzonderlijk expliciet toegestaan.
 

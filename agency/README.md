@@ -11,7 +11,7 @@ Start Codex vanuit deze repository en vertrouw projectconfiguratie alleen na eig
 4. Implementeer, toets relevante [kwaliteitsgates](rules/quality.md), bewaar elke werkende stap via [GitHub-regels](rules/github.md).
 5. Rapporteer met [oplevertemplate](../templates/delivery.md).
 
-Validatie: `python3 scripts/check-agency.py`. De checker controleert rolstructuur, TOML, kennisrouting, skills/templates en behoud van kennisbestanden. Dit is configuratievalidatie, geen live modeltest.
+Validatie: `python3 scripts/check-agency.py`. De checker controleert rolstructuur, TOML, kennisrouting, skills/templates en kennisintegriteit en aansluiting van de websitebeoordeling op de instructies. Dit is configuratievalidatie, geen live modeltest.
 
 Schema: https://github.com/openai/codex/blob/main/codex-rs/core/config.schema.json (geraadpleegd 2026-11-17). Geen model, credentials of permissies worden in projectconfiguratie overschreven.
 
@@ -19,4 +19,4 @@ De native configuratie begrenst subagentthreads per sessie op twee en delegatied
 
 Websiteoplevering volgt de [previewgate](rules/preview.md): gecontroleerde previewlink, GitHub-link en desktop-/mobiele screenshots. Zonder werkende preview is de site niet reviewbaar opgeleverd. Definitieve productiepublicatie vraagt expliciete eigenaarstoestemming.
 
-Websiteontwerp volgt de [vaste ontwerpvoorkeuren](rules/design-preferences.md): rustige koppen zonder decoratieve bovenlabels/nummers/pijltjes en een bruikbare eigen interactie met toegankelijke animatie.
+Websiteopdrachten volgen de [ontwerpstandaard](../knowledge/design/design.md) en de [gewogen websitebeoordeling](../knowledge/quality/acceptance.md#gewogen-websitebeoordeling). De [vaste ontwerpvoorkeuren](rules/design-preferences.md) blijven van toepassing: rustige koppen zonder decoratieve bovenlabels/nummers/pijltjes en een bruikbare eigen interactie met toegankelijke animatie.

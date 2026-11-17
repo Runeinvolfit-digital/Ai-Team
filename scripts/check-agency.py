@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate agency wiring and preservation; never claim live agent activation."""
+"""Validate agency wiring, knowledge integrity and website review routing."""
 from pathlib import Path
 import hashlib
 import json
@@ -7,6 +7,33 @@ import re
 import tomllib
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def check_website_review():
+    rubric = 'knowledge/quality/acceptance.md'
+    weights = [
+        ('Visuele identiteit en originaliteit', 20),
+        ('UX en gebruiksvriendelijkheid', 20),
+        ('Visuele afwerking en consistentie', 15),
+        ('Mobiele ervaring', 15),
+        ('Technische kwaliteit', 15),
+        ('Performance en toegankelijkheid', 10),
+        ('Content en SEO', 5),
+    ]
+    text = (ROOT / rubric).read_text()
+    rows = re.findall(r'^\| ([^|]+) \| (\d+)% \|', text, re.M)
+    assert [(criterion, int(weight)) for criterion, weight in rows] == weights, 'Website rubric mismatch'
+    assert '8,5/10' in text, 'Missing website quality target'
+    for entry in (
+        'AGENTS.md',
+        '.agents/skills/agency-delivery/SKILL.md',
+        '.agents/skills/quality-review/SKILL.md',
+        'agency/rules/quality.md',
+        'templates/quality-review.md',
+        '.codex/agents/critical_reviewer.toml',
+        '.codex/agents/qa_security_lead.toml',
+    ):
+        assert rubric in (ROOT / entry).read_text(), f'Missing website review routing: {entry}'
 
 
 def check():
@@ -41,7 +68,7 @@ def check():
     baseline = json.loads((ROOT / 'agency/knowledge-baseline.json').read_text())
     actual = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
               for p in (ROOT / 'knowledge').rglob('*') if p.is_file()}
-    assert actual == baseline, 'Existing knowledge changed, missing, or added'
+    assert actual == baseline, 'Knowledge differs from the recorded baseline'
     for name in ['core', 'task-interpretation', 'delegation', 'quality', 'github', 'efficiency', 'preview', 'design-preferences']:
         assert (ROOT / f'agency/rules/{name}.md').is_file()
     skills = list((ROOT / '.agents/skills').glob('*/SKILL.md'))
@@ -53,7 +80,8 @@ def check():
         assert len(text.split('---', 2)[-1].strip()) > 100
     for name in ['task-brief', 'architecture-demo', 'quality-review', 'delivery']:
         assert (ROOT / f'templates/{name}.md').is_file()
-    print(f'PASS: {len(roles)} roles, 4 leads, 17 specialists, {len(baseline)} unchanged knowledge files, 4 skills, 4 templates')
+    check_website_review()
+    print(f'PASS: {len(roles)} roles, 4 leads, 17 specialists, {len(baseline)} verified knowledge files, 4 skills, 4 templates, website review routing and rubric')
 
 
 if __name__ == '__main__':

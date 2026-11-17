@@ -10,4 +10,4 @@ Toepassen op volgende websites en op gerichte verbeteringen aan bestaande projec
 - Bedien die functie ook met toetsenbord en touch, houd essentiële inhoud beschikbaar zonder JavaScript en respecteer prefers-reduced-motion. De beweging mag worden uitgezet zonder functionaliteitsverlies.
 - Beschrijf kort welke functie onderscheid toevoegt en test de interactie, mobiele toestand en gereduceerde beweging. Een generieke fade-in alleen is geen onderscheidende functie.
 
-Deze voorkeuren vullen de bestaande kennisbank aan; wijzig de behouden knowledge-bestanden hiervoor niet.
+Deze voorkeuren vullen de [ontwerpstandaard](../../knowledge/design/design.md) aan.
