@@ -27,3 +27,7 @@ Deze website staat uitsluitend op `site/involfit-architectuur`, gebaseerd op `ma
 ## Huidige reviewstatus
 
 [Reviewbewijs en screenshots](review/README.md). Volgens de aangescherpte oplevervoorwaarde is de site nog niet reviewbaar opgeleverd zolang een gecontroleerde externe previewlink ontbreekt. Lokale tests en screenshots vervangen die link niet.
+
+## Preview zonder server
+
+[Zelfstandige downloadpreview](review/involfit-preview.html): één HTML-bestand met alle drie pagina's en ingebedde assets. Zie [testmethode en beperkingen](review/README.md#downloadbare-offline-preview). Genereren: `python3 tools/export-preview.py`; documenttest: `python3 tests/offline-preview.py`.

@@ -28,3 +28,13 @@ Dit zijn opnamen van het zichtbare browservenster uit Chromium met de bovenstaan
 Een ondersteunde HTTP-previewportal voor poort 8000 of een beschikbare testhostingomgeving is nodig. Zodra die een werkelijk adres biedt, moet dat exacte adres in de browser worden gecontroleerd, inclusief de primaire interacties, en moeten bijbehorende screenshots worden vastgelegd. Dan pas kan de status reviewbaar worden.
 
 Er is geen website naar productie gepubliceerd. Definitieve productiepublicatie vereist expliciete goedkeuring van de eigenaar voor de concrete versie en bestemming.
+
+## Downloadbare offline preview
+
+[Download het zelfstandige HTML-bestand](involfit-preview.html). Sla het op en open het op je eigen computer in een browser; CSS, scripts en afbeeldingen zijn ingebed. Navigatie tussen Home, Projecten en Contact gebeurt binnen het bestand. Geen installatie, webserver, externe afbeeldingsdienst of backend nodig.
+
+Reproduceren vanuit de projectmap: `python3 tools/export-preview.py`. Controleren: `python3 tests/offline-preview.py`. De export heeft een eigen CSP met hashes voor de ingebedde scripts/styles; de CSP en code van de gewone website blijven ongewijzigd.
+
+Werkelijk getest: de exacte HTML-inhoud via Playwright `set_content`, op 1440×1000 en 390×844. Navigatie, afbeeldingen, projectfilters, ongeldige/geldige formulierinvoer en geen externe HTTP(S)-verzoeken of JavaScriptfouten: geslaagd. Direct openen als `file://` is in deze beheerde Chromium-installatie geblokkeerd met `ERR_BLOCKED_BY_ADMINISTRATOR`; dit beleid is niet uitgezet. De lokale browserinstellingen van de gebruiker zijn niet getest.
+
+Dit is een downloadbare lokale preview. De eerder gemelde blokkade voor een gehoste previewlink blijft bestaan; er is niets naar productie gepubliceerd.
