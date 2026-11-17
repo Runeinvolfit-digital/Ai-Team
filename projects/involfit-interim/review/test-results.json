@@ -1,0 +1,15 @@
+{
+  "passed": [
+    "1440x1000: layout, anchor targets, content, mailto, placeholder, axe WCAG scan",
+    "390x844: layout, anchor targets, content, mailto, placeholder, axe WCAG scan",
+    "320x720: layout, anchor targets, content, mailto, placeholder, axe WCAG scan",
+    "844x390: layout, anchor targets, content, mailto, placeholder, axe WCAG scan",
+    "mobile keyboard menu, Escape, focus restoration and actual anchor navigation",
+    "navigation available after mobile-to-desktop resize",
+    "reduced motion preference",
+    "JavaScript disabled: navigation and contact available",
+    "standalone document: layout and menu with zero resource requests",
+    "no JS/HTTP errors, external requests, cookies or browser storage"
+  ],
+  "axe": true
+}
