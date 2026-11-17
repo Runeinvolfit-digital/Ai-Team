@@ -9,3 +9,9 @@
 8. Vraag menselijke goedkeuring voor productiepublicatie, risicovolle verwijdering/migraties, credentials, DNS/rechten en uitgaven.
 9. Voer passende checks uit, geef uitslagen en rapporteer open punten. Geen stille fouten.
 10. De platform- en veiligheidsregels hebben altijd voorrang.
+
+## Modulaire agencyconfiguratie
+- Gebruik `agency/agents.json` voor de 22 rollen en rapportagelijnen, `.codex/config.toml` voor native rolconfiguratie en `agency/README.md` voor de runtimebeperkingen.
+- Pas de taakrelevante regels in `agency/rules/` toe. Gebruik de lokale skills in `.agents/skills/` en de templates in `templates/`.
+- Bij deze herbouw blijft de bestaande `knowledge/`-map ongewijzigd. Verifieer met `python3 scripts/check-agency.py`.
+- Bewaar iedere werkende stap daadwerkelijk op GitHub volgens `agency/rules/github.md`. Geen productiepublicatie.

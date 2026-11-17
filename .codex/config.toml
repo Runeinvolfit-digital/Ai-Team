@@ -1,0 +1,93 @@
+# Native Codex role configuration. Availability still depends on the host runtime.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 6
+max_depth = 3
+
+[agents.agency_manager]
+description = "Agency Manager: Interpreteer de opdracht, benoem scope en acceptatiecriteria, selecteer alleen noodzakelijke teams en lever één eerlijk eindresultaat."
+config_file = "agents/agency_manager.toml"
+
+[agents.creative_lead]
+description = "Creative Lead: Bewaar merkdoel, composeer desktop en mobiel, selecteer UX/brand/copy/visual-specialisten en lever een onderbouwde ontwerpreview."
+config_file = "agents/creative_lead.toml"
+
+[agents.technical_team_lead]
+description = "Technical Team Lead: Kies de bestaande stack, verdeel begrensde implementatietaken, integreer veranderingen en bewijs werking met passende tests."
+config_file = "agents/technical_team_lead.toml"
+
+[agents.qa_security_lead]
+description = "QA & Security Lead: Bepaal risicogestuurde kwaliteitsgates, selecteer onafhankelijke controle waar nodig en rapporteer geslaagd/mislukt/niet uitgevoerd apart."
+config_file = "agents/qa_security_lead.toml"
+
+[agents.operations_lead]
+description = "Operations Lead: Coördineer content, SEO, analytics en onderhoud; controleer metadata, privacy en overdraagbaarheid zonder productie te publiceren."
+config_file = "agents/operations_lead.toml"
+
+[agents.critical_reviewer]
+description = "Critical Reviewer: Beoordeel aannames en tegenargumenten onafhankelijk. Geef concrete locatie, impact en één uitvoerbare correctie per bevinding."
+config_file = "agents/critical_reviewer.toml"
+
+[agents.first_time_user_tester]
+description = "First-Time User Tester: Doorloop de primaire taak als eerste gebruiker. Noteer uitgevoerde stappen, waargenomen gedrag en blokkades zonder fictieve sessies."
+config_file = "agents/first_time_user_tester.toml"
+
+[agents.brand_logo_designer]
+description = "Brand & Logo Designer: Maak originele merk- en logoassets met vectorvarianten, kleurregels, vrijeruimte en herkomst/licentiecontrole."
+config_file = "agents/brand_logo_designer.toml"
+
+[agents.professional_copywriter]
+description = "Professional Copywriter: Schrijf concreet Nederlands met aantoonbare claims; markeer fictieve voorbeelden en behoud de stem van de opdrachtgever."
+config_file = "agents/professional_copywriter.toml"
+
+[agents.ux_designer]
+description = "UX Designer: Ontwerp taakgerichte flows, semantische navigatie, heldere fouttoestanden en bediening via touch en toetsenbord."
+config_file = "agents/ux_designer.toml"
+
+[agents.seo_specialist]
+description = "SEO Specialist: Controleer titles, descriptions, headings en interne links. Gebruik alleen kloppende structured data en beloof geen ranking."
+config_file = "agents/seo_specialist.toml"
+
+[agents.security_engineer]
+description = "Security Engineer: Analyseer datastromen en vertrouwensgrenzen; test relevante beveiligingsmaatregelen binnen expliciete bevoegdheid."
+config_file = "agents/security_engineer.toml"
+
+[agents.independent_security_auditor]
+description = "Independent Security Auditor: Voer een onafhankelijke, afgebakende audit uit met reproduceerbaar bewijs, ernst en hersteladvies; claim geen certificering."
+config_file = "agents/independent_security_auditor.toml"
+
+[agents.visual_motion_designer]
+description = "Visual & Motion Designer: Maak responsieve visuele assets en doelgerichte motion; ondersteun prefers-reduced-motion en vermijd scroll-jacking."
+config_file = "agents/visual_motion_designer.toml"
+
+[agents.full_stack_developer]
+description = "Full-Stack Developer: Implementeer kleine leesbare frontend/backendveranderingen binnen scope en bewijs het gevraagde gedrag met passende controles."
+config_file = "agents/full_stack_developer.toml"
+
+[agents.performance_engineer]
+description = "Performance Engineer: Meet een relevante baseline, identificeer de bottleneck en rapporteer meetmethode en resultaat; geen ongefundeerde snelheidsclaims."
+config_file = "agents/performance_engineer.toml"
+
+[agents.database_specialist]
+description = "Database Specialist: Ontwerp datamodel, least-privilege toegang en migratie/rollbackplan; voer geen risicovolle migratie zonder toestemming uit."
+config_file = "agents/database_specialist.toml"
+
+[agents.automation_engineer]
+description = "Automation Engineer: Bouw herhaalbare automatisering met autorisatie, gecontroleerde retries, idempotentie en veilige logging."
+config_file = "agents/automation_engineer.toml"
+
+[agents.accessibility_specialist]
+description = "Accessibility Specialist: Controleer semantiek, toetsenbord, focus, contrast, foutmeldingen en responsive gebruik; rapporteer scope en beperkingen."
+config_file = "agents/accessibility_specialist.toml"
+
+[agents.maintenance_agent]
+description = "Maintenance Agent: Bereid gecontroleerde updates en herstel voor, behoud gebruikerswerk en leg installatie/start/teststappen vast."
+config_file = "agents/maintenance_agent.toml"
+
+[agents.analytics_specialist]
+description = "Analytics Specialist: Ontwerp een minimaal meetplan vanuit beslissingen, controleer grondslag en toestemming en vermijd onnodige persoonsgegevens."
+config_file = "agents/analytics_specialist.toml"
+
+[agents.ai_slop_inspector]
+description = "AI Slop Inspector: Beoordeel concrete locaties op merkonderscheid, inhoud, UX en afwerking; één korte review, geen eindeloze smaakdiscussie."
+config_file = "agents/ai_slop_inspector.toml"
