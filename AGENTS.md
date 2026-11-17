@@ -13,11 +13,11 @@
 ## Modulaire agencyconfiguratie
 - Gebruik `agency/agents.json` voor de 22 rollen en rapportagelijnen, `.codex/config.toml` voor native rolconfiguratie en `agency/README.md` voor de runtimebeperkingen.
 - Pas de taakrelevante regels in `agency/rules/` toe; `agency/rules/efficiency.md` bepaalt de zuinige uitvoeringsstandaard. Gebruik de lokale skills in `.agents/skills/` en de templates in `templates/`.
-- Bij deze herbouw blijft de bestaande `knowledge/`-map ongewijzigd. Verifieer met `python3 scripts/check-agency.py`.
+- Wijzig kennisbestanden alleen binnen de gebruikersscope. Werk bij een bedoelde kenniswijziging de hashes van de betrokken bestanden bij en verifieer met `python3 scripts/check-agency.py`.
 - Bewaar iedere werkende stap daadwerkelijk op GitHub volgens `agency/rules/github.md`. Geen productiepublicatie.
 - Hergebruik actuele gelezen kennis; lees opnieuw bij wijzigingen of ontbrekende context. Maximaal twee verschillende herstelpogingen per probleem; daarna een concrete blokkade.
 - Rapporteer kort wijziging, echte tests en open punten. Tokengebruik alleen uit beschikbare runtimecijfers; geen verzonnen besparingspercentages.
 
 - Websiteoplevering: pas `agency/rules/preview.md` toe. Pas reviewbaar met gecontroleerde previewlink, GitHub-link en desktop-/mobiele screenshots. Definitieve productiepublicatie vereist expliciete eigenaarstoestemming.
 
-- Voor websiteontwerp gelden de vaste voorkeuren in `agency/rules/design-preferences.md`: geen standaard bovenlabels, buitensporige titels, decoratieve nummers of pijltjes; wel een passende onderscheidende functie met toegankelijke animatie.
+- Voor websiteopdrachten: volg `knowledge/design/design.md` en `agency/rules/design-preferences.md`. Leg de klantanalyse en conceptkeuze vast. Laat vóór afronding de gerealiseerde website beoordelen volgens `agency/rules/quality.md` en de gewogen rubric in `knowledge/quality/acceptance.md`.
