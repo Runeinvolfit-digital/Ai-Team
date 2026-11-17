@@ -74,6 +74,7 @@ svg {
   display: block;
 }
 img {
+  height: auto;
   width: 100%;
   object-fit: cover;
 }
@@ -723,5 +724,41 @@ img {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+/* Keep the changing garden visible directly beneath its touch controls. */
+@media (max-width: 760px) {
+  .explorer-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.1rem;
+  }
+  .explorer-copy {
+    display: contents;
+  }
+  .explorer-copy h2 {
+    grid-row: 1;
+  }
+  .explorer-copy > p:first-of-type {
+    grid-row: 2;
+    margin-top: 0;
+  }
+  .garden-choices {
+    grid-row: 3;
+    margin-top: 0;
+  }
+  .garden-figure {
+    grid-row: 4;
+  }
+  .garden-result {
+    grid-row: 5;
+    margin-top: 0;
+  }
+  .explorer-note {
+    grid-row: 6;
+  }
+  .explorer-copy noscript {
+    grid-row: 7;
   }
 }

@@ -34,6 +34,9 @@ try:
    assert page.locator('.eyebrow,.step-index,.service-number,.arrow').count()==0
    assert page.locator('html').get_attribute('lang')=='nl'
    assert 'werknaam' in page.locator('.concept-note').inner_text()
+   if width<=390:
+    assert page.locator('.hero-image img').bounding_box()['height']<300
+    assert page.locator('h1').bounding_box()['y']+page.locator('h1').bounding_box()['height']<height
    assert page.locator('img').evaluate('async img=>{await img.decode();return img.naturalWidth>0}')
    assert page.locator('form,input,textarea,a[href^="mailto:"],a[href^="tel:"]').count()==0
    for link in page.locator('a[href^="#"]').all():assert page.locator(link.get_attribute('href')).count()==1
@@ -42,8 +45,10 @@ try:
     scan=page.evaluate("async()=>await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})")
     assert not scan['violations'],json.dumps(scan['violations'],indent=2)
    page.screenshot(path=str(args.artifacts/f'home-{width}.png'),animations='disabled')
-   page.locator('#tuinverkenner').scroll_into_view_if_needed();page.wait_for_timeout(200)
+   page.evaluate('document.querySelector("#tuinverkenner").scrollIntoView({behavior:"instant",block:"start"})');page.wait_for_timeout(200)
    page.screenshot(path=str(args.artifacts/f'explorer-{width}.png'),animations='disabled')
+   if width<=390:
+    assert page.locator('.garden-figure').bounding_box()['y']<page.locator('.garden-result').bounding_box()['y']
    passed(f'{width}x{height}: responsive layout, headings, image, links and honest concept labels'+(', axe WCAG scan' if args.axe else ''))
   page.set_viewport_size({'width':390,'height':844});page.goto(base+'/index.html')
   menu=page.get_by_role('button',name='Menu',exact=True)
