@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="theme-color" content="#283e2f" />
+    <meta http-equiv="Content-Security-Policy" content="__CSP__" />
+    <title>Buitenwerk — tuinaanleg &amp; onderhoud · Websiteconcept</title>
+    <meta
+      name="description"
+      content="Websiteconcept voor een hoveniersbedrijf: tuinaanleg, tuinonderhoud en een interactieve tuinverkenner. Buitenwerk is een werknaam."
+    />
+    <style>
+      __CSS__
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#inhoud">Direct naar inhoud</a>
+    <div class="concept-note">
+      <span>Websiteconcept · Buitenwerk is een werknaam</span
+      ><span>Beelden en tuinideeën zijn illustratief</span>
+    </div>
+    <header class="site-header wrap">
+      <a class="brand" href="#boven" aria-label="Buitenwerk — naar boven"
+        ><svg viewBox="0 0 32 40" aria-hidden="true" focusable="false">
+          <path
+            d="M15 36c1-13 1-20 9-30M16 22C5 23 3 14 4 7c8 2 14 6 12 15M20 16C19 7 25 3 30 2c0 8-2 13-10 14"
+            fill="currentColor"
+          />
+          <path
+            d="M15 36c-1-5-3-8-7-11"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          /></svg
+        >buitenwerk</a
+      ><button
+        class="menu-toggle"
+        type="button"
+        aria-controls="navigation"
+        aria-expanded="false"
+        hidden
+      >
+        Menu
+      </button>
+      <nav class="site-nav" id="navigation" aria-label="Hoofdnavigatie">
+        <a href="#diensten">Diensten</a><a href="#aanpak">Aanpak</a
+        ><a href="#tuinverkenner" class="nav-cta">Verken uw tuin</a>
+      </nav>
+    </header>
+    <main id="inhoud" tabindex="-1">
+      <section id="boven" class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">Buiten begint<br />bij uw tuin.</h1>
+          <p>
+            Een plek om tot rust te komen, te groeien en buiten te leven. Met
+            een doordachte aanleg en aandacht voor onderhoud wordt uw tuin een
+            geheel.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#tuinverkenner">Verken uw tuin</a
+            ><a class="button secondary" href="#diensten">Bekijk de diensten</a>
+          </div>
+        </div>
+        <figure class="hero-image">
+          <img
+            src="__GARDEN_IMAGE__"
+            width="1440"
+            height="960"
+            fetchpriority="high"
+            alt="Illustratief AI-sfeerbeeld van een groene tuin met bloeiende borders, een grindpad en een houten bank."
+          />
+          <figcaption>AI-sfeerbeeld · geen uitgevoerd project</figcaption>
+        </figure>
+      </section>
+      <div class="intro-line wrap">
+        <p>Tuinaanleg en tuinonderhoud</p>
+        <p>Van eerste idee tot prettig buiten zijn.</p>
+      </div>
+      <section
+        id="diensten"
+        class="section wrap"
+        tabindex="-1"
+        aria-labelledby="services-title"
+      >
+        <div class="section-heading">
+          <h2 id="services-title">Een tuin die bij u past.</h2>
+          <p>
+            Een goede indeling, passende materialen en groen dat de ruimte
+            krijgt. Bij aanleg én onderhoud.
+          </p>
+        </div>
+        <div class="services">
+          <article class="service">
+            <h3>Tuinaanleg</h3>
+            <p>
+              De basis voor een fijne buitenruimte: van de indeling en het
+              terras tot paden en beplanting. Uw wensen en de mogelijkheden van
+              de plek vormen het vertrekpunt.
+            </p>
+            <ul>
+              <li>Indeling en materiaalkeuze</li>
+              <li>Terras en paden</li>
+              <li>Borders en beplanting</li>
+            </ul>
+          </article>
+          <article class="service">
+            <h3>Tuinonderhoud</h3>
+            <p>
+              Een tuin blijft veranderen. Met passende zorg, snoei en
+              seizoensonderhoud blijven vorm en beplanting in balans. Het
+              onderhoud sluit aan op de tuin en uw wensen.
+            </p>
+            <ul>
+              <li>Snoeiwerk</li>
+              <li>Borderverzorging</li>
+              <li>Seizoensonderhoud</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section
+        class="explorer-section"
+        id="tuinverkenner"
+        tabindex="-1"
+        aria-labelledby="explorer-title"
+      >
+        <div class="explorer-layout wrap">
+          <div class="explorer-copy">
+            <h2 id="explorer-title">Welke tuin past bij u?</h2>
+            <p>
+              Kies wat u belangrijk vindt. De schets beweegt mee en geeft u een
+              eerste richting om met een hovenier te bespreken.
+            </p>
+            <div
+              class="garden-choices"
+              role="group"
+              aria-label="Kies uw tuinwens"
+              hidden
+            >
+              <button
+                type="button"
+                data-choice="groen"
+                aria-pressed="true"
+                aria-controls="garden-result"
+              >
+                Meer groen</button
+              ><button
+                type="button"
+                data-choice="rust"
+                aria-pressed="false"
+                aria-controls="garden-result"
+              >
+                Meer ontspannen</button
+              ><button
+                type="button"
+                data-choice="gemak"
+                aria-pressed="false"
+                aria-controls="garden-result"
+              >
+                Minder onderhoud
+              </button>
+            </div>
+            <div class="garden-result" id="garden-result">
+              <div role="status" aria-live="polite" aria-atomic="true">
+                <h3 id="idea-title">Een tuin die leeft</h3>
+                <p id="idea-description">
+                  Meer ruimte voor gelaagde beplanting, bloemen en een groene
+                  rand. Een uitnodiging om groen de hoofdrol te geven.
+                </p>
+                <ul id="idea-tips">
+                  <li>Bespreek waar bomen, heesters en borders passen.</li>
+                  <li>Laat bodem, zon en schaduw de plantkeuze bepalen.</li>
+                  <li>Houd ruimte voor een prettig pad en een zitplek.</li>
+                </ul>
+              </div>
+              <button
+                class="button result-action"
+                type="button"
+                id="save-idea"
+                disabled
+              >
+                Bewaar mijn tuinidee
+              </button>
+              <p id="idea-status" class="saved-status" role="status"></p>
+            </div>
+            <noscript
+              ><p>
+                De interactieve keuzes en download vereisen JavaScript. U kunt
+                deze groene tuinrichting als inspiratie gebruiken. Voor meer
+                rust kunt u denken aan een beschutte zitplek; voor beter
+                planbaar onderhoud aan een heldere indeling en passende
+                plantvakken.
+              </p></noscript
+            >
+            <p class="explorer-note">
+              Schematische inspiratie, geen ontwerp op schaal of advies op maat.
+              De juiste beplanting hangt onder meer af van bodem, ligging en
+              beschikbare zorg.
+            </p>
+          </div>
+          <figure class="garden-figure">
+            <svg
+              class="garden-scene"
+              data-garden="groen"
+              viewBox="0 0 600 460"
+              role="img"
+              aria-labelledby="garden-title garden-description"
+            >
+              <title id="garden-title">
+                Schematische tuin: Een tuin die leeft
+              </title>
+              <desc id="garden-description">
+                Een tuin met ruime plantvakken, bloeiende borders, een terras en
+                een zitplek. Illustratie zonder schaal of afmetingen, geen
+                uitgewerkt tuinontwerp.
+              </desc>
+              <defs>
+                <pattern
+                  id="gravel"
+                  width="14"
+                  height="14"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <rect width="14" height="14" fill="#d6c7ac" />
+                  <circle cx="3" cy="4" r="1" fill="#bcab8e" />
+                  <circle cx="10" cy="11" r=".7" fill="#eee4d0" />
+                </pattern>
+                <pattern
+                  id="paving"
+                  width="42"
+                  height="38"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <rect width="42" height="38" fill="#d6d2bd" />
+                  <path
+                    d="M0 0h42v38"
+                    fill="none"
+                    stroke="#b6b39e"
+                    stroke-width="1.5"
+                  />
+                </pattern>
+                <g id="flower">
+                  <circle r="8" fill="#a58ba3" />
+                  <circle r="2.5" fill="#e6d2a2" />
+                </g>
+                <g id="bush">
+                  <circle r="28" fill="#61764c" />
+                  <circle cx="-8" cy="-7" r="19" fill="#829466" />
+                  <circle cx="12" cy="5" r="15" fill="#71875b" />
+                </g>
+              </defs>
+              <rect
+                x="12"
+                y="12"
+                width="576"
+                height="436"
+                rx="18"
+                fill="#9eaf7f"
+              />
+              <path
+                d="M28 425V30h545v395"
+                fill="none"
+                stroke="#405d3a"
+                stroke-width="22"
+                stroke-linecap="round"
+              />
+              <rect
+                class="scene-lawn"
+                x="90"
+                y="85"
+                width="400"
+                height="290"
+                rx="80"
+                fill="#b7c68f"
+              />
+              <path
+                class="scene-path"
+                d="M175 440C175 365 360 360 365 270S240 175 320 76"
+                fill="none"
+                stroke="url(#gravel)"
+                stroke-width="53"
+                stroke-linecap="round"
+              />
+              <g class="scene-terrace">
+                <rect
+                  x="95"
+                  y="268"
+                  width="180"
+                  height="130"
+                  rx="10"
+                  fill="url(#paving)"
+                />
+                <rect
+                  x="140"
+                  y="307"
+                  width="89"
+                  height="48"
+                  rx="6"
+                  fill="#927052"
+                />
+                <path
+                  d="M150 308v46m12-46v46m12-46v46m12-46v46m12-46v46m12-46v46"
+                  stroke="#b69773"
+                  stroke-width="2"
+                />
+                <rect
+                  x="153"
+                  y="286"
+                  width="25"
+                  height="14"
+                  rx="3"
+                  fill="#66523e"
+                />
+                <rect
+                  x="190"
+                  y="286"
+                  width="25"
+                  height="14"
+                  rx="3"
+                  fill="#66523e"
+                />
+                <rect
+                  x="153"
+                  y="362"
+                  width="25"
+                  height="14"
+                  rx="3"
+                  fill="#66523e"
+                />
+                <rect
+                  x="190"
+                  y="362"
+                  width="25"
+                  height="14"
+                  rx="3"
+                  fill="#66523e"
+                />
+              </g>
+              <g class="scene-plants">
+                <path
+                  d="M60 60H245Q190 140 268 170Q300 205 220 240L72 258Z"
+                  fill="#708958"
+                />
+                <path
+                  d="M445 182Q555 164 539 310L498 395H397Q430 305 410 251Z"
+                  fill="#607c4b"
+                />
+                <use href="#bush" x="97" y="115" />
+                <use href="#bush" x="150" y="100" />
+                <use href="#bush" x="115" y="184" />
+                <use href="#bush" x="195" y="192" />
+                <use href="#bush" x="455" y="263" />
+                <use href="#bush" x="495" y="307" />
+                <use href="#bush" x="447" y="353" />
+              </g>
+              <g class="scene-flowers">
+                <use href="#flower" x="106" y="90" />
+                <use href="#flower" x="174" y="128" />
+                <use href="#flower" x="90" y="200" />
+                <use href="#flower" x="214" y="213" />
+                <use href="#flower" x="148" y="225" />
+                <use href="#flower" x="456" y="223" />
+                <use href="#flower" x="510" y="277" />
+                <use href="#flower" x="457" y="319" />
+                <use href="#flower" x="486" y="363" />
+              </g>
+              <g class="scene-bench">
+                <rect
+                  x="408"
+                  y="359"
+                  width="86"
+                  height="30"
+                  rx="4"
+                  fill="#97724e"
+                  stroke="#6e5039"
+                  stroke-width="2"
+                />
+                <path
+                  d="M411 366h80m-80 8h80m-80 8h80"
+                  stroke="#cfb28b"
+                  stroke-width="2"
+                />
+                <rect
+                  x="408"
+                  y="348"
+                  width="86"
+                  height="8"
+                  rx="2"
+                  fill="#6e5039"
+                />
+              </g>
+              <g class="scene-tree">
+                <circle cx="470" cy="96" r="61" fill="#82975f" />
+                <circle cx="440" cy="83" r="36" fill="#93a66e" />
+                <circle cx="492" cy="69" r="37" fill="#adbb7c" />
+                <circle cx="497" cy="111" r="39" fill="#91a66a" />
+                <path
+                  d="M467 124V62m0 23-20-12m20 28 27-16"
+                  stroke="#657845"
+                  stroke-width="3"
+                  fill="none"
+                />
+              </g>
+              <path
+                d="M56 426h64"
+                stroke="#f4f1e4"
+                stroke-width="7"
+                stroke-linecap="round"
+              />
+            </svg>
+            <figcaption>
+              Een beweeglijke schets van uw tuinwens · niet op schaal
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section
+        class="section approach wrap"
+        id="aanpak"
+        tabindex="-1"
+        aria-labelledby="approach-title"
+      >
+        <h2 id="approach-title">Eerst uw wensen.<br />Dan de tuin.</h2>
+        <div class="approach-list">
+          <div>
+            <h3>Kijken en luisteren</h3>
+            <p>
+              Wat doet u graag buiten? Wat wilt u behouden en wat mag anders?
+              Een eerste gesprek begint bij uw wensen en de plek.
+            </p>
+          </div>
+          <div>
+            <h3>Een passend voorstel</h3>
+            <p>
+              Indeling, materialen, beplanting en onderhoud worden in samenhang
+              besproken. De mogelijkheden en het budget bepalen de vervolgstap.
+            </p>
+          </div>
+          <div>
+            <h3>Aandacht voor het geheel</h3>
+            <p>
+              Niet alleen de aanleg telt. Ook het gebruik en het onderhoud horen
+              bij een tuin waar u met plezier buiten bent.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="closing"
+        id="contact"
+        tabindex="-1"
+        aria-labelledby="contact-title"
+      >
+        <div class="closing-inner wrap">
+          <h2 id="contact-title">Een begin voor uw hoveniersbedrijf.</h2>
+          <div>
+            <p>
+              Dit is een websiteconcept. Hier komen de echte bedrijfsnaam en
+              contactgegevens. Tot die tijd kunt u in de tuinverkenner een
+              tuinidee bewaren. Er wordt niets verstuurd.
+            </p>
+            <a class="button" href="#tuinverkenner">Maak uw tuinidee</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer wrap">
+      <span class="brand">buitenwerk</span>
+      <p>
+        Werknaam · websiteconcept voor een hoveniersbedrijf<br />AI-sfeerbeeld
+        en schematische tuinideeën · geen klantprojecten
+      </p>
+    </footer>
+    <script>
+      __JS__;
+    </script>
+  </body>
+</html>
