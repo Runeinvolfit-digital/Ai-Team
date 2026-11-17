@@ -21,3 +21,7 @@ Tests: `python3 tests/browser.py`; optioneel met `--axe /pad/naar/axe.min.js` vo
 ## Branch
 
 `site/involfit-interim`, gebaseerd op `main`; projectmap `projects/involfit-interim/`. Agency en kennisbank blijven op `main`. Geen website naar productie publiceren zonder expliciete goedkeuring. De preview heeft bewust noindex/nofollow; controleer metadata en bedrijfsinhoud vóór een eventuele goedgekeurde productiepublicatie.
+
+## Ontwerpfeedback en onderscheidende functie
+
+Koppen zijn compact, zonder decoratieve bovenlabels, nummering of pijltjes. De vraagverkenner bij Werkwijze laat bezoekers tussen tijdelijke versterking en een organisatievraag kiezen. Toelichting en e-mailonderwerp volgen de keuze, met een bewegende selectielijn. De SVG-lijn is geen data of diagnose. Toetsenbord, touch en prefers-reduced-motion zijn getest. Zonder JavaScript blijven de kerninhoud, aanpak en contactlinks beschikbaar.

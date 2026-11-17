@@ -6,8 +6,10 @@
     "844x390: layout, anchor targets, content, mailto, placeholder, axe WCAG scan",
     "mobile keyboard menu, Escape, focus restoration and actual anchor navigation",
     "navigation available after mobile-to-desktop resize",
-    "reduced motion preference",
-    "JavaScript disabled: navigation and contact available",
+    "question explorer: keyboard selection, animated path, meaningful result and matching email subject",
+    "reduced motion: no path/circle animation, question explorer remains functional",
+    "touch: both question choices respond and preserve the correct contact subject",
+    "JavaScript disabled: navigation, contact and static approach available",
     "standalone document: layout and menu with zero resource requests",
     "no JS/HTTP errors, external requests, cookies or browser storage"
   ],

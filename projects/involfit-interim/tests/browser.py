@@ -85,13 +85,25 @@ try:
   assert page.locator('.route-end').evaluate('(el)=>getComputedStyle(el).transitionDuration')=='0s'
   assert 'Interimmanagement' in page.locator('.route-contact').get_attribute('href')
   passed('reduced motion: no path/circle animation, question explorer remains functional')
+  touch_context=browser.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True)
+  touch_page=touch_context.new_page();touch_page.goto(base+'/index.html')
+  touch_page.locator('[data-choice="advies"]').tap()
+  assert touch_page.locator('#route-title').inner_text()=='Organisatieadvies'
+  assert 'Organisatieadvies' in touch_page.locator('.route-contact').get_attribute('href')
+  touch_page.locator('[data-choice="interim"]').tap()
+  assert touch_page.locator('#route-title').inner_text()=='Interimmanagement'
+  assert touch_page.locator('[data-choice="interim"]').bounding_box()['height']>=44
+  touch_context.close()
+  passed('touch: both question choices respond and preserve the correct contact subject')
   nojs=browser.new_context(java_script_enabled=False,viewport={'width':390,'height':844})
   plain=nojs.new_page();plain.goto(base+'/index.html')
   assert plain.get_by_role('navigation').is_visible()
   plain.get_by_role('navigation').get_by_role('link',name='Contact',exact=True).click()
   assert plain.url.endswith('#contact')
   assert plain.locator('#contact a[href="mailto:info@involfit.nl"]').is_visible()
-  passed('JavaScript disabled: navigation and contact available')
+  assert plain.locator('.question-tool').is_hidden()
+  assert 'uw vraag begrijpen' in plain.locator('#werkwijze noscript').inner_text()
+  passed('JavaScript disabled: navigation, contact and static approach available')
   standalone=browser.new_page(viewport={'width':390,'height':844})
   offline_errors=[];offline_requests=[]
   standalone.on('pageerror',lambda e:offline_errors.append(str(e)))
