@@ -20,3 +20,9 @@ Kies alleen gates die bij het risico passen volgens [efficiency.md](efficiency.m
 Voor een nieuwe website of herontwerp beoordeelt een reviewer die de beoordeelde uitwerking niet zelf heeft gemaakt het werkende resultaat vóór afronding. Gebruik de [gewogen rubric](../../knowledge/quality/acceptance.md#gewogen-websitebeoordeling) en het [reviewtemplate](../../templates/quality-review.md). De reviewer kan afkeuren op ontwerpkwaliteit, ook bij geslaagde technische tests. De uitvoerder verwerkt onderbouwde bevindingen en controleert de wijzigingen. Gebruik screenshots en browserbewijs waar beschikbaar. Meld ontbrekend bewijs. Wanneer onafhankelijke inzet niet beschikbaar is, voer de inhoudelijke review centraal uit, label die als zelfreview en laat de onafhankelijke controle als open staan. Bij een gerichte wijziging volstaat een review van de impact volgens de rubric.
 
 Bij een ontbrekende of falende preview is de status niet reviewbaar opgeleverd, ook als lokale tests slagen. Volg [de previewgate](preview.md); productie vereist aparte expliciete goedkeuring.
+
+## Twee reviewrondes
+
+Bij nieuwe websites, herontwerpen en nieuwe hoofdinteracties beoordeelt de ontwerpafdeling eerst vanuit merk, UX, tekst en beweging. Gebruik bij de tweede ronde de Critical Reviewer voor scope, aannames en onderbouwing en de First-Time User Tester voor een concrete bezoekerstaak. Beide krijgen de actuele opdracht en de te beoordelen versie. Bij concepten beschrijven ze wat ze in beeld kunnen beoordelen. Op de werkende versie testen ze relevante taken en interacties in de browser.
+
+De coördinator koppelt bevindingen aan een uitvoerder. Leg het herstel vast en laat de relevante bevinding hercontroleren op de aangepaste versie. Gebruik [de taakbrief](../../templates/task-brief.md) voor de overdracht en [het reviewtemplate](../../templates/quality-review.md) voor bewijs.

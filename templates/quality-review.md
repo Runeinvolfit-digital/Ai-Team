@@ -23,3 +23,8 @@ Gebruik de zeven onderdelen en gewichten uit de [websitebeoordeling](../knowledg
 - Status van de afzonderlijke previewgate:
 
 Leg bij bevindingen ernst, reproduceerstappen, verwacht en waargenomen gedrag, herstel en eigenaar vast.
+
+## Terugkoppeling
+
+| Ronde/rol | Bevinding en bewijs | Uitvoerder | Herstel en versie | Hercontrole door, resultaat en versie |
+| --- | --- | --- | --- | --- |
