@@ -12,3 +12,9 @@ Wijs bij de projectstart een previewverantwoordelijke aan. Die controleert vroeg
 6. Definitieve productiepublicatie vereist vooraf expliciete goedkeuring van de eigenaar voor de concrete versie en bestemming. Een previewopdracht, push, merge of reviewgoedkeuring is geen toestemming voor productie.
 
 Deze gate blijft verplicht bij websiteoplevering, ook binnen de zuinige uitvoeringsstandaard. Een gewijzigde websiteversie vereist een opnieuw gecontroleerde preview en bijpassende screenshots. Voor een beperkte wijziging volstaan gerichte controles; ongewijzigde functies hoeven niet opnieuw volledig getest.
+
+
+Controleer vóór oplevering of reviewverslag, opnamen en preview naar dezelfde bronversie herleidbaar zijn. Gebruik waar mogelijk de deployreferentie of een bewijslink naar de geteste commit. Noteer welke pagina’s en toestanden de beelden tonen, bijvoorbeeld een geopend mobiel menu bij navigatiefeedback.
+
+
+Controleer vroeg of de opdrachtgever het testadres kan bereiken met de beoogde toegang. Leg bij een blokkade de eigenaar en de ontbrekende optie of toegang vast. Controleer opnieuw zodra de omgeving of toegang wijzigt. Gebruik lokale browserchecks en screenshots als lokaal bewijs zolang de externe route openstaat.

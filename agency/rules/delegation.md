@@ -19,3 +19,6 @@ Bij een volledige website wijst de coördinator expliciet verantwoordelijkheden 
 Plan een onafhankelijke beoordeling van de gerealiseerde website volgens quality.md. Leg bij de oplevering vast welke agents werkelijk zijn uitgevoerd, hun taak en bevindingen, en welke verantwoordelijkheden centraal zijn uitgevoerd.
 
 Review naar risico. Critical Reviewer en onafhankelijke auditor presenteren eigen werk nooit als onafhankelijk. Een geslaagde spawn bewijst alleen die sessie. Als de runtime geen rolgebonden delegatie biedt, voer centraal uit en rapporteer de beperking. Simuleer geen agentantwoorden.
+
+
+Noteer bij [de twee reviewrondes](quality.md#twee-reviewrondes) per bijdrage de uitvoerder, rol en het beoordeelde materiaal. Eén uitvoerder die meerdere ontwerpdisciplines beoordeelt, telt als één persoon met meerdere bijdragen. Laat onafhankelijke vragenstellers eerst hun eigen waarnemingen vastleggen. Deel daarna de bevindingen met het bouwteam.

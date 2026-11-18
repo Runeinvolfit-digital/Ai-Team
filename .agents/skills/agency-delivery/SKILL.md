@@ -12,3 +12,6 @@ Specialisten krijgen minimale zelfstandige context, waar beschikbaar met `fork_t
 Bij websiteoplevering is agency/rules/preview.md verplicht: gecontroleerde previewlink, GitHub-link en desktop-/mobiele screenshots. Zonder werkende preview blijft de status niet reviewbaar opgeleverd. Productie vereist afzonderlijke expliciete goedkeuring.
 
 Bij websiteopdrachten: volg knowledge/design/design.md en agency/rules/design-preferences.md. Vergelijk bij een nieuwe website of herontwerp meerdere richtingen, werk de gekozen richting uit in code en routeer de verantwoordelijkheden volgens agency/rules/delegation.md. Laat de gerealiseerde versie vóór afronding beoordelen met knowledge/quality/acceptance.md. Verwerk en hercontroleer de bevindingen. Rapporteer alleen daadwerkelijk uitgevoerde agents en controles.
+
+
+Gebruik bij websiteoverdracht de momenten in [de taakbrief](../../../templates/task-brief.md). Verifieer het leidende concept en de startversie vóór wijzigingen. Volg voor een nieuwe website, herontwerp of nieuwe hoofdinteractie [de twee reviewrondes](../../../agency/rules/quality.md#twee-reviewrondes). Koppel bevinding, herstel en hercontrole aan de betreffende versies.

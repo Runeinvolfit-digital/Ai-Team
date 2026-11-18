@@ -4,12 +4,14 @@ Bij klein werk volstaan enkele zinnen in de taakcontext; maak dan geen apart pla
 
 - Doel en grenzen:
 - Actuele opdracht en laatste bevestigde wijziging, met bron en datum:
+- Besluitenlog: datum, besluit en bron. Leg vast welke eerdere keuze vervalt en welke punten nog openstaan.
 - Leidende referentie: gekozen concept, bestanden of bestaande versie:
 - Startpunt voor bouw: projectpad, GitHub-branch en broncommit:
 - Relevante bestanden/kennis en noodzakelijke gebruikersbeperkingen:
 - Uitvoerder(s), bestandsbezit en onafhankelijkheid (maximaal twee tegelijk):
 - Acceptatiecriteria en passende tests/securitycontroles:
-- Eventuele blokkade of vereiste toestemming:
+- Inhoud: bevestigde bronnen, voorlopige tekst of demodata, en eigenaar van open inhoud:
+- Eventuele blokkade of vereiste toestemming, met de handeling die erop moet wachten:
 - GitHub: agency op `main`; website op `site/[projectnaam]` vanaf `main`, in `projects/[projectnaam]/`.
 
 Een specialist krijgt alleen deze relevante context; geen standaard chatgeschiedenis. Hergebruik actuele gelezen kennis. Maximaal twee verschillende herstelpogingen per probleem.

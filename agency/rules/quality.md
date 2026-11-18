@@ -26,3 +26,6 @@ Bij een ontbrekende of falende preview is de status niet reviewbaar opgeleverd, 
 Bij nieuwe websites, herontwerpen en nieuwe hoofdinteracties beoordeelt de ontwerpafdeling eerst vanuit merk, UX, tekst en beweging. Gebruik bij de tweede ronde de Critical Reviewer voor scope, aannames en onderbouwing en de First-Time User Tester voor een concrete bezoekerstaak. Beide krijgen de actuele opdracht en de te beoordelen versie. Bij concepten beschrijven ze wat ze in beeld kunnen beoordelen. Op de werkende versie testen ze relevante taken en interacties in de browser.
 
 De coördinator koppelt bevindingen aan een uitvoerder. Leg het herstel vast en laat de relevante bevinding hercontroleren op de aangepaste versie. Gebruik [de taakbrief](../../templates/task-brief.md) voor de overdracht en [het reviewtemplate](../../templates/quality-review.md) voor bewijs.
+
+
+Gebruik bij terugkoppeling de status open, hersteld en te hercontroleren, hergecontroleerd of uitgesteld met reden. Geef voorrang aan blokkades van de primaire taak en aan security-, privacy- of toegankelijkheidsproblemen. Een hoge ontwerpscore heft zulke blokkades niet op.

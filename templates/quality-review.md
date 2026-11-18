@@ -26,5 +26,10 @@ Leg bij bevindingen ernst, reproduceerstappen, verwacht en waargenomen gedrag, h
 
 ## Terugkoppeling
 
-| Ronde/rol | Bevinding en bewijs | Uitvoerder | Herstel en versie | Hercontrole door, resultaat en versie |
-| --- | --- | --- | --- | --- |
+| Ronde/rol | Ernst, bevinding en bewijs | Uitvoerder | Herstel en versie | Hercontrole door, resultaat en versie | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+
+
+## Bezoekerstaak
+
+Noteer de beginsituatie, de opdracht in woorden van de bezoeker, het verwachte eindpunt en waar de route vastloopt. Geef de tester eerst de taak. Registreer daarna welke hulp nodig was. Vermeld viewport, invoermethode en of de tester een concept of een werkende versie zag.
