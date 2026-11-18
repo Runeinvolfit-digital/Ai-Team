@@ -94,7 +94,16 @@ p { max-inline-size: 62ch; }
 .founder { background: var(--peach); }
 .founder-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: clamp(1.4rem, 6vw, 6rem); align-items: center; padding-block: clamp(1.9rem, 4.8vw, 4.4rem); }
 .founder-role { font-weight: 750; margin-block: .35rem .85rem; }
-.founder figure img { aspect-ratio: 16 / 9; object-fit: cover; }
+.founder-portrait {
+  display: grid;
+  place-items: center;
+  justify-self: center;
+  width: min(100%, 15rem);
+  aspect-ratio: 4 / 5;
+  border: 1px solid currentColor;
+  color: var(--muted);
+  text-align: center;
+}
 .section { padding-block: clamp(2.3rem, 5.5vw, 5rem); }
 .expertise, .service-row, .training-band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(1.1rem, 5vw, 5rem); }
 .expertise > div > p, .service-row p { margin-top: .65rem; }
