@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="nl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Autoaanbod | Kilometer Auto’s</title><link rel="stylesheet" href="./site.css"></head>
+<body>
+<a class="skip" href="#inhoud">Naar de inhoud</a>
+<header class="top"><div class="wrap header-row"><a class="brand" href="./">Kilometer Auto’s</a><nav aria-label="Hoofdnavigatie"><a href="./" aria-current="page">Autoaanbod</a></nav></div></header>
+<main id="inhoud">
+  <section class="hero" aria-labelledby="title">
+    <div class="wrap"><h1 id="title">Autoaanbod</h1><p>Bekijk de occasions van dichtbij.</p></div>
+  </section>
+  <section class="wrap inventory" aria-label="Beschikbare auto’s">
+    <div class="filters">
+      <label>Merk<select id="make"><option value="">Alle merken</option><option>Aurelio</option><option>Veldt</option></select></label>
+      <label>Budget<select id="budget"><option value="">Elk budget</option><option value="50000">Tot € 50.000</option><option value="75000">Tot € 75.000</option></select></label>
+      <label>Brandstof<select id="fuel"><option value="">Alle brandstoffen</option><option>Benzine</option><option>Hybride</option></select></label>
+      <button class="plain" id="reset" type="button">Wis filters</button>
+    </div>
+    <p class="result" id="result" role="status"></p>
+    <div id="cars"></div>
+    <noscript><p>Bekijk de demoauto’s via de detailpagina’s.</p><ul><li><a href="./auto/?model=aurelio-gt">Aurelio GT</a></li><li><a href="./auto/?model=veldt-touring">Veldt Touring</a></li></ul></noscript>
+  </section>
+</main>
+<footer><div class="wrap footer-row"><span>Kilometer Auto’s</span><span>Fictief autoaanbod</span></div></footer>
+<script type="module" src="./aanbod.js"></script>
+</body>
+</html>

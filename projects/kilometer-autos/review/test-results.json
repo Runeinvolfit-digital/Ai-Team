@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "chromium": "156.0.8078.79",
+  "widths": [
+    320,
+    390,
+    1440
+  ],
+  "models": [
+    "aurelio-gt",
+    "veldt-touring"
+  ],
+  "checks": [
+    "filters",
+    "all 8 exterior angles",
+    "keyboard",
+    "drag",
+    "touch",
+    "interior",
+    "demo test drive",
+    "unknown model"
+  ]
+}

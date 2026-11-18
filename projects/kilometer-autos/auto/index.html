@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="nl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Auto bekijken | Kilometer Auto’s</title><link rel="stylesheet" href="../site.css"></head>
+<body>
+<a class="skip" href="#inhoud">Naar de inhoud</a>
+<header class="top"><div class="wrap header-row"><a class="brand" href="../">Kilometer Auto’s</a><nav aria-label="Hoofdnavigatie"><a href="../">Autoaanbod</a></nav></div></header>
+<main id="inhoud" class="wrap detail-page">
+  <a class="back" href="../">Terug naar autoaanbod</a>
+  <h1 id="title">Auto bekijken</h1>
+  <p id="missing" hidden>Deze demoauto staat niet in het aanbod.</p>
+  <div id="detail" hidden>
+    <p class="badge">Demoauto</p>
+    <div class="detail-grid">
+      <section class="gallery" aria-label="Voertuigweergave">
+        <div class="modes" aria-label="Kies een weergave"><button type="button" id="outside" aria-pressed="true">Exterieur</button><button type="button" id="inside" aria-pressed="false">Interieur</button></div>
+        <div id="stage" class="stage"><img id="car-image" width="640" height="640" alt="" draggable="false"></div>
+        <div class="controls" id="controls">
+          <button type="button" id="previous" aria-label="Draai naar links">‹</button>
+          <div><strong>360°</strong><span id="angle" aria-live="polite"></span><span>Sleep of gebruik de pijlen</span></div>
+          <button type="button" id="next" aria-label="Draai naar rechts">›</button>
+        </div>
+      </section>
+      <section class="specs" aria-label="Specificaties">
+        <p class="price" id="price"></p>
+        <dl id="facts"></dl>
+        <a class="button" href="#proefrit">Vraag een proefrit aan</a>
+      </section>
+    </div>
+    <section class="test-drive" id="proefrit">
+      <h2>Proefrit</h2>
+      <p>Dit is een demonstratie. Je keuze wordt lokaal getoond en er wordt geen aanvraag verstuurd.</p>
+      <form id="drive-form">
+        <label>Voorkeursmoment<select name="period" required><option value="">Maak een keuze</option><option>Ochtend</option><option>Middag</option></select></label>
+        <button class="button" type="submit">Bekijk demokeuze</button>
+      </form>
+      <p id="drive-status" role="status"></p>
+    </section>
+  </div>
+  <noscript><p>Schakel JavaScript in om de auto te draaien en het interieur te bekijken.</p></noscript>
+</main>
+<footer><div class="wrap footer-row"><span>Kilometer Auto’s</span><span>Fictief autoaanbod</span></div></footer>
+<script type="module" src="./detail.js"></script>
+</body>
+</html>
