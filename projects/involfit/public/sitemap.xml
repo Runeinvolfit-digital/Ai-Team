@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://involfit.nl/</loc></url>
+  <url><loc>https://involfit.nl/over-sander/</loc></url>
   <url><loc>https://involfit.nl/diensten/</loc></url>
+  <url><loc>https://involfit.nl/ervaring/</loc></url>
   <url><loc>https://involfit.nl/contact/</loc></url>
   <url><loc>https://involfit.nl/privacy/</loc></url>
 </urlset>

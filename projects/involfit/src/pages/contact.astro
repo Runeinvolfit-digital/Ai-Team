@@ -2,52 +2,13 @@
 import Site from '../layouts/Site.astro';
 import { email } from '../content';
 ---
-<Site title="Contact met Sander de Ridder | Involfit" description="Neem contact op met Sander de Ridder voor een kennismaking over interimmanagement, organisatieadvies of een training.">
-  <div class="shell contact-grid">
+<Site title="Contact | Involfit" description="Neem per e-mail contact op met Involfit Management & Advies.">
+  <section class="shell reading-page">
     <header class="page-intro">
-      <h1>Contact<span>.</span></h1>
-      <p>Beschrijf wat er speelt, wie ermee te maken heeft en wat u graag anders ziet. Een uitgewerkte opdracht is niet nodig.</p>
-      <div class="contact-first">
-        <h2>Wat bespreken we?</h2>
-        <p>Sander vraagt door op wat er nu gebeurt en wat u al heeft geprobeerd. Samen verkent u of tijdelijke inzet, advies of een training past.</p>
-      </div>
-      <div class="direct-contact">
-        <h2>Rechtstreeks mailen</h2>
-        <a href={`mailto:${email}`}>{email}</a>
-      </div>
+      <h1>Contact</h1>
+      <p>Wilt u een vraagstuk bespreken?</p>
     </header>
-    <section class="form-panel" aria-labelledby="formulier-kop">
-      <h2 id="formulier-kop">Stuur een bericht</h2>
-      <noscript>Het formulier vereist JavaScript. U kunt uw bericht ook rechtstreeks per e-mail sturen.</noscript>
-      <form id="contact-form" action="/api/contact" method="post">
-        <div class="form-fields">
-          <label for="name">Naam
-            <input id="name" name="name" autocomplete="name" maxlength="120" required aria-describedby="name-error" />
-            <span class="field-error" id="name-error"></span>
-          </label>
-          <label for="email">E-mailadres
-            <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="email-error" />
-            <span class="field-error" id="email-error"></span>
-          </label>
-          <label for="organization">Organisatie <span class="optional">(optioneel)</span>
-            <input id="organization" name="organization" autocomplete="organization" maxlength="160" aria-describedby="organization-error" />
-            <span class="field-error" id="organization-error"></span>
-          </label>
-          <label for="message">Bericht
-            <textarea id="message" name="message" rows="6" maxlength="5000" required aria-describedby="message-error"></textarea>
-            <span class="field-error" id="message-error"></span>
-          </label>
-        </div>
-        <div hidden>
-          <label for="website">Laat dit veld leeg</label>
-          <input id="website" name="website" tabindex="-1" autocomplete="off" />
-        </div>
-        <p class="form-note">Deel hier geen vertrouwelijke of medische gegevens. Lees hoe Involfit uw gegevens gebruikt in de <a href="/privacy/">privacyverklaring</a>.</p>
-        <button class="button" type="submit" disabled>Verstuur bericht</button>
-        <p class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
-        <p class="form-error" role="alert" aria-atomic="true"></p>
-      </form>
-    </section>
-  </div>
-  <script is:inline src="/contact.js" defer></script>
+    <p>Vertel kort wat er speelt binnen uw organisatie en waar u ondersteuning bij zoekt.</p>
+    <p class="next-step"><a href={`mailto:${email}`}>{email}</a></p>
+  </section>
 </Site>

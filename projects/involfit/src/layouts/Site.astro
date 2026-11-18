@@ -1,7 +1,5 @@
 ---
 import '@fontsource-variable/manrope/wght.css';
-import '@fontsource-variable/newsreader/wght.css';
-import '@fontsource-variable/newsreader/wght-italic.css';
 import { email } from '../content';
 
 interface Props {
@@ -13,7 +11,9 @@ const {title, description} = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const navigation = [
   { href: '/', label: 'Home' },
+  { href: '/over-sander/', label: 'Over Sander' },
   { href: '/diensten/', label: 'Diensten' },
+  { href: '/ervaring/', label: 'Ervaring' },
   { href: '/contact/', label: 'Contact' },
 ];
 ---
@@ -24,7 +24,7 @@ const navigation = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f5efe2" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/site.css" />
@@ -34,18 +34,24 @@ const navigation = [
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL('/werktafel-1200.webp', Astro.site)} />
-    <meta property="og:image:alt" content="Papieren stroken komen samen in een vouw" />
   </head>
   <body>
     <a class="skip" href="#inhoud">Naar de inhoud</a>
     <header class="site-header shell">
-      <a class="wordmark" href="/" aria-label="Involfit, home">involfit<span aria-hidden="true">.</span></a>
-      <nav aria-label="Hoofdnavigatie">
+      <a class="wordmark" href="/" aria-label="Involfit, home">involfit</a>
+      <nav class="desktop-nav" aria-label="Hoofdnavigatie">
         {navigation.map(({href, label}) => (
           <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>
         ))}
       </nav>
+      <details class="mobile-nav">
+        <summary>Menu</summary>
+        <nav aria-label="Hoofdnavigatie">
+          {navigation.map(({href, label}) => (
+            <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>
+          ))}
+        </nav>
+      </details>
     </header>
     <main id="inhoud" tabindex="-1">
       <slot />
@@ -53,8 +59,8 @@ const navigation = [
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div>
-          <a class="wordmark" href="/" aria-label="Involfit, home">involfit<span aria-hidden="true">.</span></a>
-          <p>Involfit B.V. · Sander de Ridder</p>
+          <a class="wordmark" href="/" aria-label="Involfit, home">involfit</a>
+          <p>Involfit Management & Advies</p>
         </div>
         <div class="footer-links">
           <a href={`mailto:${email}`}>{email}</a>
@@ -62,5 +68,14 @@ const navigation = [
         </div>
       </div>
     </footer>
+    <script>
+      const menu = document.querySelector<HTMLDetailsElement>('.mobile-nav');
+      menu?.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && menu.open) {
+          menu.open = false;
+          menu.querySelector('summary')?.focus();
+        }
+      });
+    </script>
   </body>
 </html>

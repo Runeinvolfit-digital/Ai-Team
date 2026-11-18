@@ -6,7 +6,9 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const defaultRoot = fileURLToPath(new URL('./dist/', import.meta.url));
 const routes = new Map([
   ['/', 'index.html'],
+  ['/over-sander/', 'over-sander/index.html'],
   ['/diensten/', 'diensten/index.html'],
+  ['/ervaring/', 'ervaring/index.html'],
   ['/contact/', 'contact/index.html'],
   ['/privacy/', 'privacy/index.html'],
 ]);

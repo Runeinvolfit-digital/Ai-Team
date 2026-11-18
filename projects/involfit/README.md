@@ -1,59 +1,33 @@
-# Involfit
+# Involfit Management & Advies
 
-Bedrijfswebsite voor Involfit B.V. met Home, Diensten, Contact en een privacyverklaring. Astro bouwt de pagina’s vooraf. De Node-server serveert de productiebuild en verwerkt het formulier via de HTTPS-API van Resend.
+Persoonlijke website voor Sander de Ridder met Home, Over Sander, Diensten, Ervaring en Contact. Astro bouwt de pagina’s vooraf. Contact verloopt via een directe zakelijke e-maillink.
 
 ## Lokaal starten
 
 Gebruik Node.js 24 of hoger en npm.
 
 ```bash
-cd projects/involfit
 npm ci
+npm run check
+npm test
 npm run build
 npm start
 ```
 
-Open `http://localhost:3000`. Gebruik `npm run dev` om in één stap te bouwen en te starten met herladen van de Node-servercode. Draai na wijzigingen aan Astro of publieke assets opnieuw `npm run build`. Gebruik `HOST` en `PORT` om het luisteradres aan te passen.
+De Node-server luistert standaard op poort 3000. Gebruik `HOST` en `PORT` voor een ander luisteradres. Bouw opnieuw na wijzigingen aan de Astro-pagina’s en publieke assets. In een sandbox zonder schrijfrechten voor de gebruikersconfiguratie kan Astro draaien met `ASTRO_TELEMETRY_DISABLED=1`.
+
+De browsercheck gebruikt Python Playwright en Chromium. Draai na de build:
 
 ```bash
-npm run check
-npm test
+python3 tests/browser.py --screenshots /tmp/involfit-review
 ```
 
-De Node-tests starten een HTTP-server op een willekeurige lokale poort, met een gesimuleerde mailprovider. Voor de browsercontrole zijn Python Playwright en Chromium nodig. Zie [review](review/README.md) voor de gebruikte commando’s en resultaten.
+## Inhoud en vrijgave
 
-## Formulier
+- Home reserveert ruimte voor het goedgekeurde portret.
+- Ervaring toont voorlopig werkgebieden. Vul de tijdlijn in met bevestigde perioden, rollen, opdrachten en eventueel openbare organisatienamen.
+- Bevestig de bio, de dienstnamen en het bestaande zakelijke adres `info@involfit.nl` vóór publicatie.
+- Staging is standaard gemarkeerd als `noindex`. Zet `SITE_INDEXABLE` pas na goedgekeurde publicatie op `1`.
+- Het bestaande formulierendpoint blijft beschikbaar voor compatibiliteit. De website linkt er niet naar en configureert geen mailprovider voor deze versie. Zie de vorige projectversie voor de endpointconfiguratie.
 
-| Instelling | Functie |
-| --- | --- |
-| `RESEND_API_KEY` | Resend-sleutel met verzendrechten, uitsluitend op de server bewaren |
-| `CONTACT_FROM` | Door Resend geverifieerde afzender, bijvoorbeeld een mailbox op een geverifieerd afzenderdomein |
-| `CONTACT_TO` | Ontvanger. Standaard `info@involfit.nl`. Gebruik in staging expliciet een testinbox |
-| `CONTACT_ORIGIN` | Toegestane oorsprong van de site, inclusief `https://`, zonder pad |
-| `SITE_INDEXABLE` | Alleen bij goedgekeurde livegang op `1` zetten |
-
-Zonder mailconfiguratie meldt het formulier dat verzending tijdelijk niet beschikbaar is. Het directe e-mailadres blijft beschikbaar. De tekstuele e-mail gebruikt het e-mailadres van de inzender als Reply-To. De website bewaart geen kopie van het bericht. De huidige cloud-egress blokkeert `api.resend.com`. Als een testomgeving een HTTPS-proxy vereist, configureer het domein in de toegestane egress en start Node 24 met `NODE_USE_ENV_PROXY=1`.
-
-## Veilige uitrol
-
-1. Maak een gescheiden stagingomgeving vanaf de gecontroleerde commit. Voer `npm ci`, `npm run check`, `npm test` en `npm run build` uit. Start met `npm start`. Een host die enkel statische bestanden serveert ondersteunt de formulierroute niet.
-2. Plaats de server achter HTTPS. Stel `CONTACT_ORIGIN` in op de staging-URL, configureer HSTS op de TLS-terminatie en stuur geen formulierinhoud naar proxylogs of monitoring. Staging stuurt standaard `X-Robots-Tag: noindex, nofollow` en blokkeert crawlers via `robots.txt`.
-3. Configureer een beperkte testkey, geverifieerde afzender en aparte testinbox. Open de staging-URL, test navigatie en verstuur een bericht met fictieve gegevens. Controleer ontvangst en Reply-To. Controleer bij een geweigerde inzending dat de foutmelding verschijnt en de invoer behouden blijft.
-4. De huidige serverlimiet telt per direct verbindingsadres en ook voor de hele instantie. Achter een reverse proxy kunnen bezoekers hetzelfde limiet delen. Stel zo nodig aanvullende, gedeelde begrenzing in op de vertrouwde proxy en toets dit vóór uitrol. De server vertrouwt geen clientgestuurde doorstuurheaders.
-5. Bevestig inhoud, afzender, ontvanger en privacy-informatie met de eigenaar, inclusief de daadwerkelijke hosting, verwerkers, eventuele doorgifte en bewaartermijnen. Publiceer pas na expliciete goedkeuring, met productie-instellingen, `CONTACT_ORIGIN=https://involfit.nl` en `SITE_INDEXABLE=1`. Controleer vervolgens sitemap, canonical, HTTPS, headers en bezorging. Bewaar het vorige release-artifact voor rollback.
-
-## Inhoud en ontwerp
-
-De masteropdracht levert de positionering en trainingsthema’s. [Het bestaande project](https://github.com/Runeinvolfit-digital/Ai-Team/blob/8dfbf3d675bf859cd541e86c8ea8f9619bd80040/projects/involfit-interim/README.md) documenteert interimmanagement, organisatieadvies, de naam van de oprichter en het opgegeven contactadres. De publieke bron gaf in deze omgeving een proxy-403. Specifieke werkgevers, cases, kwalificaties, trainingsnamen en resultaten zijn daarom weggelaten. De trainingsvoorbeelden zijn expliciet als oefenvragen beschreven.
-
-Bij het herontwerp is uitgegaan van leidinggevenden en teams die tijdelijke versterking of hulp bij een besluit of overdracht zoeken. Hun primaire taak is herkennen welke vorm van ondersteuning past en een kennismaking aanvragen.
-
-| Richting | Merk en doelgroep | Gebruik op breed en smal scherm |
-| --- | --- | --- |
-| Persoonlijk portret | Persoonlijk contact staat direct centraal. Behoeft een geverifieerd en goedgekeurd portret. | Eenvoudig te schalen. Dienstkeuze vraagt een vervolgstap. |
-| Typografisch dienstendossier | Zakelijk en goed scanbaar. Geeft minder steun bij een nog onduidelijke vraag. | Geschikt voor een lijst op mobiel en een dossierindeling op desktop. |
-| Interactieve werktafel | Maakt Involfits praktische werkwijze concreet met vragen over mandaat, besluiten en overdracht. | Desktop toont keuzes naast het antwoord. Mobiel staan alle keuzes boven het antwoord. |
-
-De werktafel is gekozen omdat die de bezoeker bij de eigen situatie laat beginnen. Elke keuze toont een concrete eerste stap en geeft toegang tot de bijbehorende dienst of een vooringevuld contactonderwerp. De selectie gebruikt native radioknoppen en CSS. Het redactionele letterbeeld, de papierkleuren en de originele, gegenereerde compositie van samenkomende stroken verbinden die werkwijze aan een herkenbaar beeld. Het beeld stelt geen bestaande klant, persoon of opdracht voor.
-
-De eerdere uitvoering is terug te vinden op [commit 0351154](https://github.com/Runeinvolfit-digital/Ai-Team/tree/035115406327492929d1cbbe1e99bef927682a00/projects/involfit). Bekijk de [review](review/README.md) voor de beoordeling van het herontwerp.
+De [reviewmap](review/) bevat het beeld- en testbewijs. Het eerdere werktafelontwerp staat in de Git-geschiedenis.

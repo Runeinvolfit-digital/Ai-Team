@@ -145,7 +145,7 @@ test('serves documented pages and protects the static root', async (t) => {
   t.after(() => rm(folder, { force: true, recursive: true }));
   const distRoot = join(folder, 'dist');
   await mkdir(distRoot);
-  for (const path of ['diensten', 'contact', 'privacy']) {
+  for (const path of ['over-sander', 'diensten', 'ervaring', 'contact', 'privacy']) {
     await mkdir(join(distRoot, path));
     await writeFile(join(distRoot, path, 'index.html'), `<h1>${path}</h1>`);
   }
@@ -157,7 +157,7 @@ test('serves documented pages and protects the static root', async (t) => {
   await symlink(join(folder, 'outside.txt'), join(distRoot, 'outside.txt'));
 
   const { base } = await runServer(t, { config: {}, distRoot });
-  for (const path of ['/', '/diensten/', '/contact/', '/privacy/']) {
+  for (const path of ['/', '/over-sander/', '/diensten/', '/ervaring/', '/contact/', '/privacy/']) {
     const response = await fetch(base + path);
     assert.equal(response.status, 200);
     assert.match(await response.text(), /<h1>/);

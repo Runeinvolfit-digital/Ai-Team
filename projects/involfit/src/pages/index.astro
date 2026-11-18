@@ -1,59 +1,22 @@
 ---
 import Site from '../layouts/Site.astro';
-import Callout from '../components/Callout.astro';
-import Worktable from '../components/Worktable.astro';
-import { email, services } from '../content';
-
-const business = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Involfit',
-  legalName: 'Involfit B.V.',
-  url: 'https://involfit.nl/',
-  email,
-  founder: {'@type': 'Person', name: 'Sander de Ridder'},
-};
+import { services } from '../content';
 ---
-<Site title="Involfit | Interimmanagement en organisatieadvies" description="Sander de Ridder helpt organisaties met interimmanagement, organisatieadvies en verbetering. Bespreek uw vraagstuk met Involfit.">
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(business)}></script>
-  <section class="hero shell">
-    <h1>Waar loopt het werk <em>vast?</em></h1>
+<Site title="Involfit | Sander de Ridder" description="Sander de Ridder. Management en advies bij groei, ontwikkeling en verandering.">
+  <section class="shell hero">
     <div class="hero-copy">
-      <p>Sander de Ridder helpt organisaties met interimmanagement, organisatieadvies en verbetering. Van een opengevallen rol tot een terugkerend knelpunt tussen teams.</p>
-      <div class="actions">
-        <a class="button" href="/contact/">Vraag een kennismaking aan</a>
-        <a class="text-link" href="/diensten/">Bekijk de diensten</a>
-      </div>
+      <h1>Verbeteren betekent veranderen.</h1>
+      <p class="hero-name">Sander de Ridder · Involfit Management &amp; Advies</p>
+      <p>Management en advies bij groei, ontwikkeling en verandering.</p>
+      <a href="/over-sander/">Over Sander</a>
     </div>
+    <div class="portrait">Portret van Sander</div>
   </section>
-  <Worktable />
-  <section class="founder">
-    <div class="shell founder-grid">
-      <div>
-        <h2>Sander de Ridder</h2>
-        <p class="founder-role">Oprichter van Involfit B.V.</p>
-        <p>Een besluit op papier helpt pas als mensen weten wat er morgen van hen wordt verwacht. Sander werkt op dat snijvlak van advies en uitvoering. Soms vraagt dat om een tijdelijke leidinggevende, soms om iemand die met uw team scherp krijgt waar het werk blijft liggen.</p>
-      </div>
-      <div class="founder-portrait">Portret van Sander</div>
-    </div>
+  <section class="shell introduction">
+    <h2>Fit for the job.</h2>
+    <p>Als een organisatie groeit of verandert, moeten mensen weten wat er van hen wordt verwacht. Ik help om keuzes te maken, verantwoordelijkheden helder te krijgen en verbeteringen in het dagelijks werk door te voeren.</p>
   </section>
-  <section class="shell section expertise">
-    <div>
-      <h2>Van vraag naar opdracht</h2>
-      <p>De vorm van de ondersteuning hangt af van wat er nodig is: tijdelijk een verantwoordelijkheid overnemen, een besluit voorbereiden of een vastgelopen werkwijze met het team verbeteren.</p>
-    </div>
-    <div class="expertise-list">
-      {services.map(service => (
-        <div><h3><a href={`/diensten/#${service.id}`}>{service.title}</a></h3><p>{service.summary}</p></div>
-      ))}
-    </div>
-  </section>
-  <section class="shell training-band">
-    <h2>Oefenen met uw eigen werk</h2>
-    <div>
-      <p>Bij trainingen rond organisatieontwikkeling, verandering en verbetering kunt u een actueel vraagstuk meenemen. Bespreek met Sander wat uw team wil oefenen.</p>
-      <a class="text-link" href="/diensten/#trainingen">Bekijk de trainingsthema’s</a>
-    </div>
-  </section>
-  <Callout title="Leg uw vraag op tafel." text="Een korte schets van de situatie is genoeg om het gesprek te beginnen." />
+  <nav class="shell expertise-links" aria-label="Diensten van Involfit">
+    {services.map(({id, title}) => <a href={`/diensten/#${id}`}>{title}</a>)}
+  </nav>
 </Site>
