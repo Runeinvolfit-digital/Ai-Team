@@ -1,0 +1,109 @@
+:root {
+  font: 16px/1.55 system-ui, sans-serif;
+  color: #19352a;
+  background: #faf8f3;
+  --ink: #183a2a;
+  --muted: #556158;
+  --paper: #fffdf9;
+  --line: #dedbd0;
+  --sand: #efe9dd;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+main { flex: 1; }
+a { color: inherit; text-underline-offset: .22em; }
+:focus-visible { outline: 3px solid #577837; outline-offset: 4px; }
+img { display: block; width: 100%; height: auto; }
+h1, h2, .brand { font-family: Georgia, serif; font-weight: 500; line-height: 1.12; }
+h1 { font-size: clamp(2.35rem, 5vw, 4.1rem); margin: 0 0 .45rem; letter-spacing: -.045em; }
+h2 { margin: 0 0 .55rem; font-size: 1.55rem; }
+p { margin: 0 0 1rem; }
+button, select { font: inherit; }
+button { cursor: pointer; }
+.wrap { width: min(100% - 3rem, 80rem); margin-inline: auto; }
+.top { border-bottom: 1px solid var(--line); background: var(--paper); }
+.top-inner, .footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.top-inner { min-height: 4.65rem; }
+.brand { text-decoration: none; font-size: 1.55rem; letter-spacing: -.035em; }
+.brand span { font: 500 .72rem/1 system-ui, sans-serif; display: block; letter-spacing: .09em; }
+.top nav a { font-size: .92rem; font-weight: 650; }
+.skip { position: absolute; left: .5rem; top: .5rem; background: white; padding: .5rem; transform: translateY(-150%); z-index: 5; }
+.skip:focus { transform: none; }
+.listing { padding-block: clamp(1.75rem, 5vw, 4rem); }
+.intro { margin-bottom: 1.5rem; }
+.intro p, .facts, .small, .tip, .result { color: var(--muted); }
+.listing-grid { display: grid; grid-template-columns: 15.5rem minmax(0, 1fr); gap: clamp(1rem, 3vw, 2.5rem); align-items: start; }
+.filter, .rooms { padding: 1.15rem; background: var(--sand); border: 1px solid var(--line); border-radius: .6rem; }
+.filter label { display: block; margin-top: .7rem; font-size: .88rem; font-weight: 650; }
+.filter select { width: 100%; border: 1px solid var(--line); background: var(--paper); min-height: 44px; border-radius: .3rem; padding-inline: .45rem; color: var(--ink); }
+.filter-toggle { border: 0; background: transparent; color: var(--ink); min-height: 44px; width: 100%; text-align: left; padding: 0; font-weight: 650; }
+.filter-toggle::after { content: "+" / ""; float: right; }
+.filter-toggle[aria-expanded="true"]::after { content: "−" / ""; }
+.reset { color: var(--ink); background: transparent; border: 0; padding: .6rem 0; text-decoration: underline; min-height: 44px; }
+.result { margin-bottom: .45rem; font-size: .9rem; }
+.property-card { max-width: 47rem; border: 1px solid var(--line); border-radius: .65rem; overflow: hidden; background: var(--paper); }
+.property-image { position: relative; display: block; }
+.property-image img { aspect-ratio: 2.1; object-fit: cover; }
+.chip { display: inline-block; width: fit-content; border-radius: .3rem; background: #f3e7ce; color: #3e3a2f; padding: .24rem .55rem; font-size: .78rem; font-weight: 650; }
+.property-image .chip { position: absolute; inset: 1rem auto auto 1rem; }
+.property-body { padding: 1.2rem; display: flex; align-items: end; justify-content: space-between; gap: 1rem; }
+.property-body h2 a { text-decoration: none; }
+.property-body h2 a:hover { text-decoration: underline; }
+.facts { margin-bottom: .45rem; font-size: .94rem; }
+.price { font: 650 1.35rem Georgia, serif; margin-bottom: .55rem; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .6rem 1rem; border-radius: .35rem; text-decoration: none; background: var(--ink); color: white; font-size: .92rem; font-weight: 650; }
+.button:hover { background: #2c533e; }
+.secondary { background: #e9e1d0; color: var(--ink); }
+.secondary:hover { background: #ddd2bb; }
+.empty { padding: 1rem; border: 1px dashed var(--line); }
+.back { display: inline-block; margin-bottom: 1rem; font-size: .9rem; }
+.detail { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(1.25rem, 4vw, 3.5rem); align-items: center; }
+.detail h1 { margin-top: .6rem; }
+.detail-photo { aspect-ratio: 1.5; object-fit: cover; border-radius: .55rem; }
+.small, .tip { font-size: .85rem; margin: .75rem 0 0; }
+.detail-rooms { border-top: 1px solid var(--line); margin-top: 2rem; padding-top: 1.4rem; }
+.detail-rooms dl { display: flex; flex-wrap: wrap; gap: 1rem 3rem; }
+dt { font-weight: 650; }
+dd { margin: 0; color: var(--muted); }
+.footer { margin-top: 2rem; border-top: 1px solid var(--line); }
+.footer .wrap { min-height: 3.8rem; font-size: .85rem; color: var(--muted); }
+.tour { padding-block: 1rem 1.5rem; }
+.tour-title { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; margin-bottom: .9rem; }
+.tour-title h1 { font-size: clamp(1.85rem, 4vw, 2.75rem); margin: 0; }
+.tour-grid { display: grid; grid-template-columns: 14.5rem minmax(0, 1fr); gap: 1rem; align-items: start; }
+.viewer { grid-column: 2; grid-row: 1; position: relative; overflow: hidden; min-height: 24rem; height: min(65vh, 42rem); border-radius: .65rem; background: #342d25; isolation: isolate; }
+.viewer:fullscreen { height: 100%; border-radius: 0; }
+.room-photo, #panorama { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+#panorama { display: block; touch-action: none; cursor: grab; }
+#panorama:active { cursor: grabbing; }
+#panorama:focus-visible { outline-offset: -5px; }
+.room-name { position: absolute; top: .9rem; left: .9rem; margin: 0; color: white; background: #1a2921e8; padding: .45rem .7rem; border-radius: .35rem; font: 650 .9rem/1.2 system-ui, sans-serif; pointer-events: none; }
+.hotspots { position: absolute; inset: 0; pointer-events: none; }
+.hotspots button { position: absolute; translate: -50% -50%; pointer-events: auto; border: 1px solid #fff; background: var(--paper); color: var(--ink); min-height: 44px; padding: .4rem .7rem; border-radius: 2rem; white-space: nowrap; font-weight: 650; font-size: .84rem; box-shadow: 0 2px 14px #1116; }
+.hotspots button:hover { background: #e9eddf; }
+.view-controls { position: absolute; bottom: .85rem; left: 50%; translate: -50%; display: flex; gap: .45rem; }
+.view-controls button { min-width: 44px; min-height: 44px; border-radius: 2rem; padding-inline: .75rem; border: 1px solid #fff; background: var(--paper); color: var(--ink); white-space: nowrap; font-size: .85rem; }
+.rooms { grid-column: 1; grid-row: 1; }
+.rooms h2 { font-size: 1.25rem; }
+.rooms .tip { margin: .35rem 0 .8rem; }
+.floors, .room-list { display: grid; gap: .4rem; }
+.floors { margin-bottom: .75rem; }
+.rooms button { text-align: left; padding: .45rem .65rem; min-height: 44px; border: 1px solid var(--line); border-radius: .3rem; color: var(--ink); background: var(--paper); font-size: .88rem; }
+.rooms button[aria-pressed="true"] { background: var(--ink); color: white; border-color: var(--ink); }
+@media (max-width: 48rem) {
+  .wrap { width: calc(100% - 1.75rem); }
+  .top-inner { min-height: 3.75rem; }
+  .brand { font-size: 1.3rem; }
+  .listing-grid, .detail, .tour-grid { grid-template-columns: minmax(0, 1fr); }
+  .property-body { align-items: stretch; flex-direction: column; }
+  .property-image img { aspect-ratio: 1.6; }
+  .viewer, .rooms { grid-column: auto; grid-row: auto; }
+  .viewer { height: clamp(18rem, 73vw, 32rem); min-height: 0; }
+  .room-list, .floors { grid-template-columns: 1fr 1fr; }
+  .rooms { padding: .9rem; }
+  .filter { padding: .25rem .85rem; }
+  #filter-fields { padding-bottom: .5rem; }
+}
+.fallback-links { inset: auto .5rem .65rem; display: flex; justify-content: center; flex-wrap: wrap; gap: .4rem; }
+.fallback-links button { position: static; translate: none; }

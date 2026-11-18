@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "chromium": "156.0.8078.79",
+  "widths": [
+    1440,
+    390,
+    320
+  ],
+  "pages": [
+    "aanbod",
+    "woning",
+    "tour"
+  ],
+  "rooms": [
+    "Hal",
+    "Woonkamer",
+    "Keuken",
+    "Overloop",
+    "Slaapkamer",
+    "Badkamer"
+  ],
+  "webglFallback": "passed"
+}

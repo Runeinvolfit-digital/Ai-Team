@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="nl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>360°-woningtour | Binnenkijk Makelaars</title><link rel="stylesheet" href="../site.css"></head>
+<body>
+<a class="skip" href="#inhoud">Naar de inhoud</a>
+<header class="top"><div class="wrap top-inner"><a class="brand" href="../" aria-label="Binnenkijk Makelaars, woningaanbod">Binnenkijk <span>Makelaars</span></a><nav aria-label="Hoofdnavigatie"><a href="../">Woningaanbod</a></nav></div></header>
+<main id="inhoud" class="wrap tour">
+  <a class="back" href="../woning/">Terug naar woning</a>
+  <div class="tour-title"><h1>360°-woningtour</h1><span class="chip">Demowoning</span></div>
+  <div class="tour-grid">
+    <section class="viewer" id="viewer" aria-labelledby="room-name">
+      <img class="room-photo" id="room-photo" src="../assets/woonkamer.webp" alt="Panoramabeeld van de woonkamer">
+      <canvas id="panorama" tabindex="0" aria-label="Panorama. Kijk rond met de pijltoetsen." hidden></canvas>
+      <h2 id="room-name" class="room-name" aria-live="polite">Woonkamer</h2>
+      <div id="hotspots" class="hotspots" aria-label="Aangrenzende ruimtes"></div>
+      <div class="view-controls" id="view-controls" aria-label="Bediening van de rondleiding" hidden>
+        <button type="button" id="left" aria-label="Kijk naar links">←</button>
+        <button type="button" id="fullscreen">Volledig scherm</button>
+        <button type="button" id="right" aria-label="Kijk naar rechts">→</button>
+      </div>
+    </section>
+    <aside class="rooms" aria-label="Verdiepingen en kamers">
+      <h2>Kies een ruimte</h2>
+      <p class="tip" id="tip">Sleep of gebruik de pijltoetsen om rond te kijken. Kies een doorgang om verder te lopen.</p>
+      <div class="floors" id="floors" aria-label="Kies een verdieping"></div>
+      <div class="room-list" id="rooms" aria-label="Ruimtes op deze verdieping"></div>
+      <noscript><p>Schakel JavaScript in om van ruimte te wisselen.</p></noscript>
+    </aside>
+  </div>
+  <p class="small">De kamers zijn gegenereerde panoramabeelden van een fictieve woning.</p>
+</main>
+<footer class="footer"><div class="wrap"><span>Binnenkijk Makelaars</span><span>Fictief woningaanbod</span></div></footer>
+<script type="module" src="./tour.js"></script>
+</body>
+</html>

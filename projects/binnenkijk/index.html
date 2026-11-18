@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="nl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Woningaanbod | Binnenkijk Makelaars</title><link rel="stylesheet" href="./site.css"></head>
+<body>
+<a class="skip" href="#inhoud">Naar de inhoud</a>
+<header class="top"><div class="wrap top-inner"><a class="brand" href="./" aria-label="Binnenkijk Makelaars, woningaanbod">Binnenkijk <span>Makelaars</span></a><nav aria-label="Hoofdnavigatie"><a href="./" aria-current="page">Woningaanbod</a></nav></div></header>
+<main class="wrap listing" id="inhoud">
+  <header class="intro"><h1>Woningaanbod</h1><p>Bekijk de woning van binnen, op uw eigen tempo.</p></header>
+  <div class="listing-grid">
+    <aside class="filter">
+      <button class="filter-toggle" id="filter-toggle" type="button" aria-controls="filter-fields" aria-expanded="true" hidden>Filters</button>
+      <div id="filter-fields"><h2>Filter woningen</h2><label for="location">Plaats</label><select id="location"><option value="">Alle plaatsen</option><option value="utrecht">Utrecht</option></select><label for="price">Maximale vraagprijs</label><select id="price"><option value="">Geen maximum</option><option value="500000">€ 500.000</option><option value="600000">€ 600.000</option></select><button class="reset" id="reset" type="button">Wis filters</button></div>
+    </aside>
+    <section aria-label="Zoekresultaten">
+      <p class="result" id="result" role="status">1 woning</p>
+      <article class="property-card" id="property">
+        <a class="property-image" href="./woning/" aria-label="Bekijk de demowoning in Utrecht"><img src="./assets/gevel.webp" width="1200" height="800" alt="Bakstenen rijwoning met groene voordeur"><span class="chip">Demowoning</span></a>
+        <div class="property-body"><div><h2><a href="./woning/">De Utrechtse stadswoning</a></h2><p class="facts">Utrecht · Tussenwoning · 2 verdiepingen</p><p class="price">€ 585.000 k.k.</p></div><a class="button secondary" href="./woning/">Bekijk woning</a></div>
+      </article>
+      <p class="empty" id="empty" hidden>Geen woningen binnen dit prijsfilter.</p>
+    </section>
+  </div>
+</main>
+<footer class="footer"><div class="wrap"><span>Binnenkijk Makelaars</span><span>Fictief woningaanbod</span></div></footer>
+<script type="module" src="./aanbod.js"></script>
+</body>
+</html>
