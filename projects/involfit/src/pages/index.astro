@@ -16,15 +16,18 @@ const portrait = Object.values(portraits)[0];
       <h1>Verbeteren betekent veranderen.</h1>
       <p class="hero-name">Sander de Ridder · Involfit Management &amp; Advies</p>
       <p>Uw organisatie groeit, een sleutelrol valt open of een verandering komt niet op gang. Ik help u kiezen wat eerst moet gebeuren en wie het oppakt.</p>
-      <a href="/over-sander/">Maak kennis met Sander</a>
+      <div class="hero-actions">
+        <a class="hero-contact" href="/contact/">Neem contact op</a>
+        <a href="/over-sander/">Maak kennis met Sander</a>
+      </div>
     </div>
     {portrait ? (
       <Image
         class="portrait"
         src={portrait}
         alt="Sander de Ridder"
-        widths={[480, 768, 1100]}
-        sizes="(max-width: 768px) 100vw, 45vw"
+        widths={[320, 480, 640]}
+        sizes="(max-width: 768px) 256px, 320px"
         format="webp"
         priority
       />
@@ -44,16 +47,19 @@ const portrait = Object.values(portraits)[0];
       <p>Van daaruit maken we afspraken over de eerstvolgende stap, wie die zet en wanneer we samen bekijken of de aanpak werkt.</p>
     </div>
   </section>
-  <nav class="shell expertise-links" aria-label="Diensten van Involfit">
-    {services.map(({id, title, opening}) => (
-      <div>
-        <a href={`/diensten/#${id}`}>{title}</a>
-        {portrait && <p>{opening}</p>}
-      </div>
-    ))}
-    <div>
-      <a href="/diensten/#trainingen">Trainingen</a>
-      <p>Oefen met een eigen organisatievraagstuk.</p>
-    </div>
-  </nav>
+  <section class="shell home-offer" aria-labelledby="aanbod-kop">
+    <h2 id="aanbod-kop">Diensten en trainingen</h2>
+    <nav class="expertise-links" aria-label="Diensten en trainingen van Involfit">
+      {services.map(({id, title, summary}) => (
+        <a class="expertise-card" href={`/diensten/#${id}`}>
+          <strong>{title}</strong>
+          <span>{summary}</span>
+        </a>
+      ))}
+      <a class="expertise-card" href="/diensten/#trainingen">
+        <strong>Trainingen</strong>
+        <span>Oefen met uw team aan een vraagstuk uit de eigen organisatie.</span>
+      </a>
+    </nav>
+  </section>
 </Site>
