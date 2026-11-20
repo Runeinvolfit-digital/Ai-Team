@@ -24,8 +24,8 @@ python3 tests/browser.py --screenshots /tmp/involfit-review
 
 ## Inhoud en vrijgave
 
-- Home reserveert ruimte voor het goedgekeurde portret.
-- Ervaring toont voorlopig werkgebieden. Vul de tijdlijn in met bevestigde perioden, rollen, opdrachten en eventueel openbare organisatienamen.
+- Plaats Sanders goedgekeurde portret als `src/assets/sander.jpg` (ook PNG, WebP of AVIF mogelijk). Astro maakt responsieve WebP-varianten. Zonder bestand toont Home alleen de introductie.
+- Ervaring toont werkgebieden zolang er geen bevestigde opdrachten zijn. Vul `experience` in `src/content.ts` in, meest recente eerst, met periode, rol, opdracht en eventueel een openbare organisatienaam.
 - Bevestig de bio, de dienstnamen en het bestaande zakelijke adres `info@involfit.nl` vóór publicatie.
 - Staging is standaard gemarkeerd als `noindex`. Zet `SITE_INDEXABLE` pas na goedgekeurde publicatie op `1`.
 - Het bestaande formulierendpoint blijft beschikbaar voor compatibiliteit. De website linkt er niet naar en configureert geen mailprovider voor deze versie. Zie de vorige projectversie voor de endpointconfiguratie.

@@ -1,20 +1,12 @@
 ---
 import Site from '../layouts/Site.astro';
-import { services } from '../content';
-
-interface Experience {
-  period: string;
-  role: string;
-  organization?: string;
-  description: string;
-}
-const experience: Experience[] = [];
+import { experience, services } from '../content';
 ---
 <Site title="Ervaring | Involfit" description="Verken de werkgebieden van Sander de Ridder bij Involfit.">
   <section class="shell reading-page">
     <header class="page-intro">
       <h1>Ervaring</h1>
-      <p>Werkgebieden van Sander de Ridder.</p>
+      <p>{experience.length ? "Rollen en opdrachten van Sander de Ridder." : "Werkgebieden van Sander de Ridder."}</p>
     </header>
     {experience.length > 0 && (
       <ol class="timeline" aria-label="Loopbaan en opdrachten">
@@ -23,7 +15,8 @@ const experience: Experience[] = [];
         ))}
       </ol>
     )}
-    <ul class="timeline">
+    {experience.length > 0 && <h2 class="work-areas-heading">Werkgebieden</h2>}
+    <ul class="work-areas">
       {services.map(({id, title, summary}) => (
         <li id={id}><h2>{title}</h2><p>{summary}</p></li>
       ))}

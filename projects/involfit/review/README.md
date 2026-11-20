@@ -1,6 +1,6 @@
 # Review van de persoonlijke Involfit-site
 
-De volledige pagina-opnamen zijn gemaakt in de lokale productiebuild in Chromium op 18 november 2026. Desktop gebruikt 1440 × 1000 CSS-pixels en mobiel 390 × 844. De omgeving biedt alleen een SSH-portal. Een externe HTTP-preview kon daarom niet worden gecontroleerd.
+De volledige pagina-opnamen zijn gemaakt in de lokale productiebuild in Chromium op 20 november 2026. Desktop gebruikt 1440 × 1000 CSS-pixels en mobiel 390 × 844. De omgeving biedt alleen een SSH-portal. Een externe HTTP-preview kon daarom niet worden gecontroleerd.
 
 | Pagina | Desktop | Mobiel |
 | --- | --- | --- |
@@ -11,9 +11,9 @@ De volledige pagina-opnamen zijn gemaakt in de lokale productiebuild in Chromium
 | Contact | [Desktop](contact-desktop.png) | [Mobiel](contact-mobiel.png) |
 | Privacy | [Desktop](privacy-desktop.png) | [Mobiel](privacy-mobiel.png) |
 
-## Onafhankelijke beoordeling
+## Eerdere onafhankelijke beoordeling van het ontwerp
 
-De creatieve reviewer bekeek alle vijf hoofdpagina’s in Chromium en beoordeelde ze met de eigenaarsrubric.
+Op 18 november bekeek de creatieve reviewer alle vijf hoofdpagina’s in Chromium en beoordeelde ze met de eigenaarsrubric.
 
 | Onderdeel | Gewicht | Cijfer |
 | --- | ---: | ---: |
@@ -33,4 +33,5 @@ Een tweede reviewer testte menu en uitklapblokken met toetsenbord en touch, cont
 
 - De typecontrole, de productiebuild en de vijf Node-tests zijn geslaagd.
 - De browsercontrole op de bijgewerkte versie deed 30 layoutchecks op vijf breedtes, inclusief 320 CSS-pixels. Ze controleerde navigatie, zichtbare focus, Escape, touch, uitklapblokken, deeplinks, reduced motion en bediening zonder JavaScript. Zie [testresultaten](test-results.json).
+- Op 20 november zijn de homepage zonder portret en de pagina Ervaring met werkgebieden opnieuw getest. In een tijdelijke testbuild zijn ook responsieve portretbestanden en een tijdlijnitem gecontroleerd. De testinhoud is buiten de site gehouden.
 - Sanders portret, de bio, de definitieve diensten, het zakelijke adres en de loopbaanfeiten wachten op inhoudelijke bevestiging. De tijdlijn toont voorlopig werkgebieden.

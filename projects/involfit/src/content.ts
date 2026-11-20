@@ -32,3 +32,13 @@ export const services = [
 ] as const;
 
 export const email = 'info@involfit.nl';
+
+interface Experience {
+  period: string;
+  role: string;
+  organization?: string;
+  description: string;
+}
+
+// Voeg alleen geverifieerde, openbaar te gebruiken opdrachten toe.
+export const experience: readonly Experience[] = [];
