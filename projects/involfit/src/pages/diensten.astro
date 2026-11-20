@@ -2,11 +2,12 @@
 import Site from '../layouts/Site.astro';
 import { services } from '../content';
 ---
-<Site title="Diensten | Involfit" description="Interimmanagement, organisatieadvies en organisatieverbetering.">
+<Site title="Diensten en trainingen | Involfit" description="Interimmanagement, organisatieadvies, organisatieverbetering en trainingen.">
   <section class="shell reading-page">
     <header class="page-intro">
       <h1>Diensten</h1>
       <p>Een opengevallen rol vraagt om iets anders dan een besluit waar meerdere teams op wachten. Kies de situatie die u herkent.</p>
+      <a href="#trainingen">Bekijk de trainingen</a>
     </header>
     <div class="service-layout">
       <div class="service-list">
@@ -30,6 +31,28 @@ import { services } from '../content';
         <p class="next-step"><a href="/contact/">Bespreek uw vraagstuk</a></p>
       </aside>
     </div>
+    <section class="page-section" id="trainingen" aria-labelledby="trainingen-kop">
+      <h2 id="trainingen-kop">Trainingen</h2>
+      <p>Neem een actueel vraagstuk uit uw organisatie mee. In de training gebruikt u dat vraagstuk om samen te oefenen.</p>
+      <ul class="work-areas">
+        <li>
+          <h3>Organisatieontwikkeling</h3>
+          <div>
+            <p>In kaart brengen hoe rollen, taken en samenwerking in uw organisatie op elkaar aansluiten.</p>
+            <p><strong>Een mogelijke oefenvraag</strong> Breng een eigen besluit of overdracht mee. Zet op een rij wie informatie aanlevert, wie beslist en wie verder kan zodra er een besluit is.</p>
+          </div>
+        </li>
+        <li>
+          <h3>Verandering en verbetering</h3>
+          <div>
+            <p>Oefenen met het vertalen van een veranderwens naar een concrete stap in het werk.</p>
+            <p><strong>Een mogelijke oefenvraag</strong> Neem één knelpunt dat binnen uw team terugkomt. Oefen hoe u het bespreekt en formuleer een proef met een duidelijk moment om het effect te beoordelen.</p>
+          </div>
+        </li>
+      </ul>
+      <p class="next-step">Bespreek met Sander welke inhoud en werkvorm passen bij de deelnemers.</p>
+      <a href="/contact/">Bespreek een training</a>
+    </section>
   </section>
   <script>
     function openRequestedService() {

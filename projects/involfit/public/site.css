@@ -145,6 +145,7 @@ summary { cursor: pointer; min-height: 44px; }
 .service-content h2 { font-size: 1rem; letter-spacing: 0; }
 .service-aside .next-step { margin-bottom: 0; }
 .work-areas li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: .7rem 2rem; border-top: 1px solid var(--line); padding-block: 1.5rem; }
+.work-areas h3 { margin: 0; font-size: 1.2rem; }
 .work-areas p { margin-bottom: .65rem; }
 .work-areas strong { display: block; color: var(--ink); }
 
