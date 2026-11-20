@@ -116,15 +116,43 @@ h2 { font-size: clamp(1.4rem, 3vw, 2.25rem); font-weight: 650; }
 .hero-actions a:is(:hover, :focus-visible, :active) { font-weight: 750; }
 .hero-contact { background: var(--ink); color: white; padding: .8rem 1.2rem; border-radius: .25rem; }
 .hero-contact:hover { background: #23477c; }
-.portrait {
-  display: block;
+.portrait-frame {
+  --portrait-inset: .85rem;
+  --portrait-line: #8e9caf;
+  position: relative;
   justify-self: center;
   width: min(100%, 20rem);
+  margin: 0 0 .65rem;
+  padding: var(--portrait-inset);
+  border: 1px solid var(--portrait-line);
+  background:
+    linear-gradient(to top right, transparent 46%, var(--portrait-line) 48% 52%, transparent 54%) top left,
+    linear-gradient(to top left, transparent 46%, var(--portrait-line) 48% 52%, transparent 54%) top right,
+    linear-gradient(to bottom right, transparent 46%, var(--portrait-line) 48% 52%, transparent 54%) bottom left,
+    linear-gradient(to bottom left, transparent 46%, var(--portrait-line) 48% 52%, transparent 54%) bottom right;
+  background-repeat: no-repeat;
+  background-size: var(--portrait-inset) var(--portrait-inset);
+}
+.portrait {
+  display: block;
+  width: 100%;
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
   object-position: center top;
-  border-radius: .35rem;
+  border: 1px solid var(--line);
+}
+.portrait-frame figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  padding-inline: .7rem;
+  background: white;
+  color: var(--ink);
+  font-size: .85rem;
+  font-weight: 650;
+  white-space: nowrap;
 }
 .introduction {
   display: grid;
@@ -215,7 +243,7 @@ summary { cursor: pointer; min-height: 44px; }
   }
   .mobile-nav nav a { min-height: 44px; padding: .65rem .45rem; border-top: 1px solid var(--line); }
   .hero, .introduction { grid-template-columns: minmax(0, 1fr); }
-  .portrait { width: min(100%, 16rem); }
+  .portrait-frame { width: min(100%, 16rem); }
   .introduction { gap: .75rem; }
   .expertise-links { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
   .expertise-card { min-height: 0; }

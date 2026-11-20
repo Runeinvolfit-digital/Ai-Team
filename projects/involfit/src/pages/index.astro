@@ -22,15 +22,18 @@ const portrait = Object.values(portraits)[0];
       </div>
     </div>
     {portrait ? (
-      <Image
-        class="portrait"
-        src={portrait}
-        alt="Sander de Ridder"
-        widths={[320, 480, 640]}
-        sizes="(max-width: 768px) 256px, 320px"
-        format="webp"
-        priority
-      />
+      <figure class="portrait-frame">
+        <Image
+          class="portrait"
+          src={portrait}
+          alt="Sander de Ridder"
+          widths={[320, 480, 640]}
+          sizes="(max-width: 768px) 256px, 320px"
+          format="webp"
+          priority
+        />
+        <figcaption>Sander de Ridder</figcaption>
+      </figure>
     ) : (
       <div class="hero-position">
         <h2>Waar loopt u tegenaan?</h2>
