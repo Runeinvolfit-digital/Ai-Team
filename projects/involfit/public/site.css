@@ -103,10 +103,11 @@ h2 { font-size: clamp(1.4rem, 3vw, 2.25rem); font-weight: 650; }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 30rem) minmax(0, 20rem);
+  justify-content: center;
   align-items: center;
-  gap: clamp(1.5rem, 5vw, 5rem);
-  padding: clamp(2.5rem, 7vw, 6rem) clamp(0rem, 3vw, 3rem);
+  gap: clamp(1.5rem, 3.5vw, 3.5rem);
+  padding-block: clamp(2rem, 5vw, 4.5rem);
 }
 .hero h1 { max-width: 12ch; margin-bottom: .42em; }
 .hero-name { font-weight: 650; color: var(--ink); }
@@ -214,7 +215,6 @@ summary { cursor: pointer; min-height: 44px; }
   }
   .mobile-nav nav a { min-height: 44px; padding: .65rem .45rem; border-top: 1px solid var(--line); }
   .hero, .introduction { grid-template-columns: minmax(0, 1fr); }
-  .hero { padding-inline: 0; }
   .portrait { width: min(100%, 16rem); }
   .introduction { gap: .75rem; }
   .expertise-links { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
