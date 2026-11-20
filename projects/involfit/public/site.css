@@ -39,8 +39,8 @@ body::before {
 }
 main { flex: 1; }
 .shell { width: min(calc(100% - 2 * var(--gutter)), 80rem); margin-inline: auto; }
-a { color: var(--ink); text-underline-offset: .2em; overflow-wrap: anywhere; }
-a:hover { text-decoration-thickness: 2px; }
+a { color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
+a:is(:hover, :focus-visible, :active) { font-weight: 750; }
 :focus-visible { outline: 2px solid #315c98; outline-offset: 4px; }
 .skip { position: fixed; z-index: 4; inset: 1rem auto auto 1rem; padding: .6rem; background: white; transform: translateY(-200%); }
 .skip:focus { transform: none; }
@@ -93,7 +93,9 @@ h2 { font-size: clamp(1.4rem, 3vw, 2.25rem); font-weight: 650; }
 .header-wordmark img { display: block; border-radius: .25rem; }
 .site-header nav, .footer-links { display: flex; flex-wrap: wrap; gap: clamp(.75rem, 2.5vw, 2rem); }
 .site-header nav a { padding-block: .55rem; text-decoration: none; }
-.site-header nav a:hover, .site-header [aria-current="page"] { text-decoration: underline; }
+.site-header [aria-current="page"],
+.mobile-nav[open] > summary,
+.mobile-nav > summary:is(:hover, :focus-visible, :active) { font-weight: 750; }
 .mobile-nav { display: none; }
 .site-footer { width: var(--frame-width); margin: clamp(2.5rem, 7vw, 6rem) auto 0; background: #f5f7fa; }
 .site-footer .shell { padding-block: 1.5rem; }
