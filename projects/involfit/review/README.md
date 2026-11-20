@@ -45,3 +45,7 @@ De voorbeeldsituaties bevatten geen klantnamen, periodes of resultaten. Voor een
 ## Portret op de homepage
 
 De huidige opnamen gebruiken een gereconstrueerde webversie van het door de eigenaar in de chat getoonde portret. Het originele bestand was niet beschikbaar in de werkmap. De browsercontrole is na plaatsing opnieuw gedraaid. Daarnaast is bevestigd dat de responsieve WebP op 320, 390 en 1440 px laadt en dat de drie dienstlinks zichtbaar blijven.
+
+## Inhoud uit het cv
+
+De huidige opnamen tonen de tijdlijn, eerdere functies en de selectie gevolgde opleidingen en trainingen. Het afzonderlijke trainingsaanbod is ook opgenomen in de uploadzip. De browsertests zijn opnieuw gedraaid en de zip is gecontroleerd op inhoud en webrechten.

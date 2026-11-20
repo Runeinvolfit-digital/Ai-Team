@@ -1,5 +1,6 @@
 ---
 import Site from '../layouts/Site.astro';
+import { professionalDevelopment } from '../content';
 ---
 <Site title="Over Sander | Involfit" description="Maak kennis met Sander de Ridder en zijn aanpak bij groei, ontwikkeling en verandering.">
   <article class="shell reading-page">
@@ -12,7 +13,7 @@ import Site from '../layouts/Site.astro';
         <h2>Ik begin bij het dagelijkse werk</h2>
         <p>Als iedereen het probleem kent en er toch weinig verandert, wil ik zien wat er op een gewone werkdag gebeurt. Ik spreek de mensen die een besluit moeten nemen én degenen die ermee verder moeten. Zo wordt zichtbaar waar verwachtingen uiteenlopen.</p>
         <p>Mijn rol hangt af van wat de situatie vraagt. Soms denk ik mee over de richting. Soms neem ik tijdelijk een managementrol op me en zorg ik dat het team verder kan terwijl een vaste oplossing wordt voorbereid.</p>
-        <a href="/ervaring/">Bekijk mijn werkgebieden</a>
+        <a href="/ervaring/">Bekijk mijn ervaring</a>
       </section>
       <section class="approach-panel">
         <h2>Zo pakken we het aan</h2>
@@ -26,5 +27,13 @@ import Site from '../layouts/Site.astro';
         </dl>
       </section>
     </div>
+    <section class="page-section">
+      <h2>Gevolgde opleidingen en trainingen</h2>
+      <ul class="work-areas">
+        {professionalDevelopment.map(({title, period}) => (
+          <li><p>{period}</p><strong>{title}</strong></li>
+        ))}
+      </ul>
+    </section>
   </article>
 </Site>

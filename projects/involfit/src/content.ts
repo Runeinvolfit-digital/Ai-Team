@@ -44,4 +44,58 @@ interface Experience {
 }
 
 // Voeg alleen geverifieerde, openbaar te gebruiken opdrachten toe.
-export const experience: readonly Experience[] = [];
+export const experience: readonly Experience[] = [
+  {
+    period: 'Juni 2026 – heden',
+    role: 'Directeur-grootaandeelhouder',
+    organization: 'Involfit Management & Advies B.V.',
+    description: 'Voortzetting van Involfit, waarvan ik sinds augustus 2020 eigenaar ben.',
+  },
+  {
+    period: 'September 2025 – heden',
+    role: 'Programmamanager informatiehuishouding',
+    organization: 'Dienst Uitvoering Onderwijs (DUO)',
+    description: 'Ik begeleid de overgang van een tijdelijk programma naar structureel informatiebeheer in de organisatie. Mijn opdracht omvat informatiesystemen, bewustwording en afstemming met de directies en het ministerie van OCW.',
+  },
+  {
+    period: 'December 2023 – juli 2025',
+    role: 'Programmamanager Groningse Digitaliseringsstrategie',
+    organization: 'Provincie Groningen',
+    description: 'Ik richtte het programma voor digitale transformatie in en stuurde het programmateam aan. Met de organisatie en ICT werkte ik aan een meerjarenvisie en aan prioriteiten voor dienstverlening, informatiemanagement en digitalisering.',
+  },
+  {
+    period: 'Mei 2021 – juli 2023',
+    role: 'Manager programma’s en projecten en interimmanager Services',
+    organization: 'Gemeente Smallingerland',
+    description: 'Ik stuurde het team Programma’s en Projecten aan in het fysieke en sociale domein en de bedrijfsvoering. Als lid van het managementteam hield ik me ook bezig met personeelsplanning, portfoliomanagement en programmatisch sturen.',
+  },
+  {
+    period: 'Februari 2019 – september 2020',
+    role: 'Interimmanager Noord-Nederland',
+    organization: 'ConoScenza B.V.',
+    description: 'Ik leidde de dagelijkse bedrijfsvoering in Noord-Nederland en was verantwoordelijk voor programma’s, projecten en opleiding op het gebied van digitale transformatie en werkplekinnovatie.',
+  },
+  {
+    period: 'Mei 2015 – februari 2019',
+    role: 'Algemeen directeur Noord-Nederland',
+    organization: 'Ordina N.V.',
+    description: 'Ik leidde de noordelijke organisatie en werkte aan de regionale positie van Ordina. In die periode groeide het consultingteam van 18 naar 40 medewerkers en kreeg de regio een eigen academie en afstudeercampus.',
+  },
+  {
+    period: 'April 2009 – mei 2015',
+    role: 'Strategisch programmamanager',
+    organization: 'Centraal Justitieel Incassobureau (CJIB)',
+    description: 'Ik begeleidde trajecten rond wetgeving, ICT, organisatiecultuur en huisvesting. Ik werkte onder meer aan de rijkshuisstijl en vervulde ook rollen in demand- en portfoliomanagement.',
+  },
+];
+
+export const professionalDevelopment = [
+  { title: 'Programmasturing als vak', period: '2022–2023' },
+  { title: 'Projectmatig werken bij de gemeentelijke overheid', period: '2021–2022' },
+  { title: 'Helder en integraal adviseren', period: '2021' },
+  { title: 'Agile projectmanagement', period: '2017–2019' },
+  { title: 'Managing Successful Programmes (MSP)', period: '2011–2013' },
+  { title: 'Leergang projectmanagement B en C (IPMA)', period: '2006–2007' },
+  { title: 'Sustainability, Leadership & Responsibility, London Business School', period: '2003–2004' },
+  { title: 'Hbo Personeel & Arbeid, richting Strategisch Management', period: '1994–1998' },
+] as const;

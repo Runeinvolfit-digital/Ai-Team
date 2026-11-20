@@ -2,7 +2,7 @@
 import Site from '../layouts/Site.astro';
 import { experience, services } from '../content';
 ---
-<Site title="Ervaring | Involfit" description="Verken de werkgebieden van Sander de Ridder bij Involfit.">
+<Site title="Ervaring | Involfit" description="Bekijk de loopbaan en opdrachten van Sander de Ridder in strategisch management, digitale transformatie en bedrijfsvoering.">
   <section class="shell reading-page">
     <header class="page-intro">
       <h1>Ervaring</h1>
@@ -14,6 +14,16 @@ import { experience, services } from '../content';
           <li><p>{period}</p><h2>{role}</h2>{organization && <p>{organization}</p>}<p>{description}</p></li>
         ))}
       </ol>
+    )}
+    {experience.length > 0 && (
+      <section class="page-section">
+        <h2>Eerdere functies</h2>
+        <ul>
+          <li>Programmamanager overheid bij Sogeti</li>
+          <li>Projectmanager bij Friesland Bank</li>
+          <li>Projectleider bij Aegon</li>
+        </ul>
+      </section>
     )}
     {experience.length > 0 && <h2 class="work-areas-heading">Werkgebieden</h2>}
     <ul class="work-areas">
