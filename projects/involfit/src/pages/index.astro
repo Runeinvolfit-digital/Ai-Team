@@ -45,6 +45,11 @@ const portrait = Object.values(portraits)[0];
     </div>
   </section>
   <nav class="shell expertise-links" aria-label="Diensten van Involfit">
-    {services.map(({id, title}) => <a href={`/diensten/#${id}`}>{title}</a>)}
+    {services.map(({id, title, opening}) => (
+      <div>
+        <a href={`/diensten/#${id}`}>{title}</a>
+        {portrait && <p>{opening}</p>}
+      </div>
+    ))}
   </nav>
 </Site>

@@ -41,3 +41,7 @@ Een tweede reviewer testte menu en uitklapblokken met toetsenbord en touch, cont
 De onafhankelijke reviewer controleerde op 20 november de vijf hoofdpagina’s op 1440 en 390 px. Home toont een vraagkiezer, Over Sander een profiel met werkwijze, Diensten een uitklaplijst met een adviespaneel, Ervaring werkgebieden met gelabelde voorbeelden en Contact een mailpaneel. Alle vijf routes laadden zonder horizontale overflow. De route van de vraagkiezer naar een geopend dienstblok en het bijbehorende voorbeeld werkte op desktop en mobiel. De nieuwe pagina-opnamen bovenaan tonen deze herbeoordeelde versie.
 
 De voorbeeldsituaties bevatten geen klantnamen, periodes of resultaten. Voor een chronologische tijdlijn blijven bevestigde loopbaangegevens nodig.
+
+## Portret op de homepage
+
+De huidige opnamen gebruiken een gereconstrueerde webversie van het door de eigenaar in de chat getoonde portret. Het originele bestand was niet beschikbaar in de werkmap. De browsercontrole is na plaatsing opnieuw gedraaid. Daarnaast is bevestigd dat de responsieve WebP op 320, 390 en 1440 px laadt en dat de drie dienstlinks zichtbaar blijven.
