@@ -10,6 +10,7 @@
   --frame-width: min(calc(100% - 2 * clamp(.55rem, 1.8vw, 1.75rem)), 86rem);
   --frame-line: #8e9caf;
   --frame-offset: .75rem;
+  --frame-surround: #d7dade;
 }
 
 * { box-sizing: border-box; }
@@ -17,6 +18,8 @@ body {
   position: relative;
   margin: 0;
   padding-block: var(--frame-offset);
+  background: linear-gradient(#fff, #fff) center /
+    var(--frame-width) calc(100% - 2 * var(--frame-offset)) no-repeat var(--frame-surround);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
