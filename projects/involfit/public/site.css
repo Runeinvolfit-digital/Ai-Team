@@ -115,6 +115,7 @@ h2 { font-size: clamp(1.4rem, 3vw, 2.25rem); font-weight: 650; }
   object-position: center top;
 }
 .introduction { display: grid; grid-template-columns: .8fr 1.2fr; gap: 2rem; padding-block: clamp(2rem, 5vw, 4.5rem); }
+.introduction h2 { justify-self: center; text-align: center; }
 .introduction p { margin: 0; max-width: 60ch; }
 .expertise-links p { margin: .25rem 0 0; font-size: .9rem; }
 .expertise-links { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem; border-block: 1px solid var(--line); padding-block: 1rem; }
