@@ -2,13 +2,24 @@
 import Site from '../layouts/Site.astro';
 import { email } from '../content';
 ---
-<Site title="Contact | Involfit" description="Neem per e-mail contact op met Involfit Management & Advies.">
-  <section class="shell reading-page">
-    <header class="page-intro">
-      <h1>Contact</h1>
-      <p>Wilt u een vraagstuk bespreken?</p>
-    </header>
-    <p>Vertel kort wat er speelt binnen uw organisatie en waar u ondersteuning bij zoekt.</p>
-    <p class="next-step"><a href={`mailto:${email}`}>{email}</a></p>
+<Site title="Contact | Involfit" description="Bespreek uw organisatievraagstuk met Sander de Ridder van Involfit.">
+  <section class="shell reading-page contact-layout">
+    <div>
+      <header class="page-intro">
+        <h1>Contact</h1>
+        <p>Bespreek uw organisatievraagstuk met Sander.</p>
+      </header>
+      <p>In een eerste gesprek kijken we samen naar wat er speelt, hoe dringend het is en welke vorm van ondersteuning past.</p>
+      <p>Een paar regels per e-mail zijn genoeg om het gesprek te beginnen.</p>
+    </div>
+    <section class="contact-panel">
+      <h2>Mail Sander</h2>
+      <ul>
+        <li>Wat speelt er in uw organisatie?</li>
+        <li>Wat wilt u op korte termijn bereiken?</li>
+        <li>Wanneer wilt u hierover spreken?</li>
+      </ul>
+      <a href={`mailto:${email}`}>{email}</a>
+    </section>
   </section>
 </Site>

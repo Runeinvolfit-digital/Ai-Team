@@ -6,21 +6,30 @@ import { services } from '../content';
   <section class="shell reading-page">
     <header class="page-intro">
       <h1>Diensten</h1>
-      <p>Waar heeft uw organisatie ondersteuning bij nodig?</p>
+      <p>Een opengevallen rol vraagt om iets anders dan een besluit waar meerdere teams op wachten. Kies de situatie die u herkent.</p>
     </header>
-    <div class="service-list">
-      {services.map(({id, title, situation, approach}, index) => (
-        <details id={id} open={index === 0}>
-          <summary>{title}</summary>
-          <div class="service-content">
-            <p>{situation}</p>
-            <p>{approach}</p>
-            <a href={`/ervaring/#${id}`}>Bekijk dit werkgebied</a>
-          </div>
-        </details>
-      ))}
+    <div class="service-layout">
+      <div class="service-list">
+        {services.map(({id, title, opening, situation, approach, firstStep}, index) => (
+          <details id={id} open={index === 0}>
+            <summary><span><strong>{title}</strong><span class="service-question">{opening}</span></span></summary>
+            <div class="service-content">
+              <p>{situation}</p>
+              <h2>Hoe ik help</h2>
+              <p>{approach}</p>
+              <h2>Waar u alvast mee kunt beginnen</h2>
+              <p>{firstStep}</p>
+              <a href={`/ervaring/#${id}`}>Bekijk dit werkgebied</a>
+            </div>
+          </details>
+        ))}
+      </div>
+      <aside class="service-aside" aria-label="De juiste vorm vinden">
+        <h2>De juiste vorm vinden</h2>
+        <p>In een eerste gesprek bespreken we wat er speelt en of u tijdelijk iemand nodig hebt die de leiding neemt, of iemand die samen met uw team een keuze voorbereidt.</p>
+        <p class="next-step"><a href="/contact/">Bespreek uw vraagstuk</a></p>
+      </aside>
     </div>
-    <p class="next-step"><a href="/contact/">Bespreek uw vraagstuk</a></p>
   </section>
   <script>
     function openRequestedService() {

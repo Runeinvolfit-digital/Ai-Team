@@ -11,14 +11,14 @@ const portraits = import.meta.glob<ImageMetadata>(
 const portrait = Object.values(portraits)[0];
 ---
 <Site title="Involfit | Sander de Ridder" description="Sander de Ridder. Management en advies bij groei, ontwikkeling en verandering.">
-  <section class:list={["shell", "hero", { "hero-with-portrait": portrait }]}>
+  <section class="shell hero">
     <div class="hero-copy">
       <h1>Verbeteren betekent veranderen.</h1>
       <p class="hero-name">Sander de Ridder · Involfit Management &amp; Advies</p>
-      <p>Management en advies bij groei, ontwikkeling en verandering.</p>
-      <a href="/over-sander/">Over Sander</a>
+      <p>Uw organisatie groeit, een sleutelrol valt open of een verandering komt niet op gang. Ik help u kiezen wat eerst moet gebeuren en wie het oppakt.</p>
+      <a href="/over-sander/">Maak kennis met Sander</a>
     </div>
-    {portrait && (
+    {portrait ? (
       <Image
         class="portrait"
         src={portrait}
@@ -28,11 +28,21 @@ const portrait = Object.values(portraits)[0];
         format="webp"
         priority
       />
+    ) : (
+      <div class="hero-position">
+        <h2>Waar loopt u tegenaan?</h2>
+        <ul>
+          {services.map(({id, opening}) => <li><a href={`/diensten/#${id}`}>{opening}</a></li>)}
+        </ul>
+      </div>
     )}
   </section>
   <section class="shell introduction">
     <h2>Fit for the job.</h2>
-    <p>Als een organisatie groeit of verandert, moeten mensen weten wat er van hen wordt verwacht. Ik help om keuzes te maken, verantwoordelijkheden helder te krijgen en verbeteringen in het dagelijks werk door te voeren.</p>
+    <div>
+      <p>Een goed besluit verandert pas iets als mensen weten wat ze morgen anders moeten doen. Daarom kijk ik samen met uw team naar het werk zelf. Welk besluit blijft liggen? Welke overdracht loopt telkens vast?</p>
+      <p>Van daaruit maken we afspraken over de eerstvolgende stap, wie die zet en wanneer we samen bekijken of de aanpak werkt.</p>
+    </div>
   </section>
   <nav class="shell expertise-links" aria-label="Diensten van Involfit">
     {services.map(({id, title}) => <a href={`/diensten/#${id}`}>{title}</a>)}

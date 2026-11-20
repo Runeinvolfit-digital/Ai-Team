@@ -35,3 +35,9 @@ Een tweede reviewer testte menu en uitklapblokken met toetsenbord en touch, cont
 - De browsercontrole op de bijgewerkte versie deed 30 layoutchecks op vijf breedtes, inclusief 320 CSS-pixels. Ze controleerde navigatie, zichtbare focus, Escape, touch, uitklapblokken, deeplinks, reduced motion en bediening zonder JavaScript. Zie [testresultaten](test-results.json).
 - Op 20 november zijn de homepage zonder portret en de pagina Ervaring met werkgebieden opnieuw getest. In een tijdelijke testbuild zijn ook responsieve portretbestanden en een tijdlijnitem gecontroleerd. De testinhoud is buiten de site gehouden.
 - Sanders portret, de bio, de definitieve diensten, het zakelijke adres en de loopbaanfeiten wachten op inhoudelijke bevestiging. De tijdlijn toont voorlopig werkgebieden.
+
+## Herbeoordeling van inhoud en paginaopbouw
+
+De onafhankelijke reviewer controleerde op 20 november de vijf hoofdpagina’s op 1440 en 390 px. Home toont een vraagkiezer, Over Sander een profiel met werkwijze, Diensten een uitklaplijst met een adviespaneel, Ervaring werkgebieden met gelabelde voorbeelden en Contact een mailpaneel. Alle vijf routes laadden zonder horizontale overflow. De route van de vraagkiezer naar een geopend dienstblok en het bijbehorende voorbeeld werkte op desktop en mobiel. De nieuwe pagina-opnamen bovenaan tonen deze herbeoordeelde versie.
+
+De voorbeeldsituaties bevatten geen klantnamen, periodes of resultaten. Voor een chronologische tijdlijn blijven bevestigde loopbaangegevens nodig.

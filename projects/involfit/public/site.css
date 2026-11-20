@@ -39,8 +39,7 @@ h2 { font-size: clamp(1.4rem, 3vw, 2.25rem); font-weight: 650; }
 .site-footer .shell { padding-block: 1.5rem; }
 .site-footer p, .footer-links { font-size: .9rem; margin: 0; }
 
-.hero { display: grid; grid-template-columns: minmax(0, 1fr); align-items: stretch; background: #f7f8fa; }
-.hero-with-portrait { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: stretch; background: #f7f8fa; }
 .hero-copy { padding: clamp(1.75rem, 5vw, 5rem); }
 .hero h1 { max-width: 11ch; margin-bottom: .42em; }
 .hero-name { font-weight: 650; color: var(--ink); }
@@ -72,9 +71,7 @@ summary { cursor: pointer; min-height: 44px; }
 .service-content { padding: .3rem .6rem 1.3rem; max-width: 65ch; }
 .next-step { margin-top: 1.75rem; }
 .work-areas-heading { margin-top: 2rem; }
-.work-areas { list-style: none; margin: 0; padding: 0; max-width: 55rem; }
-.work-areas li { border-top: 1px solid var(--line); padding-block: 1rem; }
-.work-areas p { margin-bottom: 0; }
+.work-areas { list-style: none; margin: 0; padding: 0; max-width: 68rem; }
 .timeline { list-style: none; margin: 0; padding-left: 1rem; border-left: 1px solid var(--line); }
 .timeline li { position: relative; padding: .25rem 0 1.25rem .65rem; }
 .timeline li:last-child { padding-bottom: .25rem; }
@@ -104,11 +101,50 @@ summary { cursor: pointer; min-height: 44px; }
     background: white;
   }
   .mobile-nav nav a { min-height: 44px; padding: .65rem .45rem; border-top: 1px solid var(--line); }
-  .hero-with-portrait, .introduction { grid-template-columns: minmax(0, 1fr); }
+  .hero, .introduction { grid-template-columns: minmax(0, 1fr); }
   .hero { width: 100%; }
   .hero-copy { padding-inline: var(--gutter); }
   .portrait { height: auto; min-height: 0; aspect-ratio: 4 / 3; }
   .introduction { gap: .5rem; }
   .expertise-links { flex-direction: column; gap: .65rem; }
   .site-footer .shell { align-items: flex-start; flex-direction: column; }
+}
+
+/* The opening pairs an introduction with either a portrait or the visitor's questions. */
+.hero-copy > p { max-width: 45ch; }
+.hero-position, .contact-panel {
+  background: var(--ink);
+  color: white;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+.hero-position { display: flex; flex-direction: column; justify-content: center; }
+.hero-position h2, .hero-position a, .contact-panel h2, .contact-panel a { color: inherit; }
+.hero-position :focus-visible, .contact-panel :focus-visible { outline-color: #dce2ea; }
+.hero-position ul, .contact-panel ul { padding-left: 0; list-style: none; margin: .65rem 0 1.25rem; }
+.hero-position li, .contact-panel li { padding-block: .65rem; border-bottom: 1px solid #6e809a; }
+.introduction p + p { margin-top: .8rem; }
+
+.profile-layout, .service-layout, .contact-layout {
+  display: grid;
+  align-items: start;
+  gap: clamp(1.5rem, 5vw, 5rem);
+}
+.profile-layout, .contact-layout { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
+.profile-story p, .contact-layout > div > p { max-width: 62ch; }
+.approach-panel, .service-aside { background: #f0f3f7; padding: clamp(1.25rem, 3vw, 2.5rem); }
+.approach-panel dl { margin-bottom: 0; }
+.approach-panel dt { font-weight: 700; }
+.approach-panel dd { margin: .25rem 0 1rem; color: var(--muted); }
+.approach-panel dd:last-child { margin-bottom: 0; }
+.service-layout { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+.service-question { display: block; margin-top: .2rem; color: var(--muted); font-weight: 400; }
+.service-content h2 { font-size: 1rem; letter-spacing: 0; }
+.service-aside .next-step { margin-bottom: 0; }
+.work-areas li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: .7rem 2rem; border-top: 1px solid var(--line); padding-block: 1.5rem; }
+.work-areas p { margin-bottom: .65rem; }
+.work-areas strong { display: block; color: var(--ink); }
+
+@media (max-width: 48rem) {
+  .hero, .profile-layout, .service-layout, .contact-layout, .work-areas li { grid-template-columns: minmax(0, 1fr); }
+  .hero-position { padding-inline: var(--gutter); }
 }
