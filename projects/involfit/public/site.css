@@ -14,6 +14,7 @@
 }
 
 * { box-sizing: border-box; }
+html { scroll-padding-top: 6.5rem; }
 body {
   position: relative;
   margin: 0;
@@ -41,7 +42,7 @@ main { flex: 1; }
 a { color: var(--ink); text-underline-offset: .2em; overflow-wrap: anywhere; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 2px solid #315c98; outline-offset: 4px; }
-.skip { position: fixed; z-index: 2; inset: 1rem auto auto 1rem; padding: .6rem; background: white; transform: translateY(-200%); }
+.skip { position: fixed; z-index: 4; inset: 1rem auto auto 1rem; padding: .6rem; background: white; transform: translateY(-200%); }
 .skip:focus { transform: none; }
 p { line-height: 1.65; margin: 0 0 1em; color: var(--muted); }
 h1, h2 { margin: 0 0 .4em; color: var(--ink); line-height: 1.12; letter-spacing: -.04em; }
@@ -57,7 +58,9 @@ h2 { font-size: clamp(1.4rem, 3vw, 2.25rem); font-weight: 650; }
 .site-header {
   --chamfer: clamp(.85rem, 3vw, 2.5rem);
   --notch: .65rem;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   isolation: isolate;
   display: grid;
   grid-template-columns: minmax(max-content, 1fr) auto minmax(0, 1fr);
@@ -144,6 +147,7 @@ summary { cursor: pointer; min-height: 44px; }
 }
 
 @media (max-width: 48rem) {
+  html { scroll-padding-top: 5rem; }
   .site-header {
     --chamfer: .75rem;
     --notch: .35rem;
@@ -159,6 +163,8 @@ summary { cursor: pointer; min-height: 44px; }
     position: absolute;
     z-index: 1;
     inset: 100% 0 auto;
+    max-height: calc(100dvh - 5rem);
+    overflow-y: auto;
     flex-direction: column;
     gap: 0;
     padding: .25rem .75rem .55rem;
