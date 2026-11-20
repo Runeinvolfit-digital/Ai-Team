@@ -23,13 +23,42 @@ h1, h2 { margin: 0 0 .4em; color: var(--ink); line-height: 1.12; letter-spacing:
 h1 { font-size: clamp(2.25rem, 6vw, 4.5rem); font-weight: 650; }
 h2 { font-size: clamp(1.4rem, 3vw, 2.25rem); font-weight: 650; }
 
-.site-header, .site-footer .shell {
+.site-footer .shell {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }
-.site-header { min-height: 5.5rem; border-bottom: 1px solid var(--line); }
+.site-header {
+  --chamfer: clamp(.85rem, 3vw, 2.5rem);
+  --notch: .65rem;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: .65rem;
+  min-height: 5.5rem;
+  margin-block: .75rem;
+  padding: var(--notch) calc(var(--chamfer) + .45rem);
+}
+
+.site-header::before, .site-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  clip-path: polygon(0 0, var(--chamfer) var(--notch),
+    calc(100% - var(--chamfer)) var(--notch), 100% 0, 100% 100%,
+    calc(100% - var(--chamfer)) calc(100% - var(--notch)),
+    var(--chamfer) calc(100% - var(--notch)), 0 100%);
+}
+.site-header::before { background: #8e9caf; }
+.site-header::after { inset: 1px; background: linear-gradient(#fff, #f7f9fc); }
+.site-header > .header-wordmark { justify-self: start; }
+.site-header .desktop-nav { flex-wrap: nowrap; gap: clamp(.65rem, 1.6vw, 1.55rem); }
+.desktop-nav a { white-space: nowrap; }
 .wordmark { font-size: 1.65rem; font-weight: 750; letter-spacing: -.05em; text-decoration: none; }
 .header-wordmark { display: inline-flex; align-items: center; gap: .55rem; }
 .header-wordmark img { display: block; border-radius: .25rem; }
@@ -89,7 +118,13 @@ summary { cursor: pointer; min-height: 44px; }
 }
 
 @media (max-width: 48rem) {
-  .site-header { min-height: 4rem; position: relative; }
+  .site-header {
+    --chamfer: .75rem;
+    --notch: .35rem;
+    grid-template-columns: 1fr auto;
+    min-height: 4rem;
+    margin-block: .5rem;
+  }
   .site-header .desktop-nav { display: none; }
   .mobile-nav { display: block; margin-left: auto; }
   .mobile-nav summary { display: flex; align-items: center; padding-inline: .45rem; }
