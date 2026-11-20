@@ -31,6 +31,8 @@ h2 { font-size: clamp(1.4rem, 3vw, 2.25rem); font-weight: 650; }
 }
 .site-header { min-height: 5.5rem; border-bottom: 1px solid var(--line); }
 .wordmark { font-size: 1.65rem; font-weight: 750; letter-spacing: -.05em; text-decoration: none; }
+.header-wordmark { display: inline-flex; align-items: center; gap: .55rem; }
+.header-wordmark img { display: block; border-radius: .25rem; }
 .site-header nav, .footer-links { display: flex; flex-wrap: wrap; gap: clamp(.75rem, 2.5vw, 2rem); }
 .site-header nav a { padding-block: .55rem; text-decoration: none; }
 .site-header nav a:hover, .site-header [aria-current="page"] { text-decoration: underline; }

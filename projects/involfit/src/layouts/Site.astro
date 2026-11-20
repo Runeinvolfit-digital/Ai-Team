@@ -38,7 +38,10 @@ const navigation = [
   <body>
     <a class="skip" href="#inhoud">Naar de inhoud</a>
     <header class="site-header shell">
-      <a class="wordmark" href="/" aria-label="Involfit, home">involfit</a>
+      <a class="wordmark header-wordmark" href="/" aria-label="Involfit, home">
+        <img src="/involfit-beeldmerk.png" width="36" height="36" alt="" />
+        <span>involfit</span>
+      </a>
       <nav class="desktop-nav" aria-label="Hoofdnavigatie">
         {navigation.map(({href, label}) => (
           <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>
