@@ -46,12 +46,6 @@ interface Experience {
 // Voeg alleen geverifieerde, openbaar te gebruiken opdrachten toe.
 export const experience: readonly Experience[] = [
   {
-    period: 'Juni 2026 – heden',
-    role: 'Directeur-grootaandeelhouder',
-    organization: 'Involfit Management & Advies B.V.',
-    description: 'Voortzetting van Involfit, waarvan ik sinds augustus 2020 eigenaar ben.',
-  },
-  {
     period: 'September 2025 – heden',
     role: 'Programmamanager informatiehuishouding',
     organization: 'Dienst Uitvoering Onderwijs (DUO)',
