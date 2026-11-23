@@ -289,3 +289,8 @@ summary { cursor: pointer; min-height: 44px; }
   .hero, .profile-layout, .service-layout, .contact-layout, .work-areas li { grid-template-columns: minmax(0, 1fr); }
   .hero-position { padding-inline: var(--gutter); }
 }
+
+@media (min-width: 90rem) {
+  :root { --frame-width: min(calc(100% - 2 * clamp(.55rem, 1.8vw, 1.75rem)), 106rem); }
+  .introduction, .home-offer { width: min(calc(100% - 2 * var(--gutter)), 100rem); }
+}
